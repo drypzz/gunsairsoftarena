@@ -32,8 +32,13 @@ const Service = () => {
     return (
         <div>
             {loading ?
-                <div className='loading'>
-                    <PuffLoader color={'#48D904'} loading={loading} size={100} />
+                <div>
+                    <Head>
+                        <title>Guns Airsoft Arena - Serviço</title>
+                    </Head>
+                    <div className='loading'>
+                        <PuffLoader color={'#48D904'} loading={loading} size={100} />
+                    </div>
                 </div>
             :
                 <div>
