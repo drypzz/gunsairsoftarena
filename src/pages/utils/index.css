@@ -1,0 +1,56 @@
+.error-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.error-box{
+    background-color: #000;
+    padding: 10px;
+    border-radius: 12px;
+    width: 800px;
+}
+
+.error-content{
+    margin: 10px;
+    text-align: left;
+}
+
+.error-content .image-logo{
+    width: 256px;
+    height: 200px;
+}
+
+.error-content p a{
+    color: #54A824;
+    transition: all .2s ease-in-out;
+}
+
+.error-content p a:hover{
+    color: #356917;
+}
+
+.error-content.just{
+    text-align: center;
+}
+
+.error-content.just.top{
+    margin-top: 25px;
+}
+
+.error-content.just span{
+    color: #3a3a3a;
+}
+
+@media screen and (max-width: 960px) {
+    .error-box{
+        width: 90%;
+    }
+
+    .error-content .image-logo{
+        width: 250px;
+        height: auto;
+    }
+}

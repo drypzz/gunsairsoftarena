@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+/* geral */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+};
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  color: #f4f4f4;
+  overflow-x: hidden;
+  background-color: #090b0f;
+}
+
+/* loading */
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #040507;
+}
+
+
+/* navbar */
+
+header{
+  position: sticky;
+  z-index: 30;
+  top: 0;
+}
+
+nav{
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+}
+
+.logo{
+  width: 140px;
+  height: 100px;
+}
+
+.nav__menu-bar{
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  cursor: pointer;
+}
+
+.nav__menu-bar div{
+  width: 40px;
+  height: 4px;
+  background-color: #54A824;
+  border-radius: 2px;
+}
+
+.nav__menu-list{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 130px;
+  width: 100%;
+  row-gap: 24px;
+  right: -100%;
+  align-items: center;
+  padding: 24px 16px;
+  transition: all 200ms ease-in-out;
+  min-height: calc(100vh - 60px);
+  background-color: #000;
+}
+
+.nav__menu-list.active{
+  right: 0;
+}
+
+.nav__link{
+  font-size: 18px; 
+  color: #54A824;
+  position: relative;
+  transition: all 200ms ease-in-out;
+}
+
+.nav__link:hover{
+ font-weight: bold;
+}
+
+.center{
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .nav__menu-bar{
+    display: none;
+  }
+  .nav__menu-list{
+    position: unset;
+    flex-direction: row;
+    min-height: fit-content;
+    width: fit-content;
+    column-gap: 24px;
+    align-items: center;
+  }
+  .nav__link::before{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #54A824;
+    transition: all 200ms ease-in-out;
+  }
+  
+  .nav__link:hover:before{
+   width: 100%;
+  }
+}
