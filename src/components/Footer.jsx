@@ -2,6 +2,8 @@ import React from 'react';
 
 import './utils/footer.css';
 
+import { FaMapMarkerAlt, FaWhatsapp, FaInstagram, FaHome, FaPhoneSquare, FaHandHoldingUsd, FaFacebook } from 'react-icons/fa';
+
 const Footer = () => {
     return (
         <div>
@@ -18,7 +20,8 @@ const Footer = () => {
                             <img src={'/payments/picpay.png'} alt='Formas de Pagamento' />
                             <img src={'/payments/pix.png'} alt='Formas de Pagamento' />
                         </div>
-                        <p className='copyright'>Copyright © 2020 - {new Date().getFullYear()} | Todos os direitos reservados a <span style={{color: '#fff'}}>Guns Airsoft Arena</span></p>
+                        <p className='copyright'>© 2021 - {new Date().getFullYear()} | Todos os direitos reservados</p>
+                        <p className='copyright'>GUNS AIRSOFT ARENA | CNPJ: 44.433.534/0001-87</p>
                         <a target='_blank' className='drypzz' href='https://drypzz.netlify.app/'>Developed by @drypzz</a>
                     </div>
                     
@@ -27,13 +30,13 @@ const Footer = () => {
                         <div className='about-footer'>
                             <div className='about-footer-container'>
                                 <div className='about-footer-content'>
-                                    <a href='/contact'>Contato</a>
+                                    <a href='/contact'><FaPhoneSquare /> Contato</a>
                                 </div>
                                 <div className='about-footer-content'>
-                                    <a href='/service'>Serviço</a>
+                                    <a href='/service'><FaHandHoldingUsd /> Serviço</a>
                                 </div>
                                 <div className='about-footer-content'>
-                                    <a href='/'>Inicio</a>
+                                    <a href='/'><FaHome /> Inicio</a>
                                 </div>
                             </div>
                         </div>
@@ -44,13 +47,24 @@ const Footer = () => {
                         <div className='about-footer'>
                             <div className='about-footer-container'>
                                 <div className='about-footer-content'>
-                                    <a target='_blank' href='https://www.instagram.com/gunsairsoftarena/'>Instagram</a>
+                                    <a target='_blank' href='https://www.instagram.com/gunsairsoftarena/'><FaInstagram /> Instagram</a>
                                 </div>
                                 <div className='about-footer-content'>
-                                    <a target='_blank' href='https://www.facebook.com/gunsairsoftarena'>Facebook</a>
+                                    <a target='_blank' href='https://www.facebook.com/gunsairsoftarena'><FaFacebook /> Facebook</a>
                                 </div>
                                 <div className='about-footer-content'>
-                                    <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'>Whatsapp</a>
+                                    <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'><FaWhatsapp /> Whatsapp</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className='content-footer'>
+                        <p className='title-footer'>Localização</p>
+                        <div className='about-footer'>
+                            <div className='about-footer-container'>
+                                <div className='about-footer-content'>
+                                    <a target='_blank' href='https://goo.gl/maps/rLWMmyMyFr234XPe6'><FaMapMarkerAlt /> Maps</a>
                                 </div>
                             </div>
                         </div>

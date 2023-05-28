@@ -59,10 +59,13 @@ const Contacts = () => {
                         <div className='container'>
                             <div className='box-s'>
                                 <div>
-                                    <h1 className='title'>Contato</h1>
+                                    <h1 className='title'>Contate-nos</h1>
                                 </div>
                                 <div>
-                                    <p className='subtitle'>Entre em contato conosco para mais informações sobre o nosso campo de airsoft.</p>
+                                    <p className='subtitle'>Faça contato para obter mais informações sobre nossos serviços</p>
+                                </div>
+                                <div>
+                                    <p className='address'>Ou visite nossa pagina de serviços</p>
                                 </div>
                             </div>
                         </div>

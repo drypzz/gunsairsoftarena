@@ -3,17 +3,13 @@
 import NavItem from './NavItem';
 import { useState } from 'react';
 
-import { FaHome } from 'react-icons/fa';
-import { FaPhoneSquare } from 'react-icons/fa';
-import { FaHandHoldingUsd } from 'react-icons/fa';
+import { FaHome, FaPhoneSquare, FaHandHoldingUsd } from 'react-icons/fa';
 
 const MENU_LIST = [
     {text: ' - Inicio', href: '/', icon: <FaHome />},
     {text: ' - Contato', href: '/contact', icon: <FaPhoneSquare />},
     {text: ' - Serviços', href: '/service', icon: <FaHandHoldingUsd />},
 ]
-
-import Image from 'next/image';
 
 const Navbar = () => {
 
