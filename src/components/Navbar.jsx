@@ -14,7 +14,6 @@ const MENU_LIST = [
     {text: ' - Serviços', href: '/service', icon: <FaHandHoldingUsd />},
 ]
 
-import img from '../files/transparent.png'
 import Image from 'next/image';
 
 const Navbar = () => {
@@ -25,9 +24,9 @@ const Navbar = () => {
     return (
         <header>
             <nav className='nav'>
-                <Link href={'/'}>
-                    <Image src={img} className='logo' alt='logo' />
-                </Link>
+                <a href='/'>
+                    <img src='../files/transparent.png' className='logo' alt='logo' />
+                </a>
 
                 <div onClick={() => setNavActive(!navActive)} className={`${navActive ? 'active' : ''} nav__menu-bar`} id='nav__menu'>
                     <div></div>

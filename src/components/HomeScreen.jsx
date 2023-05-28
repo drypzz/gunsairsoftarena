@@ -2,8 +2,6 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import img from '../files/transparent.png'
-
 import './utils/home.css';
 
 import MY_CONFIG from '../config/data';
@@ -35,7 +33,7 @@ const HomeScreen = () => {
                 <span className='category'>Sobre nós</span>
                 <div className='row'>
                     <div className='content'>
-                        <Image src={img} className='img' />
+                        <img src='/files/transparent.png' className='img' />
                     </div>
                     <div className='content'>
                         <p className='text'>

@@ -32,11 +32,11 @@
 }
 
 .footer .container-footer .content-footer a:hover{
-    color: var(--primary);
+    color: #54A824;
 }
 
 .footer .container-footer .content-footer p.copyright{
-    color: var(--primary);
+    color: #54A824;
     max-width: 500px;
     margin: 20px 0;
 }
