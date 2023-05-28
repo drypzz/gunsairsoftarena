@@ -20,6 +20,22 @@ const MyCarousel = () => {
         '/guns/014.jpg',
         '/guns/015.jpg',
         '/guns/016.jpg',
+    ]
+    return (
+        <Carousel autoPlay transitionTime={1000} swipeable={false} interval={4000} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={false}>
+            {imagens.map((img, index) => {
+                return (
+                    <div className='modal-content' key={index}>
+                        <img src={`${img}`} alt={`Imagem ${index + 1}`} />
+                    </div>
+                )
+            })}
+        </Carousel>
+    );
+};
+
+const MyCarousel2 = () => {
+    const imagens2 = [
         '/guns/017.jpg',
         '/guns/018.jpg',
         '/guns/019.jpg',
@@ -39,7 +55,7 @@ const MyCarousel = () => {
     ]
     return (
         <Carousel autoPlay transitionTime={1000} swipeable={false} interval={4000} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={false}>
-            {imagens.map((img, index) => {
+            {imagens2.map((img, index) => {
                 return (
                     <div className='modal-content' key={index}>
                         <img src={`${img}`} alt={`Imagem ${index + 1}`} />
@@ -50,4 +66,4 @@ const MyCarousel = () => {
     );
 };
 
-export default MyCarousel;
+export {MyCarousel, MyCarousel2};

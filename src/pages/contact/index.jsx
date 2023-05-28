@@ -1,10 +1,14 @@
+'use client';
+
 import React, {useState, useEffect} from 'react';
 import Head from 'next/head';
 
 import icon from '../../app/favicon.ico';
 
 import '../../app/style/globals.css';
+
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 import PuffLoader from 'react-spinners/PuffLoader';
 
@@ -43,7 +47,8 @@ const Contacts = () => {
                         <title>Guns Airsoft Arena - Contato</title>
                     </Head>
                     <Navbar />
-                    <h1>Contacts</h1>
+                    <div>/contact</div>
+                    <Footer />
                 </div>
             }
         </div>

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, {useState, useEffect} from 'react';
 import Head from 'next/head';
@@ -6,7 +6,9 @@ import Head from 'next/head';
 import icon from '../../app/favicon.ico';
 
 import '../../app/style/globals.css';
+
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -55,6 +57,7 @@ const Service = () => {
                     </Head>
                     <Navbar />
                     <h1>Service</h1>
+                    <Footer />
                 </div>
             }
         </div>

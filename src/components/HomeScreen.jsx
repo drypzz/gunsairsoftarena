@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 import { FaWhatsapp } from 'react-icons/fa';
 
-import MyCarousel from './Carousel';
+import {MyCarousel, MyCarousel2} from './Carousel';
 
 const HomeScreen = () => {
     return (
@@ -52,6 +52,9 @@ const HomeScreen = () => {
                 <div className='modal'>
                     <div className='modal-container'>
                         <MyCarousel />
+                    </div>
+                    <div className='modal-container'>
+                        <MyCarousel2 />
                     </div>
                 </div>
             </div>
