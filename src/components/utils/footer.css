@@ -14,7 +14,7 @@
 }
 
 .footer .container-footer .content-footer{
-    margin: 0 20px;
+    margin: 20px 100px;
 }
 
 .footer .container-footer .content-footer p.title-footer{
@@ -89,12 +89,12 @@
         margin: 20px 0;
     }
     
-    .footer .container-footer .content-footer:nth-child(2){
+    .footer .container-footer .content-footer:nth-child(2), .footer .container-footer .content-footer:nth-child(3){
         border-top: 1px solid #54A824;
         width: 100%;
     }
 
-    .footer .container-footer .content-footer:nth-child(2) p.title-footer{
+    .footer .container-footer .content-footer:nth-child(2) p.title-footer, .footer .container-footer .content-footer:nth-child(3) p.title-footer{
         margin-top: 20px;
     }
 

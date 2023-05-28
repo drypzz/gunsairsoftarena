@@ -32,10 +32,29 @@ const Footer = () => {
                                 <div className='about-footer-content'>
                                     <a href='/service'>Serviço</a>
                                 </div>
+                                <div className='about-footer-content'>
+                                    <a href='/'>Inicio</a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    <div className='content-footer'>
+                        <p className='title-footer'>Links</p>
+                        <div className='about-footer'>
+                            <div className='about-footer-container'>
+                                <div className='about-footer-content'>
+                                    <a target='_blank' href='https://www.instagram.com/gunsairsoftarena/'>Instagram</a>
+                                </div>
+                                <div className='about-footer-content'>
+                                    <a target='_blank' href='https://www.facebook.com/gunsairsoftarena'>Facebook</a>
+                                </div>
+                                <div className='about-footer-content'>
+                                    <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'>Whatsapp</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </footer>
         </div>

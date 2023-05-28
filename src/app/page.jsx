@@ -1,37 +1,7 @@
-'use client';
-
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 import HomeScreen from '@/components/HomeScreen';
 
-import PuffLoader from 'react-spinners/PuffLoader';
-
-import './style/globals.css';
-
 export default function Home() {
-
-  const [loading, setLoading] = useState(false);
-  
-    useEffect(() => {
-        setLoading(true);
-        setTimeout(() => {
-        setLoading(false);
-        }, 5000);
-    }, []);
-
-  return (
-    <div>
-      {loading ?
-        <div>
-          <div className='loading'>
-            <PuffLoader color={'#48D904'} loading={loading} size={100} />
-          </div>
-        </div>
-      :
-        <div>
-          <HomeScreen />
-        </div>
-      }
-    </div>
-  )
+  return <HomeScreen />
 };
