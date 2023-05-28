@@ -14,7 +14,7 @@ const MENU_LIST = [
     {text: ' - Serviços', href: '/service', icon: <FaHandHoldingUsd />},
 ]
 
-import img from '../app/favicon.ico'
+import img from '../files/transparent.png'
 import Image from 'next/image';
 
 const Navbar = () => {
@@ -29,7 +29,7 @@ const Navbar = () => {
                     <Image src={img} className='logo' alt='logo' />
                 </Link>
 
-                <div onClick={() => setNavActive(!navActive)} className='nav__menu-bar'>
+                <div onClick={() => setNavActive(!navActive)} className={`${navActive ? 'active' : ''} nav__menu-bar`} id='nav__menu'>
                     <div></div>
                     <div></div>
                     <div></div>

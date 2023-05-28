@@ -1,0 +1,172 @@
+@keyframes shadow{
+    from{
+        text-shadow: 5px 0 10px #54A824;
+    }
+    to{
+        text-shadow: 5px 0 20px #54A824;
+    }
+}
+
+/* main */
+
+.main{
+    position: relative;
+    z-index: 1;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100vh;  
+    opacity: .3; 
+    z-index: -1;
+    background: url('../../files/wallpaper.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main .container{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 15px;
+}
+
+.main .container div{
+    margin: 10px;
+}
+
+.title{
+    font-size: 6rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    animation: shadow infinite alternate 1s;
+}
+
+.address{
+    font-weight: 200;
+    animation: shadow infinite alternate 1s;
+}
+
+.subtitle{
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    animation: shadow infinite alternate 1s;
+}
+
+.category{
+    font-size: 1rem;
+    line-height: 1.5;
+    display: block;
+    color: #adacac;
+    text-transform: uppercase;
+    letter-spacing: .3125rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: sans-serif;
+}
+
+/* about */
+
+.about{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5% auto;
+}
+
+.about .row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 15px;
+    padding: 10px;
+}
+
+.about .row::before{
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    opacity: 1; 
+    z-index: -1;
+    border-radius: 12px;
+    background: rgb(7, 7, 7);
+}
+
+.about .content{
+    margin: 10px;
+    text-align: center;
+}
+
+.about .content .img{
+    width: 400px;
+    height: auto;
+}
+
+.about .content p{
+    max-width: 800px;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+
+.about .content .button{
+    margin: 20px 0;
+}
+
+.about .content .button a{
+    margin: 25px 0;
+    padding: 10px 20px;
+    border: 1px solid #54A824;
+    border-radius: 5px;
+    background: none;
+    color: #54A824;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.about .content .button a:hover{
+    background: #54A824;
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width: 960px) {
+    .title{
+        font-size: 3.5rem;
+    }
+    .subtitle{
+        font-size: 1.5rem;
+    }
+    .about{
+        padding: 20px;
+    }
+    .about .content p{
+        font-size: .9rem;
+    }
+    .about .content .img{
+        width: 100%;
+        height: auto;
+    }
+}

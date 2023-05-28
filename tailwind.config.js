@@ -9,5 +9,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: ["styled-jsx/babel"],
 }

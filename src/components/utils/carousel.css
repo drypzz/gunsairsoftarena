@@ -1,0 +1,32 @@
+.modal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-container{
+    width: 30%;
+    margin: 20px;
+}
+
+.modal-content{
+    margin: 5px;
+}
+
+.carousel .thumb.selected, .carousel .thumb:hover {
+    border: 2px solid #54A824!important;
+    cursor: pointer!important;
+}
+
+.carousel .thumb{
+    border: 2px solid rgba(87, 170, 36, .3)!important;
+}
+
+@media screen and (max-width: 960px) {
+    .modal-container{
+        width: 100%;
+    }
+}

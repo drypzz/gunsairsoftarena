@@ -19,7 +19,7 @@ html{
 body{
   color: #f4f4f4;
   overflow-x: hidden;
-  background-color: #090b0f;
+  background-color: #000;
 }
 
 /* loading */
@@ -32,7 +32,6 @@ body{
   height: 100vh;
   background-color: #040507;
 }
-
 
 /* navbar */
 
@@ -51,29 +50,44 @@ nav{
 }
 
 .logo{
-  width: 140px;
-  height: 100px;
+  width: 100px;
+  height: auto;
 }
 
 .nav__menu-bar{
-  display: flex;
-  flex-direction: column;
-  row-gap: 6px;
-  cursor: pointer;
+  top: 30%;
+  right: 5%;
+  transform: translate(5%, 30%);
+  position: absolute;
 }
 
 .nav__menu-bar div{
-  width: 40px;
-  height: 4px;
+  display: block;
+  cursor: pointer;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
   background-color: #54A824;
-  border-radius: 2px;
+}
+
+#nav__menu.active div:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#nav__menu.active div:nth-child(2){
+  opacity: 0;
+}
+
+#nav__menu.active div:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .nav__menu-list{
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 130px;
+  top: 110px;
   width: 100%;
   row-gap: 24px;
   right: -100%;
