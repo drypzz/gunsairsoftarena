@@ -5,15 +5,12 @@ import Head from 'next/head';
 
 import icon from '../../app/favicon.ico';
 
-import '../../app/style/globals.css';
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-
 import PuffLoader from 'react-spinners/PuffLoader';
+
+import '../../app/style/globals.css';
 
 const Service = () => {
     const [loading, setLoading] = useState(false);
@@ -21,13 +18,7 @@ const Service = () => {
     useEffect(() => {
         setLoading(true);
         setTimeout(() => {
-        setLoading(false);
-        Aos.init(
-            { 
-            duration: 2000,
-            easing: 'ease-in-out'
-            }
-        );
+            setLoading(false);
         }, 2000);
     }, []);
 
@@ -56,7 +47,7 @@ const Service = () => {
                         <title>Guns Airsoft Arena - Serviço</title>
                     </Head>
                     <Navbar />
-                    <h1>Service</h1>
+                    <h1>/service</h1>
                     <Footer />
                 </div>
             }

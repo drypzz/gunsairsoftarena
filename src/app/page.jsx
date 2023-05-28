@@ -1,11 +1,12 @@
 'use client';
 
 import React, {useState, useEffect} from 'react';
-import './style/globals.css';
 
 import HomeScreen from '@/components/HomeScreen';
 
 import PuffLoader from 'react-spinners/PuffLoader';
+
+import './style/globals.css';
 
 export default function Home() {
 

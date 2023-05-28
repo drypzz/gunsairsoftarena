@@ -5,12 +5,12 @@ import Head from 'next/head';
 
 import icon from '../../app/favicon.ico';
 
-import '../../app/style/globals.css';
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 import PuffLoader from 'react-spinners/PuffLoader';
+
+import '../../app/style/globals.css';
 
 const Contacts = () => {
     const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ const Contacts = () => {
     useEffect(() => {
         setLoading(true);
         setTimeout(() => {
-        setLoading(false);
+            setLoading(false);
         }, 2000);
     }, []);
 
@@ -47,7 +47,7 @@ const Contacts = () => {
                         <title>Guns Airsoft Arena - Contato</title>
                     </Head>
                     <Navbar />
-                    <div>/contact</div>
+                    <h1>/contact</h1>
                     <Footer />
                 </div>
             }
