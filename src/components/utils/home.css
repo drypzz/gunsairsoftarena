@@ -60,18 +60,6 @@
     text-align: center;
 }
 
-.category{
-    font-size: 1rem;
-    line-height: 1.5;
-    display: block;
-    color: #adacac;
-    text-transform: uppercase;
-    letter-spacing: .3125rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-family: sans-serif;
-}
-
 /* about */
 
 .about{

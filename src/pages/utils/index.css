@@ -7,7 +7,7 @@
 }
 
 .error-box{
-    background-color: #000;
+    background-color: #0b0b0b;
     padding: 10px;
     border-radius: 12px;
     width: 800px;
@@ -19,8 +19,8 @@
 }
 
 .error-content .image-logo{
-    width: 256px;
-    height: 200px;
+    width: 400px;
+    height: auto;
 }
 
 .error-content p a{
