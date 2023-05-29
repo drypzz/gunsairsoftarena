@@ -4,34 +4,27 @@ import React, {useState, useEffect} from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import MY_CONFIG from '../config/data';
-
 import { FaWhatsapp } from 'react-icons/fa';
 
 import {MyCarousel, MyCarousel2} from './Carousel';
 
-import PuffLoader from 'react-spinners/PuffLoader';
-
 import './utils/home.css';
 
+import LoadingScreen from './LoadingScreen';
+
 const HomeScreen = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
   
     useEffect(() => {
-        setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 2000);
+        }, 5000);
     }, []);
 
     return (
-        <div>
+        <>
             {loading ?
-                <div>
-                    <div className='loading'>
-                        <PuffLoader color={'#48D904'} loading={loading} size={100} />
-                    </div>
-                </div>
+                <LoadingScreen loading={loading} />
             :
                 <div>
                     <Navbar />
@@ -39,13 +32,13 @@ const HomeScreen = () => {
                         <div className='container'>
                             <div className='box-s'>
                                 <div>
-                                    <h1 className='title'>{MY_CONFIG.titulo}</h1>
+                                    <h1 className='title'>Guns Airsoft Arena</h1>
                                 </div>
                                 <div>
-                                    <p className='subtitle'>{MY_CONFIG.subtitulo}</p>
+                                    <p className='subtitle'>Sua arena de airsoft em Joinville - SC.</p>
                                 </div>
                                 <div>
-                                    <span className='address'>{MY_CONFIG.endereco}</span>
+                                    <span className='address'>R. Boehmerwald, 170 - Boehmerwald, Joinville - SC, 89219-731</span>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +52,10 @@ const HomeScreen = () => {
                             </div>
                             <div className='content'>
                                 <p className='text'>
-                                    {MY_CONFIG.sobre}
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
                                 </p>
                                 <div className='button'>
                                     <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814' className='btn'>
@@ -81,7 +77,7 @@ const HomeScreen = () => {
                     <Footer />
                 </div>
             } 
-        </div>
+        </>
     )
 };
 

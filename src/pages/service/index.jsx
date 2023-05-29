@@ -8,31 +8,24 @@ import icon from '../../app/favicon.ico';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-import PuffLoader from 'react-spinners/PuffLoader';
 
 import '../../app/style/globals.css';
 
+import LoadingScreen from '@/components/LoadingScreen';
+
 const Service = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
   
     useEffect(() => {
-        setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 2000);
+        }, 5000);
     }, []);
 
     return (
-        <div>
+        <>
             {loading ?
-                <div>
-                    <Head>
-                        <title>Guns Airsoft Arena - Serviço</title>
-                    </Head>
-                    <div className='loading'>
-                        <PuffLoader color={'#48D904'} loading={loading} size={100} />
-                    </div>
-                </div>
+                <LoadingScreen loading={loading} />
             :
                 <div>
                     <Head>
@@ -51,7 +44,7 @@ const Service = () => {
                     <Footer />
                 </div>
             }
-        </div>
+        </>
     )
 };
 

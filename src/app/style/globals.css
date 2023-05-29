@@ -10,6 +10,7 @@
   text-decoration: none;
   list-style: none;
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 };
 
 html{
@@ -17,9 +18,9 @@ html{
 }
 
 body{
-  color: #f4f4f4;
-  overflow-x: hidden;
-  background-color: #000;
+  color: #f4f4f4!important;
+  overflow-x: hidden!important;
+  background-color: #000!important;
 }
 
 img, svg{
