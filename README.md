@@ -2,8 +2,8 @@
 
 ## 📰 Informações
 
-- Version: 1.0.5
-- Date update: 28/05/23 - 21:50
+- Version: 2.0.0
+- Date update: 29/05/23 - 20:03
 
 ---
 
@@ -50,7 +50,9 @@ npm i
     "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
     "react-icons": "^4.8.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-spinners": "^0.13.8",
+    "styled-jsx": "^5.1.2",
     "tailwindcss": "^3.3.2"
   },
 }
