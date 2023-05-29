@@ -22,16 +22,39 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     font-weight: 700;
+    position: relative;
 }
 
-.footer .container-footer .content-footer a{
+.footer .container-footer .content-footer p.title-footer::before{
+    content: '•';
+    position: absolute;
+    bottom: 0;
+    left: -13px;
+}
+
+.links-footer, .drypzz{
     color: #727272;
     font-size: 15px;
-    font-family: 'Lato', sans-serif;
-    transition: all 1s ease;
+    transition: all .1s ease;
+    position: relative;
 }
 
-.footer .container-footer .content-footer a:hover{
+.links-footer:hover, .drypzz:hover{
+    color: #54A824;
+}
+
+.links-footer::before{
+    content: '↪︎';
+    top: 0;
+    bottom: 0;
+    left: -20px;
+    right: 0;
+    position: absolute;
+    transition: all .1s ease-in-out;
+}
+
+.links-footer:hover::before{
+    left: -18px;
     color: #54A824;
 }
 
@@ -42,7 +65,7 @@
 }
 
 .footer .container-footer .content-footer .payments img{
-    width: 70px;
+    width: 50px;
     margin-top: 15px;
     margin-right: 10px;
 }
@@ -58,26 +81,6 @@
 
 .footer .container-footer .content-footer .about-footer .about-footer-container .about-footer-content{
     margin: 10px 0;
-}
-
-.footer .container-footer .content-footer .about-footer .about-footer-container .about-footer-content a{
-    position: relative;
-    transition: all .1s ease-in-out;
-}
-
-.footer .container-footer .content-footer .about-footer .about-footer-container .about-footer-content a::before{
-    content: '↪︎';
-    top: 0;
-    bottom: 0;
-    left: -20px;
-    right: 0;
-    position: absolute;
-    transition: all .1s ease-in-out;
-}
-
-.footer .container-footer .content-footer .about-footer .about-footer-container .about-footer-content a:hover::before{
-    left: -18px;
-    color: #54A824;
 }
 
 @media screen and (max-width: 960px) {

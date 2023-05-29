@@ -21,12 +21,6 @@ body #wave-footer{
     text-align: center;
 }
 
-.hrbro{
-    border: 1px solid green;
-    width: 50%;
-    margin: 50px auto;
-}
-
 .contacts .items-container{
     display: flex;
     justify-content: center;
@@ -71,12 +65,21 @@ body #wave-footer{
     text-align: center;
     width: 100%;
     background: none;
-    border: 1px solid #0b0b0b;
-    border-radius: 5px;
+    border: 1px solid #54a82451;
+    border-radius: 10px;
     text-align: center;
-    -webkit-transition: .5s;
-    transition: .5s;
-    box-shadow: 0 0 20px rgba(11, 11, 11, 1);
+    animation: shadow 1s infinite alternate;
+}
+
+@keyframes shadow {
+    to {
+        box-shadow: 0 0 30px #54a82451;
+        transform: scale(1);
+    }
+    from {
+        box-shadow: 0 0 50px #54a824;
+        transform: scale(1.01);
+    }
 }
 
 .modal-title{
@@ -102,6 +105,7 @@ body #wave-footer{
 .item{
     position: relative;
     margin: 5px 0px 5px 30px;
+    color: #54A824;
 }
 
 .item::before{
@@ -125,6 +129,15 @@ body #wave-footer{
     color: #000;
 }
 
+.item-economic{
+    color: #54A824;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    background-color: #54a82451;
+}
+
 
 
 
@@ -144,9 +157,5 @@ body #wave-footer{
 
     .section{
         margin-top: -10px;
-    }
-
-    .hrbro{
-        width: 100%;
     }
 }

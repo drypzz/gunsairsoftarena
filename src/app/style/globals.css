@@ -133,6 +133,12 @@ nav{
   align-items: center;
 }
 
+.hrbro{
+  border: 1px solid green;
+  width: 50%;
+  margin: 5% auto;
+}
+
 .category{
   font-size: 1rem;
   line-height: 1.5;
@@ -148,6 +154,11 @@ nav{
 @media screen and (max-width: 968px) {
   body #wave-footer{
     margin: 0;
+  }
+
+  .hrbro{
+    width: 100%;
+    margin: 30% auto;
   }
 }
 

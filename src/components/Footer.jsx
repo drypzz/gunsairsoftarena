@@ -2,7 +2,15 @@ import React from 'react';
 
 import './utils/footer.css';
 
-import { FaMapMarkerAlt, FaWhatsapp, FaInstagram, FaHome, FaPhoneSquare, FaHandHoldingUsd, FaFacebook } from 'react-icons/fa';
+import { 
+    FaMapMarkerAlt,
+    FaWhatsapp,
+    FaInstagram,
+    FaHome,
+    FaPhoneSquare,
+    FaHandHoldingUsd,
+    FaFacebook
+} from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -19,6 +27,7 @@ const Footer = () => {
                             <img src={'/payments/card.png'} alt='Formas de Pagamento' />
                             <img src={'/payments/picpay.png'} alt='Formas de Pagamento' />
                             <img src={'/payments/pix.png'} alt='Formas de Pagamento' />
+                            <img src={'/payments/money.png'} alt='Formas de Pagamento' />
                         </div>
                         <p className='copyright'>© 2021 - {new Date().getFullYear()} | Todos os direitos reservados</p>
                         <p className='copyright'>GUNS AIRSOFT ARENA | CNPJ: 44.433.534/0001-87</p>
@@ -30,13 +39,13 @@ const Footer = () => {
                         <div className='about-footer'>
                             <div className='about-footer-container'>
                                 <div className='about-footer-content'>
-                                    <a href='/contact'><FaPhoneSquare /> Contato</a>
+                                    <a className='links-footer' href='/contact'><FaPhoneSquare /> Contato</a>
                                 </div>
                                 <div className='about-footer-content'>
-                                    <a href='/service'><FaHandHoldingUsd /> Serviço</a>
+                                    <a className='links-footer' href='/service'><FaHandHoldingUsd /> Serviço</a>
                                 </div>
                                 <div className='about-footer-content'>
-                                    <a href='/'><FaHome /> Inicio</a>
+                                    <a className='links-footer' href='/'><FaHome /> Inicio</a>
                                 </div>
                             </div>
                         </div>
@@ -47,13 +56,13 @@ const Footer = () => {
                         <div className='about-footer'>
                             <div className='about-footer-container'>
                                 <div className='about-footer-content'>
-                                    <a target='_blank' href='https://www.instagram.com/gunsairsoftarena/'><FaInstagram /> Instagram</a>
+                                    <a className='links-footer' target='_blank' href='https://www.instagram.com/gunsairsoftarena/'><FaInstagram /> Instagram</a>
                                 </div>
                                 <div className='about-footer-content'>
-                                    <a target='_blank' href='https://www.facebook.com/gunsairsoftarena'><FaFacebook /> Facebook</a>
+                                    <a className='links-footer' target='_blank' href='https://www.facebook.com/gunsairsoftarena'><FaFacebook /> Facebook</a>
                                 </div>
                                 <div className='about-footer-content'>
-                                    <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'><FaWhatsapp /> Whatsapp</a>
+                                    <a className='links-footer' target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'><FaWhatsapp /> Whatsapp</a>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +73,7 @@ const Footer = () => {
                         <div className='about-footer'>
                             <div className='about-footer-container'>
                                 <div className='about-footer-content'>
-                                    <a target='_blank' href='https://goo.gl/maps/rLWMmyMyFr234XPe6'><FaMapMarkerAlt /> Maps</a>
+                                    <a className='links-footer' target='_blank' href='https://goo.gl/maps/rLWMmyMyFr234XPe6'><FaMapMarkerAlt /> Maps</a>
                                 </div>
                             </div>
                         </div>

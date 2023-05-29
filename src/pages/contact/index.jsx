@@ -56,10 +56,10 @@ const Contacts = () => {
                                     <h1 className='title'>Contate-nos</h1>
                                 </div>
                                 <div>
-                                    <p className='subtitle'>Faça contato para obter mais informações sobre nossos serviços</p>
+                                    <p className='subtitle'>Faça contato para obter mais informações.</p>
                                 </div>
                                 <div>
-                                    <p className='address'>Ou visite nossa pagina de serviços</p>
+                                    <p className='address'>Ou visite nossa pagina de serviços.</p>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ const Contacts = () => {
                         <hr className='hrbro' />
 
                         <div className='contacts'>
-                            <span className='category'>Venha você também pra essa experiência</span>
+                            <span className='category'>Venha falar conosco</span>
 
                             <div className='centered'>
                                 <div className='contact'>
@@ -104,8 +104,15 @@ const Contacts = () => {
                                             <div className='modal-item'>
                                                 <p className='title-item'>Valores:</p>
                                                 <ul>
-                                                    <li className='item'>R$ 25,00 - (100 BBs)</li>
-                                                    <li className='item'>R$ 50,00 - (350 BBs)</li>
+                                                    <li className='item'>Single - R$ 25,00 (100 BBs)</li>
+                                                    <li className='item'>Premium - R$ 55,00 (300 BBs) <span className='item-economic'>Economize {Math.floor(5 / 20 * 100)}%</span></li>
+                                                </ul>
+                                            </div>
+                                            <div className='modal-item'>
+                                                <p className='title-item'>Valores Recargas:</p>
+                                                <ul>
+                                                    <li className='item'>Single - R$ 20,00 + 100Bbs</li>
+                                                    <li className='item'>Premium - R$ 15,00 + 100Bbs</li>
                                                 </ul>
                                             </div>
                                             <div className='modal-item'>
@@ -116,8 +123,8 @@ const Contacts = () => {
                                                     <li className='item'>Quarta-Feira: 07:00 - 22:00</li>
                                                     <li className='item'>Quinta-Feira: 07:00 - 22:00</li>
                                                     <li className='item'>Sexta-Feira: 07:00 - 22:00</li>
-                                                    <li className='item'>Sabado-Feira: 07:00 - 22:00</li>
-                                                    <li className='item'>Domingo-Feira: 07:00 - 22:00</li>
+                                                    <li className='item'>Sabado: 07:00 - 22:00</li>
+                                                    <li className='item'>Domingo: 07:00 - 22:00</li>
                                                 </ul>
                                             </div>
                                             <div className='modal-item'>
