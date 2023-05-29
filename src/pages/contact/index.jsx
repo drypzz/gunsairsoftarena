@@ -46,7 +46,8 @@ const Contacts = () => {
 
                         <title>Guns Airsoft Arena - Contato</title>
                     </Head>
-                    <Navbar />
+
+                    <Navbar bool={1} />
 
                     <div className='main' >
                         <div className='container'>

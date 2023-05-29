@@ -39,7 +39,7 @@ const Service = () => {
 
                         <title>Guns Airsoft Arena - Serviço</title>
                     </Head>
-                    <Navbar />
+                    <Navbar bool={2} />
                     <h1>/service</h1>
                     <Footer />
                 </div>

@@ -122,6 +122,10 @@ nav{
  font-weight: bold;
 }
 
+.nav__link.active{
+  font-weight: bold;
+}
+
 .center{
   min-height: 600px;
   display: flex;
@@ -172,5 +176,13 @@ nav{
   
   .nav__link:hover:before{
    width: 100%;
+  }
+
+  .nav__link.active{
+    font-weight: bold;
+  }
+
+  .nav__link.active::before{
+    width: 100%;
   }
 }

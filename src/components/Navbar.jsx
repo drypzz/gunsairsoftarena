@@ -11,10 +11,10 @@ const MENU_LIST = [
     {text: ' - Serviços', href: '/service', icon: <FaHandHoldingUsd />},
 ]
 
-const Navbar = () => {
+const Navbar = ({bool}) => {
 
     const [navActive, setNavActive] = useState(false);
-    const [activeIdX, setActiveIdx] = useState(0);
+    // const [activeIdX, setActiveIdx] = useState(0);
 
     return (
         <header>
@@ -32,8 +32,8 @@ const Navbar = () => {
                 <div className={`${navActive ? 'active' : ''} nav__menu-list`}>
                     {
                         MENU_LIST.map((item, index) => {
-                            return <div onClick={() => {setActiveIdx(index); setNavActive(false)}} key={item.text}>
-                                <NavItem active={activeIdX === index} {...item} />
+                            return <div onClick={() => {setNavActive(false)}} key={item.text}>
+                                <NavItem active={bool === index} {...item} />
                             </div>
                         })
                     }

@@ -40,16 +40,16 @@ body #wave-footer{
 
 .contacts .items-container .items a{
     color: #54A824;
-    border: 1px solid #54A824;
+    background-color: #0b0b0b;
     padding: 20px;
-    border-radius: 50%;
+    border-radius: 3px;
     transition: all 600ms ease-in-out;
     font-size: 1.5rem;
 }
 
 .contacts .items-container .items a:hover{
     background-color: #54A824;
-    color: #000;
+    color: #fff;
 }
 
 .waves{

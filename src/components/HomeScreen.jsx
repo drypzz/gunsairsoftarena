@@ -27,7 +27,7 @@ const HomeScreen = () => {
                 <LoadingScreen loading={loading} />
             :
                 <div>
-                    <Navbar />
+                    <Navbar bool={0} />
                     <div className='main' >
                         <div className='container'>
                             <div className='box-s'>
