@@ -111,16 +111,16 @@
     max-width: 800px;
     font-size: 1rem;
     text-align: justify;
+    letter-spacing: 1px;
 }
 
 
 .about .content .button{
-    margin: 20px 0;
+    margin: 30px;
 }
 
 .about .content .button a{
-    margin: 25px 0;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: 1px solid #54A824;
     border-radius: 5px;
     background: none;
@@ -147,6 +147,7 @@
     }
     .about .content p{
         font-size: .9rem;
+        text-align: left;
     }
     .about .content .img{
         width: 100%;

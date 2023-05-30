@@ -1,5 +1,5 @@
 import { Carousel } from 'react-responsive-carousel';
-import './utils/carousel.css';
+import '../utils/carousel.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const MyCarousel = () => {

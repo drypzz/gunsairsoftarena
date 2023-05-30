@@ -8,9 +8,9 @@ import Footer from '@/components/footer/Footer';
 
 import LoadingScreen from '@/components/loading/LoadingScreen';
 
-import '../utils/contact.css';
+import '../utils/values.css';
 
-const Contacts = () => {
+const Values = () => {
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
@@ -29,15 +29,15 @@ const Contacts = () => {
                         <meta name='description' content='Sua arena de airsoft em Joinville - SC' key='desc' />
                         <meta property='og:description' content='Sua arena de airsoft em Joinville - SC'/>
 
-                        <meta property='title' content='Guns Airsoft Arena - Contato' />
-                        <meta property='og:title' content='Guns Airsoft Arena - Contato' />
+                        <meta property='title' content='Guns Airsoft Arena - Valores' />
+                        <meta property='og:title' content='Guns Airsoft Arena - Valores' />
 
                         <meta property='og:image' content='/files/transparent.png' />
 
-                        <title>Guns Airsoft Arena - Contato</title>
+                        <title>Guns Airsoft Arena - Valores</title>
                     </Head>
-                    <Navbar bool={5} />
-                    <h1>/contacts</h1>
+                    <Navbar bool={4} />
+                    <h1>/values</h1>
                     <Footer />
                 </div>
             }
@@ -45,4 +45,4 @@ const Contacts = () => {
     )
 };
 
-export default Contacts;
+export default Values;

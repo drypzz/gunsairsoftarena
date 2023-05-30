@@ -1,16 +1,8 @@
 import React from 'react';
 
-import './utils/footer.css';
+import '../utils/footer.css';
 
-import { 
-    FaMapMarkerAlt,
-    FaWhatsapp,
-    FaInstagram,
-    FaHome,
-    FaPhoneSquare,
-    FaHandHoldingUsd,
-    FaFacebook
-} from 'react-icons/fa';
+import { FaHome, FaShieldAlt, FaShareAlt, FaPhotoVideo, FaMoneyBillAlt, FaPhoneSquareAlt, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -39,13 +31,22 @@ const Footer = () => {
                         <div className='about-footer'>
                             <div className='about-footer-container'>
                                 <div className='about-footer-content'>
-                                    <a className='links-footer' href='/contact'><FaPhoneSquare /> Contato</a>
+                                    <a className='links-footer' href='/contact'><FaHome /> Inicio</a>
                                 </div>
                                 <div className='about-footer-content'>
-                                    <a className='links-footer' href='/service'><FaHandHoldingUsd /> Serviço</a>
+                                    <a className='links-footer' href='/service'><FaShieldAlt /> Equipamentos</a>
                                 </div>
                                 <div className='about-footer-content'>
-                                    <a className='links-footer' href='/'><FaHome /> Inicio</a>
+                                    <a className='links-footer' href='/'><FaShareAlt /> Modos de Jogo</a>
+                                </div>
+                                <div className='about-footer-content'>
+                                    <a className='links-footer' href='/'><FaPhotoVideo /> Fotos</a>
+                                </div>
+                                <div className='about-footer-content'>
+                                    <a className='links-footer' href='/'><FaMoneyBillAlt /> Valores</a>
+                                </div>
+                                <div className='about-footer-content'>
+                                    <a className='links-footer' href='/'><FaPhoneSquareAlt /> Contato</a>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +69,7 @@ const Footer = () => {
                         </div>
                     </div>
                     
-                    <div className='content-footer'>
+                    {/* <div className='content-footer'>
                         <p className='title-footer'>Localização</p>
                         <div className='about-footer'>
                             <div className='about-footer-container'>
@@ -77,7 +78,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </footer>
         </div>

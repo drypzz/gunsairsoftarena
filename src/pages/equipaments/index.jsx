@@ -3,23 +3,20 @@
 import React, {useState, useEffect} from 'react';
 import Head from 'next/head';
 
-import icon from '../../app/favicon.ico';
+import Navbar from '@/components/navbar/Navbar';
+import Footer from '@/components/footer/Footer';
 
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import LoadingScreen from '@/components/loading/LoadingScreen';
 
+import '../utils/equipaments.css';
 
-import '../../app/style/globals.css';
-
-import LoadingScreen from '@/components/LoadingScreen';
-
-const Service = () => {
+const Equipaments = () => {
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 5000);
+        }, 2000);
     }, []);
 
     return (
@@ -32,15 +29,15 @@ const Service = () => {
                         <meta name='description' content='Sua arena de airsoft em Joinville - SC' key='desc' />
                         <meta property='og:description' content='Sua arena de airsoft em Joinville - SC'/>
 
-                        <meta property='title' content='Guns Airsoft Arena - Serviços' />
-                        <meta property='og:title' content='Guns Airsoft Arena - Serviços' />
+                        <meta property='title' content='Guns Airsoft Arena - Equipamentos' />
+                        <meta property='og:title' content='Guns Airsoft Arena - Equipamentos' />
 
-                        <meta property='og:image' content={icon} />
+                        <meta property='og:image' content='/files/transparent.png' />
 
-                        <title>Guns Airsoft Arena - Serviço</title>
+                        <title>Guns Airsoft Arena - Equipamentos</title>
                     </Head>
-                    <Navbar bool={2} />
-                    <h1>/service</h1>
+                    <Navbar bool={1} />
+                    <h1>/equipaments</h1>
                     <Footer />
                 </div>
             }
@@ -48,4 +45,4 @@ const Service = () => {
     )
 };
 
-export default Service;
+export default Equipaments;

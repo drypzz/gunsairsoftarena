@@ -2,7 +2,7 @@ import React from 'react';
 
 import PuffLoader from 'react-spinners/PuffLoader';
 
-import '../app/style/globals.css';
+import '../../app/style/globals.css';
 import Head from 'next/head';
 
 const LoadingScreen = ( {loading} ) => {

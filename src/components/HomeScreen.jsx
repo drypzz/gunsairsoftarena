@@ -5,19 +5,19 @@ import React, {
     useEffect
 } from 'react';
 
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from './navbar/Navbar';
+import Footer from './footer/Footer';
 
 import { FaWhatsapp } from 'react-icons/fa';
 
 import {
     MyCarousel,
     MyCarousel2
-} from './Carousel';
+} from './carousel/Carousel';
 
 import './utils/home.css';
 
-import LoadingScreen from './LoadingScreen';
+import LoadingScreen from './loading/LoadingScreen';
 
 const HomeScreen = () => {
     const [loading, setLoading] = useState(true);
@@ -59,14 +59,11 @@ const HomeScreen = () => {
                                 <img src='/files/transparent.png' className='img' />
                             </div>
                             <div className='content'>
-                                <p className='text'>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                                <p>
+                                    A <span className='gunsairsoft'>Guns Airsoft Arena</span> foi criada em <span className='gunsairsoft'>2021</span>, com o propósito de oferecer um <span className='gunsairsoft'>entretenimento diferente</span> para a cidade de Joinville e região. O <span className='gunsairsoft'>Airsoft</span> é um esporte que tem se tornado uma ótima opção para quem procura uma atividade para aliviar as tensões do dia a dia. Isso porque, além de prazeroso, o <span className='gunsairsoft'>Airsoft</span> envolve exercícios de resistência, trabalho em equipe e raciocínio rápido, trazendo benefícios para a saúde física e mental do praticante. E se você está procurando um lugar para aliviar o estresse profissional e pessoal, convide seus amigos e venha jogar, aqui é o lugar. 
                                 </p>
                                 <div className='button'>
-                                    <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814' className='btn'>
+                                    <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'>
                                         <FaWhatsapp /> - Entrar em Contato
                                     </a>
                                 </div>

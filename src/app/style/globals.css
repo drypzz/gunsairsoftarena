@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
+@font-face {
+  font-family: progress;
+  src: url(/fonts/progress.ttf);
+}
+
 /* geral */
 
 *{
@@ -31,6 +36,10 @@ body #wave-footer{
   margin-top: calc(-100vh + 70vh);
 }
 
+span.gunsairsoft{
+  color: #54A824;
+}
+
 /* loading */
 
 .loading{
@@ -48,82 +57,6 @@ header{
   position: sticky;
   z-index: 30;
   top: 0;
-}
-
-nav{
-  display: flex;
-  padding: 16px;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #000;
-}
-
-.logo{
-  width: 100px;
-  height: auto;
-}
-
-.nav__menu-bar{
-  top: 30%;
-  right: 5%;
-  transform: translate(5%, 30%);
-  position: absolute;
-}
-
-.nav__menu-bar div{
-  display: block;
-  cursor: pointer;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  transition: all 0.3s ease-in-out;
-  background-color: #54A824;
-}
-
-#nav__menu.active div:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-#nav__menu.active div:nth-child(2){
-  opacity: 0;
-}
-
-#nav__menu.active div:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-.nav__menu-list{
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 100px;
-  width: 100%;
-  row-gap: 24px;
-  right: -100%;
-  align-items: center;
-  padding: 24px 16px;
-  transition: all 200ms ease-in-out;
-  min-height: calc(100vh - 60px);
-  background-color: #000;
-}
-
-.nav__menu-list.active{
-  right: 0;
-}
-
-.nav__link{
-  font-size: 18px; 
-  color: #54A824;
-  position: relative;
-  transition: all 200ms ease-in-out;
-}
-
-.nav__link:hover{
- font-weight: bold;
-}
-
-.nav__link.active{
-  font-weight: bold;
 }
 
 .center{
@@ -159,41 +92,5 @@ nav{
   .hrbro{
     width: 100%;
     margin: 30% auto;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .nav__menu-bar{
-    display: none;
-  }
-  .nav__menu-list{
-    position: unset;
-    flex-direction: row;
-    min-height: fit-content;
-    width: fit-content;
-    column-gap: 24px;
-    align-items: center;
-  }
-  .nav__link::before{
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #54A824;
-    transition: all 200ms ease-in-out;
-  }
-  
-  .nav__link:hover:before{
-   width: 100%;
-  }
-
-  .nav__link.active{
-    font-weight: bold;
-  }
-
-  .nav__link.active::before{
-    width: 100%;
   }
 }
