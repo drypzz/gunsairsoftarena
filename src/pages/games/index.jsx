@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
 
-import LoadingScreen from '@/components/loading/LoadingScreen';
+import LoadingScreen from '@/components/loading/Loading';
 
 import '../utils/games.css';
 

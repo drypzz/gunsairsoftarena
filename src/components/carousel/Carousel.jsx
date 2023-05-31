@@ -2,7 +2,7 @@ import { Carousel } from 'react-responsive-carousel';
 import '../utils/carousel.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-const MyCarousel = () => {
+const CarouselPhotos = () => {
     const imagens = [
         '/guns/001.jpg',
         '/guns/002.jpg',
@@ -34,7 +34,7 @@ const MyCarousel = () => {
     );
 };
 
-const MyCarousel2 = () => {
+const CarouselPhotos2 = () => {
     const imagens2 = [
         '/guns/017.jpg',
         '/guns/018.jpg',
@@ -66,4 +66,33 @@ const MyCarousel2 = () => {
     );
 };
 
-export {MyCarousel, MyCarousel2};
+const CarouselHome = () => {
+
+    const homeImg = [
+        {
+            file: '/files/wallpaper.png',
+            title: 'Test 1'
+        },
+        {
+            file: '/files/wallpaper2.png',
+            title: 'Test 2'
+        },
+    ]
+
+    return (
+        <Carousel autoPlay transitionTime={1000} swipeable={false} interval={5000} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={true}>
+            {homeImg.map((img, index) => {
+                return (
+                    <div className='wallpaper-ca' key={index}>
+                        <img className='imagem-wallpaper' src={`${img.file}`} alt={`Imagem ${index + 1}`} />
+                        <div className='title-box'>
+                            <h1>{img.title}</h1>
+                        </div>
+                    </div>
+                )
+            })}
+        </Carousel>
+    );
+};
+
+export {CarouselPhotos, CarouselPhotos2, CarouselHome};
