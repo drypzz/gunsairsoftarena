@@ -3,7 +3,7 @@
 import NavItem from './NavItem';
 import { useState } from 'react';
 
-import { FaHome, FaShieldAlt, FaShareAlt, FaPhotoVideo, FaMoneyBillAlt, FaPhoneSquareAlt } from 'react-icons/fa';
+import { FaHome, FaShieldAlt, FaShareAlt, FaPhotoVideo, FaMoneyBillAlt, FaPhoneSquareAlt, FaUserPlus } from 'react-icons/fa';
 
 const MENU_LIST = [
     {text: ' Inicio', href: '/', icon: <FaHome />},
@@ -25,12 +25,15 @@ const Navbar = ({bool}) => {
         <>
             <section>
                 <div className='header__logo'>
-                    {/* <a href='/'>
+                    <div>
                         <img src='../files/transparent.png' className='logo' alt='logo' />
-                    </a> */}
-                    <span className='logo__title'>
-                        GUNS AIRSOFT ARENA
-                    </span>
+                    </div>
+                    <div>
+                        <span className='logo__title'>GUNS AIRSOFT ARENA</span>
+                    </div>
+                    <div>
+                        <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814' className='link__title'><FaUserPlus /> Reserve Agora</a>
+                    </div>
                 </div>
             </section>
             <header>
@@ -53,6 +56,9 @@ const Navbar = ({bool}) => {
                                 </div>
                             })
                         }
+                        <div className='link__div'>
+                            <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814' className='link__title'><FaUserPlus /> Reserve Agora</a>
+                        </div>
                     </div>
                 </nav>
             </header>

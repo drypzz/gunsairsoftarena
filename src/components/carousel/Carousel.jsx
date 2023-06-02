@@ -67,30 +67,62 @@ const CarouselPhotos2 = () => {
 };
 
 const CarouselHome = () => {
-
-    const homeImg = [
-        {
-            file: '/files/wallpaper.png',
-            title: 'Test 1'
-        },
-        {
-            file: '/files/wallpaper2.png',
-            title: 'Test 2'
-        },
-    ]
-
     return (
         <Carousel autoPlay transitionTime={1000} swipeable={false} interval={5000} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={true}>
-            {homeImg.map((img, index) => {
-                return (
-                    <div className='wallpaper-ca' key={index}>
-                        <img className='imagem-wallpaper' src={`${img.file}`} alt={`Imagem ${index + 1}`} />
-                        <div className='title-box'>
-                            <h1>{img.title}</h1>
+            <div className='wallpaper-ca'>
+                <div className='div-imgs'>
+                    <img src={'/files/wallpaper.png'} alt='Imagem de Fundo' />
+                </div>
+                <div className='title-box'>
+                    <div className='box__container--main'>
+                        <div className='box__content--main'>
+                            <h1>Text</h1>
+                        </div>
+                        <div className='box__content--main'>
+                            <p>Text</p>
+                        </div>
+                        <div className='box__content--main'>
+                            <button>Button</button>
                         </div>
                     </div>
-                )
-            })}
+                </div>
+            </div>
+            <div className='wallpaper-ca'>
+                <div className='div-imgs'>
+                    <img src={'/files/wallpaper2.png'} alt='Imagem de Fundo 2' />
+                </div>
+                <div className='title-box'>
+                    <div className='box__container--main'>
+                        <div className='box__content--main'>
+                            <h1>Text</h1>
+                        </div>
+                        <div className='box__content--main'>
+                            <p>Text</p>
+                        </div>
+                        <div className='box__content--main'>
+                            <button>Button</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='wallpaper-ca'>
+                <div className='div-imgs'>
+                    <img src={'/files/wallpaper3.png'} alt='Imagem de Fundo 2' />
+                </div>
+                <div className='title-box'>
+                    <div className='box__container--main'>
+                        <div className='box__content--main'>
+                            <h1>Text</h1>
+                        </div>
+                        <div className='box__content--main'>
+                            <p>Text</p>
+                        </div>
+                        <div className='box__content--main'>
+                            <button>Button</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Carousel>
     );
 };

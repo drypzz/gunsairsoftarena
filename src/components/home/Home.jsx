@@ -51,17 +51,6 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <hr className='hrbro' />
-
-                        <span className='category'>Veja mais sobre o campo</span>
-                        <div className='modal'>
-                            <div className='modal-container'>
-                                <CarouselPhotos />
-                            </div>
-                            <div className='modal-container'>
-                                <CarouselPhotos2 />
-                            </div>
-                        </div>
                     </div>
                     <Footer />
                 </div>
