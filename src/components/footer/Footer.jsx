@@ -2,86 +2,73 @@ import React from 'react';
 
 import '../utils/footer.css';
 
-import { FaHome, FaShieldAlt, FaShareAlt, FaPhotoVideo, FaMoneyBillAlt, FaPhoneSquareAlt, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div>
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' id='wave-footer'>
-                <path fill='#0b0b0b' fillOpacity='1' d='M0,256L1440,288L1440,320L0,320Z'></path>
-            </svg>
+        <>
+            <section className='custom__footer'>
+                <div className='custom__footer__layout'>
+                    <div className='custom__footer__container'>
+
+                        <div className='custom__footer__content--box'>
+                            <h2 className='custom__footer__box--title'><span>Formas de Pagamento</span></h2>
+                            <ul className='custom__footer__box--img'>
+                                <li><img src={'/payments/card.png'} alt='Aceitamos Cartao de Crédito e Debito' /></li>
+                                <li><img src={'/payments/money.png'} alt='Aceitamos Dinheiro' /></li>
+                                <li><img src={'/payments/picpay.png'} alt='Aceitamos Picpay' /></li>
+                                <li><img src={'/payments/pix.png'} alt='Aceitamos Pix' /></li>
+                            </ul>
+                            <div className='dev'>
+                                <a target='_blank' href='https://drypzz.netlify.app/'>Developed by drpyzz</a>
+                            </div>
+                        </div>
+
+                        <div className='custom__footer__content--box'>
+                            <h2 className='custom__footer__box--title'><span>Menu Rápido</span></h2>
+                            <ul className='custom__footer__box--list'>
+                                <li><a href='/'>{'•'} Inicio</a></li>
+                                <li><a href='/'>{'•'} Equipamentos</a></li>
+                                <li><a href='/'>{'•'} Modos de Jogo</a></li>
+                                <li><a href='/'>{'•'} Fotos</a></li>
+                                <li><a href='/'>{'•'} Valores</a></li>
+                                <li><a href='/'>{'•'} Contato</a></li>
+                            </ul>
+                        </div>
+
+                        <div className='custom__footer__content--box'>
+                            <div className='custom__footer__box--icons'>
+                                <div className='custom__footer__box--icons--conent'>
+                                    <a target='_blank' href='https://www.facebook.com/gunsairsoftarena/'><FaFacebook/></a>
+                                </div>
+                                <div className='custom__footer__box--icons--conent'>
+                                    <a target='_blank' href='https://www.instagram.com/gunsairsoftarena/'><FaInstagram/></a>
+                                </div>
+                                <div className='custom__footer__box--icons--conent'>
+                                    <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'><FaWhatsapp/></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
             <footer className='footer'>
-                <div className='container-footer'>
-
-                    <div className='content-footer'>
-                        <p className='title-footer'>Formas de Pagamento</p>
-                        <div className='payments'>
-                            <img src={'/payments/card.png'} alt='Formas de Pagamento' />
-                            <img src={'/payments/picpay.png'} alt='Formas de Pagamento' />
-                            <img src={'/payments/pix.png'} alt='Formas de Pagamento' />
-                            <img src={'/payments/money.png'} alt='Formas de Pagamento' />
-                        </div>
-                        <p className='copyright'>© 2021 - {new Date().getFullYear()} | Todos os direitos reservados</p>
-                        <p className='copyright'>GUNS AIRSOFT ARENA | CNPJ: 44.433.534/0001-87</p>
-                        <a target='_blank' className='drypzz' href='https://drypzz.netlify.app/'>Developed by @drypzz</a>
+                <div className='footer-container'>
+                    <div className='footer-content'>
+                        <p>© 2021 - {new Date().getFullYear()} | Todos os direitos reservados</p>
                     </div>
-                    
-                    <div className='content-footer'>
-                        <p className='title-footer'>Menu Rápido</p>
-                        <div className='about-footer'>
-                            <div className='about-footer-container'>
-                                <div className='about-footer-content'>
-                                    <a className='links-footer' href='/contact'><FaHome /> Inicio</a>
-                                </div>
-                                <div className='about-footer-content'>
-                                    <a className='links-footer' href='/service'><FaShieldAlt /> Equipamentos</a>
-                                </div>
-                                <div className='about-footer-content'>
-                                    <a className='links-footer' href='/'><FaShareAlt /> Modos de Jogo</a>
-                                </div>
-                                <div className='about-footer-content'>
-                                    <a className='links-footer' href='/'><FaPhotoVideo /> Fotos</a>
-                                </div>
-                                <div className='about-footer-content'>
-                                    <a className='links-footer' href='/'><FaMoneyBillAlt /> Valores</a>
-                                </div>
-                                <div className='about-footer-content'>
-                                    <a className='links-footer' href='/'><FaPhoneSquareAlt /> Contato</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div className='footer-content'>
+                        <p>CNPJ: 44.433.534/0001-87</p>
                     </div>
-
-                    <div className='content-footer'>
-                        <p className='title-footer'>Links</p>
-                        <div className='about-footer'>
-                            <div className='about-footer-container'>
-                                <div className='about-footer-content'>
-                                    <a className='links-footer' target='_blank' href='https://www.instagram.com/gunsairsoftarena/'><FaInstagram /> Instagram</a>
-                                </div>
-                                <div className='about-footer-content'>
-                                    <a className='links-footer' target='_blank' href='https://www.facebook.com/gunsairsoftarena'><FaFacebook /> Facebook</a>
-                                </div>
-                                <div className='about-footer-content'>
-                                    <a className='links-footer' target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'><FaWhatsapp /> Whatsapp</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div className='footer-content'>
+                        <img src={'/files/transparent.png'} />
                     </div>
-                    
-                    {/* <div className='content-footer'>
-                        <p className='title-footer'>Localização</p>
-                        <div className='about-footer'>
-                            <div className='about-footer-container'>
-                                <div className='about-footer-content'>
-                                    <a className='links-footer' target='_blank' href='https://goo.gl/maps/rLWMmyMyFr234XPe6'><FaMapMarkerAlt /> Maps</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
             </footer>
-        </div>
+        </>
     )
 };
 
