@@ -9,7 +9,7 @@ import LoadingScreen from '../loading/Loading';
 
 import { FaWhatsapp } from 'react-icons/fa';
 
-import { CarouselPhotos, CarouselPhotos2, CarouselHome } from './../carousel/Carousel';
+import { CarouselHome } from './../carousel/Carousel';
 
 import './../utils/home.css';
 
@@ -19,7 +19,7 @@ const Home = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 100);
+        }, 5000);
     }, []);
 
     return (

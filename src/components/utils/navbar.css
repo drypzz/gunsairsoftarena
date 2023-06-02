@@ -180,7 +180,6 @@ section .header__logo{
     }
 
     .nav__link{
-        background-color: #000;
         padding: 10px;
         border-radius: 5px;
     }
