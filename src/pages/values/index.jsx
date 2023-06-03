@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
-
+import CustomNav from '@/components/customnav/CustomNav';
 import LoadingScreen from '@/components/loading/Loading';
 
 import '../utils/values.css';
@@ -37,7 +37,7 @@ const Values = () => {
                         <title>Guns Airsoft Arena - Valores</title>
                     </Head>
                     <Navbar bool={4} />
-                    <h1>/values</h1>
+                    <CustomNav link='/' text='Valores' />
                     <Footer />
                 </div>
             }

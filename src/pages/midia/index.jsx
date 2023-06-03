@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
-
+import CustomNav from '@/components/customnav/CustomNav';
 import LoadingScreen from '@/components/loading/Loading';
 
 import '../utils/midia.css';
@@ -37,7 +37,7 @@ const Midia = () => {
                         <title>Guns Airsoft Arena - Fotos</title>
                     </Head>
                     <Navbar bool={3} />
-                    <h1>/midia</h1>
+                    <CustomNav link='/' text='Fotos' />
                     <Footer />
                 </div>
             }

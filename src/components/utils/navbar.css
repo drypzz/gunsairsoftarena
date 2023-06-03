@@ -93,7 +93,7 @@ section .header__logo{
 
 .nav__link{
     font-size: 18px; 
-    color: #54A824;
+    color: #ffffff;
     position: relative;
     transition: all 200ms ease-in-out;
 }
@@ -110,11 +110,11 @@ section .header__logo{
 }
   
 .nav__link:hover{
-    font-weight: bold;
+    color: #54A824;
 }   
   
 .nav__link.active{
-    font-weight: bold;
+    color: #54A824;
 }
 
 
@@ -180,7 +180,7 @@ section .header__logo{
     }
 
     .nav__link{
-        padding: 10px;
+        padding: 0px;
         border-radius: 5px;
     }
 }

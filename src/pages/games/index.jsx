@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
-
+import CustomNav from '@/components/customnav/CustomNav';
 import LoadingScreen from '@/components/loading/Loading';
 
 import '../utils/games.css';
@@ -37,7 +37,7 @@ const Games = () => {
                         <title>Guns Airsoft Arena - Modos de Jogo</title>
                     </Head>
                     <Navbar bool={2} />
-                    <h1>/games</h1>
+                    <CustomNav link='/' text='Modos de Jogo' />
                     <Footer />
                 </div>
             }

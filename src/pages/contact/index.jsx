@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
-
+import CustomNav from '@/components/customnav/CustomNav';
 import LoadingScreen from '@/components/loading/Loading';
 
 import '../utils/contact.css';
@@ -37,7 +37,7 @@ const Contacts = () => {
                         <title>Guns Airsoft Arena - Contato</title>
                     </Head>
                     <Navbar bool={5} />
-                    <h1>/contacts</h1>
+                    <CustomNav link='/' text='Contato' />
                     <Footer />
                 </div>
             }
