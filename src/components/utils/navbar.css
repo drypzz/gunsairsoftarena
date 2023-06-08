@@ -131,6 +131,8 @@ section .header__logo{
         font-size: calc(100vw - 96vw);
         color: #54A824;
         font-family: progress, sans-serif;
+        pointer-events: none;
+        user-select: none;
     }
 
     .logo__div{

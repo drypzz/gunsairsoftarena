@@ -9,6 +9,7 @@ import CustomNav from '@/components/customnav/CustomNav';
 import LoadingScreen from '@/components/loading/Loading';
 
 import '../utils/midia.css';
+import { CarouselPhotos, CarouselPhotos2 } from '@/components/carousel/Carousel';
 
 const Midia = () => {
     const [loading, setLoading] = useState(true);
@@ -37,7 +38,31 @@ const Midia = () => {
                         <title>Guns Airsoft Arena - Fotos</title>
                     </Head>
                     <Navbar bool={3} />
+                    
                     <CustomNav link='/' text='Fotos' />
+
+                    <div className='container--midia'>
+                        <div className='container__content--midia'>
+                            <div className='container__content--title--midia'>
+                                <h1>Fotos</h1>
+                            </div>
+                            <div className='container__content--text--midia'>
+                                <p>Confira algumas fotos de nossos clientes aqui na Guns Airsoft Arena!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='modal'>
+                        <div className='modal-container'>
+                            <div className='modal-content'>
+                                <CarouselPhotos />
+                            </div>
+                            <div className='modal-content'>
+                                <CarouselPhotos2 />
+                            </div>
+                        </div>
+                    </div>
+
                     <Footer />
                 </div>
             }

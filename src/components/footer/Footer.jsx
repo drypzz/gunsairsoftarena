@@ -20,7 +20,7 @@ const Footer = () => {
                                 <li><img src={'/payments/pix.png'} alt='Aceitamos Pix' /></li>
                             </ul>
                             <div className='dev'>
-                                <a target='_blank' href='https://drypzz.netlify.app/'>Developed by drpyzz</a>
+                                <a target='_blank' href='https://drypzz.netlify.app/'>Developed by @drypzz</a>
                             </div>
                         </div>
 
@@ -28,11 +28,11 @@ const Footer = () => {
                             <h2 className='custom__footer__box--title'><span>Menu Rápido</span></h2>
                             <ul className='custom__footer__box--list'>
                                 <li><a href='/'>{'•'} Inicio</a></li>
-                                <li><a href='/'>{'•'} Equipamentos</a></li>
-                                <li><a href='/'>{'•'} Modos de Jogo</a></li>
-                                <li><a href='/'>{'•'} Fotos</a></li>
-                                <li><a href='/'>{'•'} Valores</a></li>
-                                <li><a href='/'>{'•'} Contato</a></li>
+                                <li><a href='/equipaments'>{'•'} Equipamentos</a></li>
+                                <li><a href='/games'>{'•'} Modos de Jogo</a></li>
+                                <li><a href='/midia'>{'•'} Fotos</a></li>
+                                <li><a href='/values'>{'•'} Valores</a></li>
+                                <li><a href='/contact'>{'•'} Contato</a></li>
                             </ul>
                         </div>
 
