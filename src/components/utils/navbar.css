@@ -96,6 +96,7 @@ section .header__logo{
     color: #ffffff;
     position: relative;
     transition: all 200ms ease-in-out;
+    text-transform: uppercase;
 }
 
 .nav__link::before{

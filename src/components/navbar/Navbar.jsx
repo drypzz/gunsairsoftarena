@@ -3,7 +3,7 @@
 import NavItem from './NavItem';
 import { useState } from 'react';
 
-import { FaHome, FaShieldAlt, FaShareAlt, FaPhotoVideo, FaMoneyBillAlt, FaPhoneSquareAlt, FaUserPlus } from 'react-icons/fa';
+import { FaHome, FaShieldAlt, FaShareAlt, FaPhotoVideo, FaMoneyBillAlt, FaPhoneSquareAlt } from 'react-icons/fa';
 
 const MENU_LIST = [
     {text: ' Inicio', href: '/', icon: <FaHome />},
@@ -32,7 +32,7 @@ const Navbar = ({bool}) => {
                         <span className='logo__title'>GUNS AIRSOFT ARENA</span>
                     </div>
                     <div>
-                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de marcar um game, quais os valores?')}`} className='link__title'><FaUserPlus /> Reserve Agora</a>
+                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de marcar um game, quais os valores?')}`} className='link__title'>Reserve Agora</a>
                     </div>
                 </div>
             </section>
@@ -57,7 +57,7 @@ const Navbar = ({bool}) => {
                             })
                         }
                         <div className='link__div'>
-                            <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de marcar um game, quais os valores?')}`} className='link__title'><FaUserPlus /> Reserve Agora</a>
+                            <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de marcar um game, quais os valores?')}`} className='link__title'>Reserve Agora</a>
                         </div>
                     </div>
                 </nav>
