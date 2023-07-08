@@ -49,6 +49,10 @@
     justify-content: flex-end;
 }
 
+.wallpaper-ca#jspqjw2od__dsk{
+    justify-content: center;
+}
+
 .wallpaper-ca .title-box{
     position: absolute;
     z-index: 1;
@@ -66,7 +70,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: .4;
+    opacity: .6;
     background-color: rgba(0, 0, 0, 1);
 }
 
@@ -79,6 +83,10 @@
 
 .wallpaper-ca#kdoswd992__ .box__container--main{
     text-align: right;
+}
+
+.wallpaper-ca#jspqjw2od__dsk .box__container--main{
+    text-align: center;
 }
 
 .box__container--main{
@@ -110,7 +118,7 @@
 
 .box__content--main p{
     font-size: 25px;
-    color: #adacac;
+    color: #e2e2e2;
     font-family: 'Lato', sans-serif;
 }
 
@@ -123,6 +131,10 @@
 
 .wallpaper-ca#kdoswd992__ .box__content--main .box__content--main-itens-container{
     justify-content: flex-end;
+}
+
+.wallpaper-ca#jspqjw2od__dsk .box__content--main .box__content--main-itens-container{
+    justify-content: center;
 }
 
 .box__content--main .box__content--main-itens-container .box__content--main-itens-content{

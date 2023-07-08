@@ -115,6 +115,24 @@ const CarouselHome = () => {
                 <div className='title-box'>
                     <div className='box__container--main'>
                         <div className='box__content--main'>
+                            <h1>Proteja-se e Domine o Campo!</h1>
+                        </div>
+                        <div className='box__content--main'>
+                            <p>Descubra os equipamentos de Airsoft que garantem segurança e estilo.</p>
+                        </div>
+                        <div className='box__content--main button'>
+                            <a target='_blank' className='button-contact' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Quero saber mais sobre o campo e valores.')}`}><FaWhatsapp />・Entrar em Contato</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='jspqjw2od__dsk' className='wallpaper-ca'>
+                <div className='div-imgs'>
+                    <img src={'/files/wallpaper3.jpg'} alt='Imagem de Fundo 2' />
+                </div>
+                <div className='title-box'>
+                    <div className='box__container--main'>
+                        <div className='box__content--main'>
                             <h1>Não deixe de ver nossas redes sociais!</h1>
                         </div>
                         <div className='box__content--main'>
