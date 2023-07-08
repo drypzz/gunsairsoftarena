@@ -38,7 +38,7 @@
 }
 
 .about .content{
-    margin: 10px;
+    margin: 10px 50px;
     text-align: center;
 }
 
@@ -50,7 +50,7 @@
 .about .content p{
     max-width: 800px;
     font-size: 18px;
-    text-align: justify;
+    text-align: left;
     letter-spacing: 1px;
     line-height: 1.5rem;
 }
@@ -85,6 +85,11 @@
     .about{
         padding: 20px;
     }
+
+    .about .content{
+        margin: 10px 0;
+    }
+
     .about .content p{
         font-size: .9rem;
         text-align: left;

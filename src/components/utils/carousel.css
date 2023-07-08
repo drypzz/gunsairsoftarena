@@ -45,6 +45,10 @@
     text-align: center;
 }
 
+.wallpaper-ca#kdoswd992__{
+    justify-content: flex-end;
+}
+
 .wallpaper-ca .title-box{
     position: absolute;
     z-index: 1;
@@ -73,6 +77,9 @@
     object-position: center;
 }
 
+.wallpaper-ca#kdoswd992__ .box__container--main{
+    text-align: right;
+}
 
 .box__container--main{
     width: 100%;
@@ -88,7 +95,7 @@
 
 .box__content--main h1{
     color: #fff;
-    font-size: 60px;
+    font-size: 55px;
     letter-spacing: 1px;
     max-width: 700px;
     font-family: Arial, sans-serif;
@@ -112,6 +119,10 @@
     align-items: center;
     justify-content: flex-start;
     margin-top: 20px;
+}
+
+.wallpaper-ca#kdoswd992__ .box__content--main .box__content--main-itens-container{
+    justify-content: flex-end;
 }
 
 .box__content--main .box__content--main-itens-container .box__content--main-itens-content{
@@ -159,6 +170,30 @@
     background-color: #54A824;
 }
 
+/* anim-custom */
+
+.custom-carousel.animation-one .slide {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.custom-carousel.animation-one .slide.selected {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.custom-carousel.animation-two .slide {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.custom-carousel.animation-two .slide.selected {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 @media screen and (max-width: 960px) {
     .modal-container{
@@ -187,6 +222,7 @@
 
     .box__content--main h1{
         font-size: 35px;
+        max-width: 100%;
     }
 
     .box__content--main p{
@@ -204,5 +240,13 @@
 
     .control-arrow{
         padding: 0 5px!important;
+    }
+
+    .wallpaper-ca#kdoswd992__ .box__content--main .box__content--main-itens-container{
+        justify-content: center;
+    }
+    
+    .wallpaper-ca#kdoswd992__ .box__container--main{
+        text-align: center;
     }
 }

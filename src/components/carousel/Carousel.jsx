@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
@@ -74,8 +75,21 @@ const CarouselPhotos2 = () => {
 };
 
 const CarouselHome = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [animationClass, setAnimationClass] = useState('animation-one');
+
+    const handleSlideChange = (index) => {
+        setCurrentSlide(index);
+
+        if (index % 2 === 0) {
+            setAnimationClass('animation-one');
+        } else {
+            setAnimationClass('animation-two');
+        }
+    };
+
     return (
-        <Carousel autoPlay transitionTime={500} swipeable={false} interval={5000} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={true}>
+        <Carousel className={`custom-carousel ${animationClass}`} selectedItem={currentSlide} onChange={handleSlideChange} autoPlay transitionTime={300} swipeable={false} interval={5000} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={true}>
             <div className='wallpaper-ca'>
                 <div className='div-imgs'>
                     <img src={'/files/wallpaper.jpg'} alt='Imagem de Fundo' />
@@ -94,7 +108,7 @@ const CarouselHome = () => {
                     </div>
                 </div>
             </div>
-            <div className='wallpaper-ca'>
+            <div id='kdoswd992__' className='wallpaper-ca'>
                 <div className='div-imgs'>
                     <img src={'/files/wallpaper2.jpg'} alt='Imagem de Fundo 2' />
                 </div>
@@ -104,7 +118,7 @@ const CarouselHome = () => {
                             <h1>Não deixe de ver nossas redes sociais!</h1>
                         </div>
                         <div className='box__content--main'>
-                            <p>Ali, você encontrará preços, fotos, vídeos e muito mais</p>
+                            <p>Lá, você encontrará preços, fotos, vídeos e muito mais</p>
                         </div>
                         <div className='box__content--main'>
                             <div className='box__content--main-itens-container'>
@@ -122,24 +136,6 @@ const CarouselHome = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className='wallpaper-ca'>
-                <div className='div-imgs'>
-                    <img src={'/files/wallpaper3.png'} alt='Imagem de Fundo 2' />
-                </div>
-                <div className='title-box'>
-                    <div className='box__container--main'>
-                        <div className='box__content--main'>
-                            <h1>Text</h1>
-                        </div>
-                        <div className='box__content--main'>
-                            <p>Text</p>
-                        </div>
-                        <div className='box__content--main'>
-                            <button>Button</button>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
         </Carousel>
     );
 };
