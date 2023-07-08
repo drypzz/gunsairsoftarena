@@ -2,8 +2,8 @@
 
 ## 📰 Informações
 
-- Version: 2.0.0
-- Date update: 08/06/23 - 12:14
+- Version: 2.0.1
+- Date update: 08/07/23 - 12:16
 
 ---
 

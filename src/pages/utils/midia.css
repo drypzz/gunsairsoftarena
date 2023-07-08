@@ -19,13 +19,15 @@
 .container__content--title--midia h1{
     font-size: 5rem;
     padding-bottom: 2px;
+    font-weight: 100;
     color: #54A824;
     border-bottom: 1px solid #54A824;
     font-family: progress, sans-serif;
 }
 
 .container__content--text--midia p{
-    font-family: progress, sans-serif;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 @media screen and (max-width: 960px) {

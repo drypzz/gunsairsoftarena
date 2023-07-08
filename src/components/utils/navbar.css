@@ -4,11 +4,11 @@ section .header__logo{
 
 .nav{
     display: flex;
-    padding: 20px;
+    padding: 20px 0;
     justify-content: space-between;
     align-items: center;
     background-color: #0b0b0b;
-    border-bottom: 2px solid #54A824;
+    border-bottom: 1px solid #54A824;
 }
 
 .logo{
@@ -92,7 +92,7 @@ section .header__logo{
 }
 
 .nav__link{
-    font-size: 18px; 
+    font-size: 17px;
     color: #ffffff;
     position: relative;
     transition: all 200ms ease-in-out;
@@ -118,6 +118,14 @@ section .header__logo{
     color: #54A824;
 }
 
+#dossde{
+    display: block;
+}
+
+#navbar{
+    display: none;
+}
+
 
 @media screen and (min-width: 960px) {
     section .header__logo{
@@ -128,6 +136,7 @@ section .header__logo{
         justify-content: space-between;
         padding: 10px 50px;
     }
+    
     .logo__title{
         font-size: calc(100vw - 96vw);
         color: #54A824;
@@ -146,11 +155,12 @@ section .header__logo{
 
     .nav{
         justify-content: center;
-        padding: 0px;
     }
+    
     .nav__menu-bar{
         display: none;
     }
+
     .nav__menu-list{
         position: unset;
         flex-direction: row;
@@ -159,15 +169,16 @@ section .header__logo{
         column-gap: 24px;
         align-items: center;
     }
+
     .nav__link::before{
         content: '';
         position: absolute;
         width: 0%;
-        height: 2px;
-        bottom: -5px;
+        height: 1px;
+        bottom: -1px;
         left: 0;
         background-color: #54A824;
-        transition: all 200ms ease-in-out;
+        transition: all .3s ease-in-out;
     }
     
     .nav__link:hover:before{
@@ -185,5 +196,13 @@ section .header__logo{
     .nav__link{
         padding: 0px;
         border-radius: 5px;
+    }
+
+    #dossde{
+        display: none;
+    }
+
+    #navbar{
+        display: block;
     }
 }

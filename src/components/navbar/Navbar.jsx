@@ -6,37 +6,22 @@ import { useState } from 'react';
 import { FaHome, FaShieldAlt, FaShareAlt, FaPhotoVideo, FaMoneyBillAlt, FaPhoneSquareAlt } from 'react-icons/fa';
 
 const MENU_LIST = [
-    {text: ' Inicio', href: '/', icon: <FaHome />},
-    {text: ' Equipamentos', href: '/equipaments', icon: <FaShieldAlt />},
-    {text: ' Modos de Jogo', href: '/games', icon: <FaShareAlt />},
-    {text: ' Fotos', href: '/midia', icon: <FaPhotoVideo />},
-    {text: ' Valores', href: '/values', icon: <FaMoneyBillAlt />},
-    {text: ' Contato', href: '/contact', icon: <FaPhoneSquareAlt />},
+    {text: '・Inicio', href: '/', icon: <FaHome />},
+    {text: '・Equipamentos', href: '/equipaments', icon: <FaShieldAlt />},
+    {text: '・Modos de Jogo', href: '/games', icon: <FaShareAlt />},
+    {text: '・Fotos', href: '/midia', icon: <FaPhotoVideo />},
+    {text: '・Valores', href: '/values', icon: <FaMoneyBillAlt />},
+    {text: '・Contato', href: '/contact', icon: <FaPhoneSquareAlt />},
 ]
 
 import '../utils/navbar.css';
 
-const Navbar = ({bool}) => {
-
+const Navbar = ({id, bool}) => {
     const [navActive, setNavActive] = useState(false);
-    // const [activeIdX, setActiveIdx] = useState(0);
 
     return (
         <>
-            <section>
-                <div className='header__logo'>
-                    <div>
-                        <img src='../files/transparent.png' className='logo' alt='logo' />
-                    </div>
-                    <div>
-                        <span className='logo__title'>GUNS AIRSOFT ARENA</span>
-                    </div>
-                    <div>
-                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de marcar um game, quais os valores?')}`} className='link__title'>Reserve Agora</a>
-                    </div>
-                </div>
-            </section>
-            <header>
+            <header id={id}>
                 <nav className='nav'>
                     <a className='logo__div' href='/'>
                         <img src='../files/transparent.png' className='logo-nav' alt='logo' />

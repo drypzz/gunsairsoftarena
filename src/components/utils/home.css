@@ -34,7 +34,7 @@
     opacity: 1; 
     z-index: -1;
     border-radius: 12px;
-    background: rgb(11, 11, 11);
+    /* background: rgb(11, 11, 11); */
 }
 
 .about .content{
@@ -49,14 +49,14 @@
 
 .about .content p{
     max-width: 800px;
-    font-size: 1rem;
+    font-size: 18px;
     text-align: justify;
     letter-spacing: 1px;
+    line-height: 1.5rem;
 }
 
-
 .about .content .button{
-    margin: 30px;
+    margin: 50px 0;
 }
 
 .about .content .button a{

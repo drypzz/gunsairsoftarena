@@ -14,10 +14,10 @@ const Footer = () => {
                         <div className='custom__footer__content--box'>
                             <h2 className='custom__footer__box--title'><span>Formas de Pagamento</span></h2>
                             <ul className='custom__footer__box--img'>
-                                <li><img src={'/payments/card.png'} alt='Aceitamos Cartao de Crédito e Debito' /></li>
-                                <li><img src={'/payments/money.png'} alt='Aceitamos Dinheiro' /></li>
-                                <li><img src={'/payments/picpay.png'} alt='Aceitamos Picpay' /></li>
-                                <li><img src={'/payments/pix.png'} alt='Aceitamos Pix' /></li>
+                                <li><img src={'/payments/card.png'} alt='Aceitamos Cartao de Crédito e Debito' title='Cartão' /></li>
+                                <li><img src={'/payments/money.png'} alt='Aceitamos Dinheiro' title='Dinheiro' /></li>
+                                <li><img src={'/payments/picpay.png'} alt='Aceitamos Picpay' title='PicPay' /></li>
+                                <li><img src={'/payments/pix.png'} alt='Aceitamos Pix' title='Pix' /></li>
                             </ul>
                             <div className='dev'>
                                 <a target='_blank' href='https://drypzz.netlify.app/'>Developed by @drypzz</a>

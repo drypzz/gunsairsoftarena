@@ -1,8 +1,9 @@
 import { Carousel } from 'react-responsive-carousel';
-import '../utils/carousel.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+
+import '../utils/carousel.css';
 
 const CarouselPhotos = () => {
     const imagens = [
@@ -74,28 +75,28 @@ const CarouselPhotos2 = () => {
 
 const CarouselHome = () => {
     return (
-        <Carousel autoPlay transitionTime={1000} swipeable={false} interval={5000} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={true}>
+        <Carousel autoPlay transitionTime={500} swipeable={false} interval={5000} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={true}>
             <div className='wallpaper-ca'>
                 <div className='div-imgs'>
-                    <img src={'/files/wallpaper.png'} alt='Imagem de Fundo' />
+                    <img src={'/files/wallpaper.jpg'} alt='Imagem de Fundo' />
                 </div>
                 <div className='title-box'>
                     <div className='box__container--main'>
                         <div className='box__content--main'>
-                            <h1>Venha Para A Guns Airsoft Arena</h1>
+                            <h1 id='title--uii'>Bem-vindo(a) ao Guns Airsoft</h1>
                         </div>
                         <div className='box__content--main'>
-                            <p>Aqui a diversão é garantida</p>
+                            <p>Aqui, a diversão é garantida.</p>
                         </div>
                         <div className='box__content--main button'>
-                            <a target='_blank' className='button-contact' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Quero saber mais sobre o campo e valores.')}`}><FaWhatsapp /> Entrar em Contato</a>
+                            <a target='_blank' className='button-contact' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Quero saber mais sobre o campo e valores.')}`}><FaWhatsapp />・Entrar em Contato</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div className='wallpaper-ca'>
                 <div className='div-imgs'>
-                    <img src={'/files/wallpaper2.png'} alt='Imagem de Fundo 2' />
+                    <img src={'/files/wallpaper2.jpg'} alt='Imagem de Fundo 2' />
                 </div>
                 <div className='title-box'>
                     <div className='box__container--main'>
@@ -103,7 +104,7 @@ const CarouselHome = () => {
                             <h1>Não deixe de ver nossas redes sociais!</h1>
                         </div>
                         <div className='box__content--main'>
-                            <p>La você vera preços, fotos, videos e muito mais</p>
+                            <p>Ali, você encontrará preços, fotos, vídeos e muito mais</p>
                         </div>
                         <div className='box__content--main'>
                             <div className='box__content--main-itens-container'>

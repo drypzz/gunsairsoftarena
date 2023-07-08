@@ -56,7 +56,7 @@ const Contacts = () => {
                             <h1>Localização</h1>
                         </div>
                         <div className='location'>
-                            <iframe src={map} frameborder='0'></iframe>
+                            <iframe src={map} frameBorder={0}></iframe>
                         </div>
                         <div className='contacts'>
                             <div className='contacts-container'>
