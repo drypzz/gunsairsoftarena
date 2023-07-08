@@ -89,7 +89,7 @@ const CarouselHome = () => {
     };
 
     return (
-        <Carousel className={`custom-carousel ${animationClass}`} selectedItem={currentSlide} onChange={handleSlideChange} autoPlay transitionTime={300} swipeable={false} interval={5000} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={true}>
+        <Carousel className={`custom-carousel ${animationClass}`} selectedItem={currentSlide} onChange={handleSlideChange} autoPlay transitionTime={(20 * 10)} swipeable={false} interval={(15 * 1000)} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={true}>
             <div className='wallpaper-ca'>
                 <div className='div-imgs'>
                     <img src={'/files/wallpaper.jpg'} alt='Imagem de Fundo' />
@@ -97,7 +97,7 @@ const CarouselHome = () => {
                 <div className='title-box'>
                     <div className='box__container--main'>
                         <div className='box__content--main'>
-                            <h1 id='title--uii'>Bem-vindo(a) ao Guns Airsoft</h1>
+                            <h1 id='title--uii'>Bem-vindo(a) ao Guns Airsoft Arena</h1>
                         </div>
                         <div className='box__content--main'>
                             <p>Aqui, a diversão é garantida.</p>
@@ -121,7 +121,7 @@ const CarouselHome = () => {
                             <p>Descubra os equipamentos de Airsoft que garantem segurança e estilo.</p>
                         </div>
                         <div className='box__content--main button'>
-                            <a target='_blank' className='button-contact' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Quero saber mais sobre o campo e valores.')}`}><FaWhatsapp />・Entrar em Contato</a>
+                            <a target='_blank' className='button-contact' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de saber sobre os Equipamentos de Proteção do campo.')}`}><FaWhatsapp />・Entrar em Contato</a>
                         </div>
                     </div>
                 </div>

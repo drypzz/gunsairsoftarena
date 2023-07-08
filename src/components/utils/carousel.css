@@ -113,7 +113,7 @@
 }
 
 .box__content--main h1#title--uii{
-    max-width: 450px;
+    max-width: 520px;
 }
 
 .box__content--main p{
@@ -254,7 +254,7 @@
         padding: 0 5px!important;
     }
 
-    .wallpaper-ca#kdoswd992__ .box__content--main .box__content--main-itens-container, .wallpaper-ca#jspqjw2od__dsk .box__content--main .box__content--main-itens-container{
+    .wallpaper-ca#kdoswd992__, .wallpaper-ca#kdoswd992__ .box__content--main .box__content--main-itens-container, .wallpaper-ca#jspqjw2od__dsk .box__content--main .box__content--main-itens-container{
         justify-content: center;
     }
     
