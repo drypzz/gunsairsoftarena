@@ -108,6 +108,7 @@ const CarouselHome = () => {
                     </div>
                 </div>
             </div>
+            
             <div id='kdoswd992__' className='wallpaper-ca'>
                 <div className='div-imgs'>
                     <img src={'/files/wallpaper2.jpg'} alt='Imagem de Fundo 2' />
@@ -118,7 +119,7 @@ const CarouselHome = () => {
                             <h1>Proteja-se e Domine o Campo!</h1>
                         </div>
                         <div className='box__content--main'>
-                            <p>Descubra os equipamentos de Airsoft que garantem segurança e estilo.</p>
+                            <p>Veja os equipamentos de Airsoft que garantem segurança e estilo.</p>
                         </div>
                         <div className='box__content--main button'>
                             <a target='_blank' className='button-contact' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de saber sobre os Equipamentos de Proteção do campo.')}`}><FaWhatsapp />・Entrar em Contato</a>
@@ -126,6 +127,7 @@ const CarouselHome = () => {
                     </div>
                 </div>
             </div>
+
             <div id='jspqjw2od__dsk' className='wallpaper-ca'>
                 <div className='div-imgs'>
                     <img src={'/files/wallpaper3.jpg'} alt='Imagem de Fundo 2' />
