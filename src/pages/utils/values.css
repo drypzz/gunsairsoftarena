@@ -1,0 +1,123 @@
+.container--modals{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.modal{
+    margin: 40px;
+    text-align: center;
+    width: 650px;
+    background-color: #0b0b0b;
+    border-radius: 0 0 10px 10px;
+}
+
+.modal--title{
+    background-color: #f4f4f4;
+    color: #0b0b0b;
+    margin: 0;
+    padding: 20px 0;
+    cursor: pointer;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal--title:hover{
+    color: #54A824;
+}
+
+.modal--title h3{
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.modal--content--value{
+    color: #fff;
+    background-color: #54a824b6;
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 10px 0;
+}
+
+.modal--content--value span#real{
+    font-size: 24px;
+    font-weight: 400;
+    position: relative;
+    top: -2px;
+}
+
+.modal--content{
+    padding: 0 15px 60px;
+}
+
+.modal--content ul{
+    padding: 37px 0;
+}
+
+.modal--content ul li{
+    color: rgba(255, 255, 255, .8);
+    text-align: start;
+    font-size: 16px;
+    margin-left: 10px;
+    line-height: 1.5;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    padding: 14px 0;
+}
+
+.modal--content ul li::before{
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: #54A824;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.button--modals a{
+    width: 100%;
+    border: 3px solid #54A824;
+    color: #54A824;
+    display: inline-block;
+    font-family: "Oswald",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    height: 60px;
+    letter-spacing: 0.7px;
+    line-height: 53px;
+    padding: 0 46px;
+    text-transform: uppercase;
+    background: transparent;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+.button--modals a:hover{
+    background-color: #54A824;
+    color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+    .modal{
+        margin: 20px 0;
+        width: 100%;
+    }
+}

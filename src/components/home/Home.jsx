@@ -61,7 +61,7 @@ const Home = () => {
                                 </p>
                                 <div className='button'>
                                     <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'>
-                                        <FaWhatsapp /> - Entrar em Contato
+                                        <FaWhatsapp />・Entrar em Contato
                                     </a>
                                 </div>
                             </div>

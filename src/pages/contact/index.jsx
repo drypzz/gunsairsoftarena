@@ -51,9 +51,10 @@ const Contacts = () => {
                     </Head>
                     <Navbar bool={5} />
                     <CustomNav link='/' text='Contato' />
-                    <div className='main-contacts'>
+                    <div className='main'>
                         <div className='title'>
                             <h1>Localização</h1>
+                            <p>Observe a nossa localização atual.</p>
                         </div>
                         <div className='location'>
                             <iframe src={map} frameBorder={0}></iframe>

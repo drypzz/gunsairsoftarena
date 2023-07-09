@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp, FaShieldAlt } from 'react-icons/fa';
 
 import '../utils/carousel.css';
 
@@ -122,7 +122,7 @@ const CarouselHome = () => {
                             <p>Veja os equipamentos de Airsoft que garantem segurança e estilo.</p>
                         </div>
                         <div className='box__content--main button'>
-                            <a target='_blank' className='button-contact' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de saber sobre os Equipamentos de Proteção do campo.')}`}><FaWhatsapp />・Entrar em Contato</a>
+                            <a className='button-contact' href='/equipaments'><FaShieldAlt />・Equipamentos</a>
                         </div>
                     </div>
                 </div>
