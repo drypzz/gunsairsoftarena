@@ -89,7 +89,7 @@ const CarouselHome = () => {
     };
 
     return (
-        <Carousel className={`custom-carousel ${animationClass}`} selectedItem={currentSlide} onChange={handleSlideChange} autoPlay transitionTime={(20 * 10)} swipeable={false} interval={(15 * 1000)} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={false} infiniteLoop showArrows={true}>
+        <Carousel className={`custom-carousel ${animationClass}`} selectedItem={currentSlide} onChange={handleSlideChange} autoPlay transitionTime={(20 * 10)} swipeable={false} interval={(15 * 1000)} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={true} infiniteLoop showArrows={true}>
             <div className='wallpaper-ca'>
                 <div className='div-imgs'>
                     <img src={'/files/wallpaper.jpg'} alt='Imagem de Fundo' />
