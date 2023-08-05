@@ -10,20 +10,29 @@ import LoadingScreen from '@/components/loading/Loading';
 
 import '../utils/contact.css';
 
+import ClipLoader from 'react-spinners/ClipLoader';
+
 import { FaInstagram, FaWhatsapp, FaFacebook, FaMap, FaPhoneAlt, FaRegEnvelope } from 'react-icons/fa';
 
 const Contacts = () => {
     const [loading, setLoading] = useState(true);
     const [map, setMap] = useState([]);
 
+    const [getLoadingMap, setLoadingMap] = useState(true)
+
     async function loadMap(){
+        
+        setTimeout(() => {
+            setLoadingMap(false);
+        }, 5000);
+        
         const result = fetch('https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed')
-            .then((res) => setMap(res.url))
-            .catch((err) => setMap(<div><h1>{err}</h1></div>)
+            .then((res) => setMap(<iframe src={res.url} frameBorder={0}></iframe>))
+            .catch(() => setMap(<h1>Ocorreu um erro ao carregar o Mapa.</h1>)
         );
 
         return result;
-    }
+    };
   
     useEffect(() => {
         loadMap();
@@ -57,7 +66,7 @@ const Contacts = () => {
                             <p>Observe a nossa localização atual.</p>
                         </div>
                         <div className='location'>
-                            <iframe src={map} frameBorder={0}></iframe>
+                            {getLoadingMap ? <ClipLoader color={'#48D904'} loading={getLoadingMap} size={100} /> : map}
                         </div>
                         <div className='contacts'>
                             <div className='contacts-container'>

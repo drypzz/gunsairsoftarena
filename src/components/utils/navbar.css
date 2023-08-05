@@ -30,7 +30,7 @@ section .header__logo{
 }
 .link__title:hover{
     background-color: #54A824;
-    color: #000;
+    color: #fff;
 }
 
 .logo__div{

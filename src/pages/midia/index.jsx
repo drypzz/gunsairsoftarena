@@ -41,14 +41,10 @@ const Midia = () => {
                     
                     <CustomNav link='/' text='Fotos' />
 
-                    <div className='container--midia'>
-                        <div className='container__content--midia'>
-                            <div className='container__content--title--midia'>
-                                <h1>Fotos</h1>
-                            </div>
-                            <div className='container__content--text--midia'>
-                                <p>Confira algumas fotos de nossos clientes aqui na Guns Airsoft Arena!</p>
-                            </div>
+                    <div>
+                        <div className='title'>
+                            <h1>Fotos</h1>
+                            <p>Confira algumas fotos de nossos clientes aqui na Guns Airsoft Arena!</p>
                         </div>
                     </div>
 

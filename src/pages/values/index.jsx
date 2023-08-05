@@ -10,8 +10,14 @@ import LoadingScreen from '@/components/loading/Loading';
 
 import '../utils/values.css';
 
+import CONFIGS from '../../__config';
+
 const Values = () => {
     const [loading, setLoading] = useState(true);
+
+    const getDiscount = CONFIGS.valores.descontos['desconto'];
+    const getValue1 = (getDiscount ? CONFIGS.valores.descontos['pacote_1'] : CONFIGS.valores['pacote_1']);
+    const getValue2 = (getDiscount ? CONFIGS.valores.descontos['pacote_2'] : CONFIGS.valores['pacote_2']);
   
     useEffect(() => {
         setTimeout(() => {
@@ -41,14 +47,18 @@ const Values = () => {
                     <div className='main'>
                         <div className='title'>
                             <h1>Valores</h1>
+                            <p>Confira nossos pacotes de jogos.</p>
                         </div>
                         <div className='container--modals'>
                             <div className='modal'>
                                 <div className='modal--title'>
-                                    <h3>Game - 1</h3>
+                                    <h3>Pacote 1</h3>
                                 </div>
                                 <div className='modal--content--value'>
-                                    <span id='real'>R$</span>25,00
+                                    <div>
+                                        <span id='real'>R$</span>{getValue1},00
+                                    </div>
+                                    {getDiscount ? <div><span id='off'>R${CONFIGS.valores['pacote_1']},00</span></div> : <></>}
                                 </div>
                                 <div className='modal--content'>
                                     <ul>
@@ -57,16 +67,19 @@ const Values = () => {
                                         <li>Arma + Máscara + Camisa (Verde ou Vermelha)</li>
                                     </ul>
                                     <div className='button--modals'>
-                                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de marcar um game.')}`}>Agende Agora!</a>
+                                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent(`Olá! Gostaria de marcar um game. Vi que o valor do pacote 1 está R$${getValue1},00 seria este valor mesmo? `)}`}>Agende Agora!</a>
                                     </div>
                                 </div>
                             </div>
                             <div className='modal'>
                                 <div className='modal--title'>
-                                    <h3>Game - 2</h3>
+                                    <h3>Pacote 2</h3>
                                 </div>
                                 <div className='modal--content--value'>
-                                    <span id='real'>R$</span>55,00
+                                    <div>
+                                        <span id='real'>R$</span>{getValue2},00
+                                    </div>
+                                    {getDiscount ? <div><span id='off'>R${CONFIGS.valores['pacote_2']},00</span></div> : <></>}
                                 </div>
                                 <div className='modal--content'>
                                     <ul>
@@ -75,7 +88,7 @@ const Values = () => {
                                         <li>Arma + Máscara + Camisa (Verde ou Vermelha)</li>
                                     </ul>
                                     <div className='button--modals'>
-                                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de marcar um game.')}`}>Agende Agora!</a>
+                                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent(`Olá! Gostaria de marcar um game. Vi que o valor do pacote 2 está R$${getValue2},00 seria este valor mesmo?`)}`}>Agende Agora!</a>
                                     </div>
                                 </div>
                             </div>

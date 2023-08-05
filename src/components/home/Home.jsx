@@ -7,7 +7,7 @@ import Footer from './../footer/Footer';
 
 import LoadingScreen from '../loading/Loading';
 
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaRegPaperPlane } from 'react-icons/fa';
 
 import { CarouselHome } from './../carousel/Carousel';
 
@@ -39,7 +39,7 @@ const Home = () => {
                                 <span className='logo__title'>GUNS AIRSOFT ARENA</span>
                             </div>
                             <div>
-                                <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de marcar um game, quais os valores?')}`} className='link__title'>Reserve Agora</a>
+                                <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de marcar um game, quais os valores?')}`} className='link__title'><FaRegPaperPlane />・Reserve Agora</a>
                             </div>
                         </div>
                     </section>
