@@ -15,9 +15,12 @@ import CONFIGS from '../../__config';
 const Values = () => {
     const [loading, setLoading] = useState(true);
 
-    const getDiscount = CONFIGS.valores.descontos['desconto'];
-    const getValue1 = (getDiscount ? CONFIGS.valores.descontos['pacote_1'] : CONFIGS.valores['pacote_1']);
-    const getValue2 = (getDiscount ? CONFIGS.valores.descontos['pacote_2'] : CONFIGS.valores['pacote_2']);
+    const getDiscount = (CONFIGS.valores.descontos['desconto'] ?? false);
+    const getValue1 = (getDiscount ? (CONFIGS.valores.descontos.pacotes.recruta['valor'] ?? 0) : (CONFIGS.valores.pacotes.recruta['valor'] ?? 0));
+    const getValue2 = (getDiscount ? (CONFIGS.valores.descontos.pacotes.atirador['valor'] ?? 0) : (CONFIGS.valores.pacotes.atirador['valor'] ?? 0));
+
+    const getValueReload1 = (getDiscount ? (CONFIGS.valores.descontos.pacotes.recruta['valorRecarga'] ?? 0) : (CONFIGS.valores.pacotes.recruta['valorRecarga'] ?? 0))
+    const getValueReload2 = (getDiscount ? (CONFIGS.valores.descontos.pacotes.atirador['valorRecarga'] ?? 0) : (CONFIGS.valores.pacotes.atirador['valorRecarga'] ?? 0))
   
     useEffect(() => {
         setTimeout(() => {
@@ -52,43 +55,45 @@ const Values = () => {
                         <div className='container--modals'>
                             <div className='modal'>
                                 <div className='modal--title'>
-                                    <h3>Pacote 1</h3>
+                                    <h3>Pacote Recruta</h3>
                                 </div>
                                 <div className='modal--content--value'>
                                     <div>
                                         <span id='real'>R$</span>{getValue1},00
                                     </div>
-                                    {getDiscount ? <div><span id='off'>R${CONFIGS.valores['pacote_1']},00</span></div> : <></>}
+                                    {getDiscount ? <div><span id='off'>R${(CONFIGS.valores.pacotes.recruta['valor'] ?? 0)},00</span></div> : <></>}
                                 </div>
                                 <div className='modal--content'>
                                     <ul>
-                                        <li>100 BBs (Munições)</li>
+                                        <li>{(CONFIGS.valores.pacotes.recruta['bbsBase'] ?? 100)} BBs (Munições)</li>
                                         <li>2h de Jogo</li>
                                         <li>Arma + Máscara + Camisa (Verde ou Vermelha)</li>
+                                        <li>R${getValueReload1},00 recarga para cada 100 munições </li>
                                     </ul>
                                     <div className='button--modals'>
-                                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent(`Olá! Gostaria de marcar um game. Vi que o valor do pacote 1 está R$${getValue1},00 seria este valor mesmo? `)}`}>Agende Agora!</a>
+                                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent(`Olá! Gostaria de marcar um game. Vi que o valor do *Pacote Recruta* está *R$${getValue1},00* seria este valor mesmo? `)}`}>Agende Agora!</a>
                                     </div>
                                 </div>
                             </div>
                             <div className='modal'>
                                 <div className='modal--title'>
-                                    <h3>Pacote 2</h3>
+                                    <h3>Pacote Atirador</h3>
                                 </div>
                                 <div className='modal--content--value'>
                                     <div>
                                         <span id='real'>R$</span>{getValue2},00
                                     </div>
-                                    {getDiscount ? <div><span id='off'>R${CONFIGS.valores['pacote_2']},00</span></div> : <></>}
+                                    {getDiscount ? <div><span id='off'>R${CONFIGS.valores.pacotes.atirador['valor']},00</span></div> : <></>}
                                 </div>
                                 <div className='modal--content'>
                                     <ul>
-                                        <li>300 BBs (Munições)</li>
+                                        <li>{(CONFIGS.valores.pacotes.atirador['bbsBase'] ?? 300)} BBs (Munições)</li>
                                         <li>2h de Jogo</li>
                                         <li>Arma + Máscara + Camisa (Verde ou Vermelha)</li>
+                                        <li>R${getValueReload2},00 recarga para cada 100 munições </li>
                                     </ul>
                                     <div className='button--modals'>
-                                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent(`Olá! Gostaria de marcar um game. Vi que o valor do pacote 2 está R$${getValue2},00 seria este valor mesmo?`)}`}>Agende Agora!</a>
+                                        <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent(`Olá! Gostaria de marcar um game. Vi que o valor do *Pacote Atirador* está *R$${getValue2},00* seria este valor mesmo?`)}`}>Agende Agora!</a>
                                     </div>
                                 </div>
                             </div>

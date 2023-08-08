@@ -120,10 +120,10 @@
 }
 
 .custom__footer__box--img li{
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
-.custom__footer__box--img li img{
+.custom__footer__box--img li svg{
     width: 50px;
     height: auto;
 }

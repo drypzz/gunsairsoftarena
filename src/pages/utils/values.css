@@ -106,26 +106,18 @@
     transform: translateY(-50%);
 }
 
+.button--modals{
+    margin: 20px 0;
+}
+
 .button--modals a{
     width: 100%;
-    border: 3px solid #54A824;
+    border: 1px solid #54A824;
+    border-radius: 5px;
+    padding: 20px 20%;
     color: #54A824;
-    display: inline-block;
-    font-family: "Oswald",sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    height: 60px;
-    letter-spacing: 0.7px;
-    line-height: 53px;
-    padding: 0 46px;
+    transition: all .5s ease-in-out;
     text-transform: uppercase;
-    background: transparent;
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-    cursor: pointer;
 }
 
 .button--modals a:hover{

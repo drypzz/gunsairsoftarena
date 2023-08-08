@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import  * as React from 'react';
 import Head from 'next/head';
 
 
@@ -27,7 +27,7 @@ function Maintenance(){
                         <h2>Página em Manutenção.</h2>
                     </div>
                     <div className='error-content'>
-                        <p>Volte aqui mais tarde.</p>
+                        <p>Volte em breve</p>
                     </div>
                     <div className='error-content just top'>
                         <span>Copyright © Guns Airsoft Arena - {new Date().getFullYear()}</span>

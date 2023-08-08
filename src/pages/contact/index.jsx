@@ -21,14 +21,13 @@ const Contacts = () => {
     const [getLoadingMap, setLoadingMap] = useState(true)
 
     async function loadMap(){
-        
-        setTimeout(() => {
-            setLoadingMap(false);
-        }, 5000);
-        
         const result = fetch('https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed')
-            .then((res) => setMap(<iframe src={res.url} frameBorder={0}></iframe>))
-            .catch(() => setMap(<h1>Ocorreu um erro ao carregar o Mapa.</h1>)
+            .then((res) => (
+                setLoadingMap(false) + setMap(<iframe src={res.url} frameBorder={0}></iframe>)
+            ))
+            .catch(() => (
+                setLoadingMap(true) + console.log('Erro ao carregar o mapa')
+            )
         );
 
         return result;
