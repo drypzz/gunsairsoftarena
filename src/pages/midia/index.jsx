@@ -11,6 +11,8 @@ import LoadingScreen from '@/components/loading/Loading';
 import '../utils/midia.css';
 import { CarouselPhotos, CarouselPhotos2 } from '@/components/carousel/Carousel';
 
+import { CONFIGS } from '@/__config';
+
 const Midia = () => {
     const [loading, setLoading] = useState(true);
   

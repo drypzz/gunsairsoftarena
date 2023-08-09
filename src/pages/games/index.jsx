@@ -10,6 +10,8 @@ import LoadingScreen from '@/components/loading/Loading';
 
 import '../utils/games.css';
 
+import { CONFIGS } from '@/__config';
+
 const Games = () => {
     const [loading, setLoading] = useState(true);
   
