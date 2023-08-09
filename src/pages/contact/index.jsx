@@ -120,10 +120,10 @@ const Contacts = () => {
                                     <h3 className='title--info'>NOS ENCONTRE</h3>
                                     <div className='container--red'>
                                         <div className='itens--red'>
-                                            <a target='_blank' href='https://www.instagram.com/gunsairsoftarena/'><FaInstagram/></a>
+                                            <a target='_blank' href={CONFIGS.gerais.redesSociais['instagram']}><FaInstagram/></a>
                                         </div>
                                         <div className='itens--red'>
-                                            <a target='_blank' href='https://www.facebook.com/gunsairsoftarena/'><FaFacebook/></a>
+                                            <a target='_blank' href={CONFIGS.gerais.redesSociais['facebook']}><FaFacebook/></a>
                                         </div>
                                         <div className='itens--red'>
                                             <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'><FaWhatsapp/></a>

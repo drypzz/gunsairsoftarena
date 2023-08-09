@@ -73,13 +73,13 @@ const Footer = () => {
                         <div className='custom__footer__content--box'>
                             <div className='custom__footer__box--icons'>
                                 <div className='custom__footer__box--icons--conent'>
-                                    <a target='_blank' href='https://www.facebook.com/gunsairsoftarena/'><FaFacebook/></a>
+                                    <a target='_blank' href={CONFIGS.gerais.redesSociais['facebook']}><FaFacebook/></a>
                                 </div>
                                 <div className='custom__footer__box--icons--conent'>
-                                    <a target='_blank' href='https://www.instagram.com/gunsairsoftarena/'><FaInstagram/></a>
+                                    <a target='_blank' href={CONFIGS.gerais.redesSociais['instagram']}><FaInstagram/></a>
                                 </div>
                                 <div className='custom__footer__box--icons--conent'>
-                                    <a target='_blank' href='https://api.whatsapp.com/send?phone=554797519814'><FaWhatsapp/></a>
+                                    <a target='_blank' href={`https://api.whatsapp.com/send?phone=${CONFIGS.gerais['telefone']}`}><FaWhatsapp/></a>
                                 </div>
                             </div>
                         </div>
