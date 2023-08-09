@@ -14,11 +14,13 @@ import ClipLoader from 'react-spinners/ClipLoader';
 
 import { FaInstagram, FaWhatsapp, FaFacebook, FaMap, FaPhoneAlt, FaRegEnvelope } from 'react-icons/fa';
 
+import { CONFIGS, LIST_HOURS } from '@/__config';
+
 const Contacts = () => {
     const [loading, setLoading] = useState(true);
     const [map, setMap] = useState([]);
 
-    const [getLoadingMap, setLoadingMap] = useState(true)
+    const [getLoadingMap, setLoadingMap] = useState(true);
 
     async function loadMap(){
         const result = fetch('https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed')
@@ -47,15 +49,33 @@ const Contacts = () => {
             :
                 <div>
                     <Head>
-                        <meta name='description' content='Sua arena de airsoft em Joinville - SC' key='desc' />
-                        <meta property='og:description' content='Sua arena de airsoft em Joinville - SC'/>
+                        <meta charset='UTF-8' />
+                        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
-                        <meta property='title' content='Guns Airsoft Arena - Contato' />
-                        <meta property='og:title' content='Guns Airsoft Arena - Contato' />
+                        <meta property='og:type' content='website' />
+
+                        <meta name='theme-color' content='#54A824' />
+
+                        <meta name='keywords' content='Guns Airsoft Arena, gunsairsoftarena, guns airsoft, arena joinville, airsoft joinville, joinville airsoft, SC Airsoft, Airsoft, Guns Arena, Sua Arena de Airsoft em Joinville' />
+                        <meta name='title' content={`${CONFIGS.gerais['nome']} - Contato`} />
+                        <meta name='description' content='Sua arena de Airsoft em Joinville - SC' />
+                        <meta name='url' content='https://gunsairsoftarena.netlify.app/contact' />
+
+                        <meta property='og:title' content={`${CONFIGS.gerais['nome']} - Contato`} />
+
+                        <meta property='og:description' content='Sua arena de Airsoft em Joinville - SC' />
+
+                        <meta property='og:site_name' content={`${CONFIGS.gerais['nome']} - Contato`} />
+                        <meta property='og:url' content='https://gunsairsoftarena.netlify.app/contact' />
 
                         <meta property='og:image' content='/files/transparent.png' />
+                        <meta property='og:image:width' content='200' />
+                        <meta property='og:image:height' content='200' />
 
-                        <title>Guns Airsoft Arena - Contato</title>
+                        <link rel='shortcut icon' href='/files/transparent.png' type='image/x-icon' />
+                        <link rel='image_src' href='/files/transparent.png' />
+                        
+                        <title>{CONFIGS.gerais['nome']} - Contato</title>
                     </Head>
                     <Navbar bool={5} />
                     <CustomNav link='/' text='Contato' />
@@ -73,13 +93,13 @@ const Contacts = () => {
                                     <h3 className='title--info'>Contato</h3>
                                     <ul id='kasw' className='contacts-info-item--ul'>
                                         <li>
-                                            <a target='_blank' href='https://goo.gl/maps/cxPno5J1cjJEvS1W6'><FaMap />R. Boehmerwald, 170 - Boehmerwald, Joinville - SC, 89219-731</a>
+                                            <a target='_blank' href='https://goo.gl/maps/cxPno5J1cjJEvS1W6'><FaMap />{CONFIGS.gerais['endereco']}</a>
                                         </li>
                                         <li>
-                                            <a href='tel:+5547997519814'><FaPhoneAlt />(47) 99751-9814</a>
+                                            <a href={`tel:+${CONFIGS.gerais['telefone']}`}><FaPhoneAlt />{ CONFIGS.gerais['telefone'] }</a>
                                         </li>
                                         <li>
-                                            <a target='_blank' href='mailto:gunsairsoftarena@gmail.com'><FaRegEnvelope />gunsairsoftarena@gmail.com</a>
+                                            <a target='_blank' href='mailto:gunsairsoftarena@gmail.com'><FaRegEnvelope />{CONFIGS.gerais['email']}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -87,34 +107,12 @@ const Contacts = () => {
                                 <div className='contacts-info'>
                                     <h3 className='title--info'>Horario de Funcionamento</h3>
                                     <ul className='contacts-info-item--ul'>
-                                        <li>
-                                            Segunda-Feira
-                                            <span>07:00 - 22:00</span>
-                                        </li>
-                                        <li>
-                                            Terça-Feira
-                                            <span>07:00 - 22:00</span>
-                                        </li>
-                                        <li>
-                                            Quarta-Feira
-                                            <span>07:00 - 22:00</span>
-                                        </li>
-                                        <li>
-                                            Quinta-Feira
-                                            <span>07:00 - 22:00</span>
-                                        </li>
-                                        <li>
-                                            Sexta-Feira
-                                            <span>07:00 - 22:00</span>
-                                        </li>
-                                        <li>
-                                            Sábado
-                                            <span>07:00 - 22:00</span>
-                                        </li>
-                                        <li>
-                                            Domingo
-                                            <span>07:00 - 22:00</span>
-                                        </li>
+                                        {LIST_HOURS.map((e, index) => (
+                                            <li key={index}>
+                                                {e.Dia}
+                                                <span>{e.Aberto} - {e.Fechado}</span>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
 

@@ -57,6 +57,7 @@ iframe{
     -o-transition: all 300ms ease;
     transition: all 300ms ease;
     cursor: pointer;
+    text-transform: capitalize;
 }
 
 .contacts-info-item--ul#kasw li{
@@ -109,7 +110,7 @@ iframe{
     color: #54A824;
     padding: 10px;
     background-color: #0b0b0b;
-    border-radius: 50%;
+    border-radius: 2px;
     font-size: 1.5rem;
     object-fit: cover;
     transition: all .4s ease 0s;

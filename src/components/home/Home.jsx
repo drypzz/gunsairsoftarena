@@ -12,6 +12,7 @@ import { FaWhatsapp, FaRegPaperPlane } from 'react-icons/fa';
 import { CarouselHome } from './../carousel/Carousel';
 
 import './../utils/home.css';
+import { CONFIGS } from '@/__config';
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -36,7 +37,7 @@ const Home = () => {
                                 <img src='../files/transparent.png' className='logo' alt='logo' />
                             </div>
                             <div>
-                                <span className='logo__title'>GUNS AIRSOFT ARENA</span>
+                                <span className='logo__title'>{CONFIGS.gerais['nome']}</span>
                             </div>
                             <div>
                                 <a target='_blank' href={`https://api.whatsapp.com/send?phone=554797519814&text=${encodeURIComponent('Olá! Gostaria de marcar um game, quais os valores?')}`} className='link__title'><FaRegPaperPlane />・Reserve Agora</a>

@@ -3,6 +3,7 @@ import React from 'react';
 import '../utils/footer.css';
 
 import { FaInstagram, FaWhatsapp, FaFacebook, FaCcVisa } from 'react-icons/fa';
+import { CONFIGS } from '@/__config';
 
 const Footer = () => {
     return (
@@ -94,7 +95,7 @@ const Footer = () => {
                         <p>© 2021 - {new Date().getFullYear()} | Todos os direitos reservados</p>
                     </div>
                     <div className='footer-content'>
-                        <p>CNPJ: 44.433.534/0001-87</p>
+                        <p>CNPJ: {CONFIGS.gerais['cnpj']}</p>
                     </div>
                     <div className='footer-content'>
                         <img src={'/files/transparent.png'} />

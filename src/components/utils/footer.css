@@ -35,7 +35,7 @@
 .custom__footer__content--box .dev a{
     color: #565656;
     transition: all .5s ease-in-out;
-    opacity: .5;
+    opacity: .7;
 }
 
 .custom__footer__content--box .dev a:hover{
@@ -146,7 +146,7 @@
     color: #54A824;
     padding: 10px;
     background-color: #000;
-    border-radius: 50%;
+    border-radius: 2px;
     font-size: 1.1rem;
     object-fit: cover;
     transition: all .4s ease 0s;

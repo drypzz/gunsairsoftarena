@@ -5,6 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FaFacebook, FaInstagram, FaWhatsapp, FaShieldAlt } from 'react-icons/fa';
 
 import '../utils/carousel.css';
+import { CONFIGS } from '@/__config';
 
 const CarouselPhotos = () => {
     const imagens = [
@@ -78,14 +79,22 @@ const CarouselHome = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [animationClass, setAnimationClass] = useState('animation-one');
 
+    function getRandomNumber(min, max) {
+        return Math.random() * (max - min) + min;
+    };
+
     const handleSlideChange = (index) => {
+        
+        const classes = [
+            {text: 'animation-one'},
+            {text: 'animation-two'},
+        ];
+
         setCurrentSlide(index);
 
-        if (index % 2 === 0) {
-            setAnimationClass('animation-one');
-        } else {
-            setAnimationClass('animation-two');
-        }
+        const random = Math.floor(getRandomNumber(0, 2));
+
+        return setAnimationClass(classes[random].text);
     };
 
     return (
@@ -97,7 +106,7 @@ const CarouselHome = () => {
                 <div className='title-box'>
                     <div className='box__container--main'>
                         <div className='box__content--main'>
-                            <h1 id='title--uii'>Bem-vindo(a) ao Guns Airsoft Arena</h1>
+                            <h1 id='title--uii'>Bem-vindo(a) ao {CONFIGS.gerais['nome']}</h1>
                         </div>
                         <div className='box__content--main'>
                             <p>Aqui, a diversão é garantida.</p>
