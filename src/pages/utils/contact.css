@@ -44,9 +44,6 @@ iframe{
     height: 100%;
 }
 
-.contacts-info-item--ul{
-    padding-bottom: 10px;
-}
 
 .contacts-info-item--ul li{
     border-top: 1px solid rgba(255, 255, 255, .2);
@@ -89,7 +86,11 @@ iframe{
 .contacts-info-item--ul#kasw li a{
     transition: all .2s ease-in-out;
     color: #3e7d1a;
-    text-decoration: underline;
+    text-transform: none;
+}
+
+.contacts-info-item--ul#kasw li a:hover{
+    color: #fff;
 }
 
 .contacts-info-item--ul li span{

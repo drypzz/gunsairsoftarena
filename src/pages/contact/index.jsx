@@ -12,7 +12,7 @@ import '../utils/contact.css';
 
 import ClipLoader from 'react-spinners/ClipLoader';
 
-import { FaInstagram, FaWhatsapp, FaFacebook, FaMap, FaPhoneAlt, FaRegEnvelope } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaFacebook, FaMap, FaPhoneAlt, FaRegEnvelope, FaClock } from 'react-icons/fa';
 
 import { CONFIGS, LIST_HOURS } from '@/__config';
 
@@ -25,7 +25,7 @@ const Contacts = () => {
     async function loadMap(){
         const result = fetch('https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed')
             .then((res) => (
-                setMap(<iframe src={res.url} frameBorder={0}></iframe>), setTimeout(() => { setLoadingMap(false) }, 5000)
+                setMap(<iframe src={res.url}></iframe>), setTimeout(() => { setLoadingMap(false) }, 5000)
             ))
             .catch(() => (
                 setLoadingMap(true), console.log('Erro ao carregar o mapa.')
@@ -33,6 +33,16 @@ const Contacts = () => {
         );
 
         return result;
+    };
+
+    const formatPhoneNumber = (phoneNumber) => {
+        const cleanedNumber = phoneNumber.replace(/\D/g, '');
+
+        if (cleanedNumber.length === 12) {
+            return `+${cleanedNumber.slice(0, 2)} (${cleanedNumber.slice(2, 4)}) ${cleanedNumber.slice(4, 8)}-${cleanedNumber.slice(8)}`;
+        }else{
+            return `+${cleanedNumber.slice(0, 2)} (${cleanedNumber.slice(2, 3)}) ${cleanedNumber.slice(3, 7)}-${cleanedNumber.slice(7)}`;
+        };
     };
   
     useEffect(() => {
@@ -49,7 +59,7 @@ const Contacts = () => {
             :
                 <div>
                     <Head>
-                        <meta charset='UTF-8' />
+                        <meta charSet='UTF-8' />
                         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
                         <meta property='og:type' content='website' />
@@ -93,23 +103,23 @@ const Contacts = () => {
                                     <h3 className='title--info'>Contato</h3>
                                     <ul id='kasw' className='contacts-info-item--ul'>
                                         <li>
-                                            <a target='_blank' href='https://goo.gl/maps/cxPno5J1cjJEvS1W6'><FaMap />{CONFIGS.gerais['endereco']}</a>
+                                            <a target='_blank' href='https://goo.gl/maps/cxPno5J1cjJEvS1W6'><FaMap />・{CONFIGS.gerais['endereco']}</a>
                                         </li>
                                         <li>
-                                            <a href={`tel:+${CONFIGS.gerais['telefone']}`}><FaPhoneAlt />{ CONFIGS.gerais['telefone'] }</a>
+                                            <a href={`tel:+${CONFIGS.gerais['telefone']}`}><FaPhoneAlt />・{formatPhoneNumber(CONFIGS.gerais['telefone'])}</a>
                                         </li>
                                         <li>
-                                            <a target='_blank' href='mailto:gunsairsoftarena@gmail.com'><FaRegEnvelope />{CONFIGS.gerais['email']}</a>
+                                            <a target='_blank' href='mailto:gunsairsoftarena@gmail.com'><FaRegEnvelope />・{CONFIGS.gerais['email']}</a>
                                         </li>
                                     </ul>
                                 </div>
 
                                 <div className='contacts-info'>
-                                    <h3 className='title--info'>Horario de Funcionamento</h3>
+                                    <h3 className='title--info'>Horário de Funcionamento</h3>
                                     <ul className='contacts-info-item--ul'>
                                         {LIST_HOURS.map((e, index) => (
                                             <li key={index}>
-                                                {e.Dia}
+                                                <FaClock />{e.Dia}
                                                 <span>{e.Aberto} - {e.Fechado}</span>
                                             </li>
                                         ))}

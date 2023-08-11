@@ -2,7 +2,7 @@
   "name": "gunsairsoftarena",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://gunsairsoftarena.com.br",
+  "homepage": "https://gunsairsoftarena.netlify.app/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

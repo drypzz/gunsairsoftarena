@@ -16,43 +16,43 @@ const CONFIGS = {
     contato:{ // Informações de contato
         list:[ // Lista de horários
             {
-                Dia: 'segunda-feira', // Dia da semana
+                Dia: '・segunda-feira', // Dia da semana
                 Aberto: '07:00', // Horário de abertura
                 Fechado: '22:00', // Horário de fechamento
             },
 
             { 
-                Dia: 'terça-feira', // Dia da semana
+                Dia: '・terça-feira', // Dia da semana
                 Aberto: '07:00', // Horário de abertura
                 Fechado: '22:00', // Horário de fechamento
             },
 
             { 
-                Dia: 'quarta-feira', // Dia da semana
+                Dia: '・quarta-feira', // Dia da semana
                 Aberto: '07:00', // Horário de abertura
                 Fechado: '22:00', // Horário de fechamento
             },
 
             { 
-                Dia: 'quinta-feira', // Dia da semana
+                Dia: '・quinta-feira', // Dia da semana
                 Aberto: '07:00', // Horário de abertura
                 Fechado: '22:00', // Horário de fechamento
             },
 
             { 
-                Dia: 'sexta-feira', // Dia da semana
+                Dia: '・sexta-feira', // Dia da semana
                 Aberto: '07:00', // Horário de abertura
                 Fechado: '22:00', // Horário de fechamento
             },
 
             { 
-                Dia: 'sábado', // Dia da semana
+                Dia: '・sábado', // Dia da semana
                 Aberto: '07:00', // Horário de abertura
                 Fechado: '22:00', // Horário de fechamento
             },
 
             { 
-                Dia: 'domingo', // Dia da semana
+                Dia: '・domingo', // Dia da semana
                 Aberto: '07:00', // Horário de abertura
                 Fechado: '22:00', // Horário de fechamento
             },
