@@ -33,7 +33,7 @@ const CarouselPhotos = () => {
             {imagens.map((img, index) => {
                 return (
                     <div key={index}>
-                        <img src={`${img}`} alt={`Imagem ${index + 1}`} />
+                        <img draggable='false' dragstart='false' src={`${img}`} alt={`Imagem ${index + 1}`} />
                     </div>
                 )
             })}
@@ -67,7 +67,7 @@ const CarouselPhotos2 = () => {
             {imagens2.map((img, index) => {
                 return (
                     <div key={index}>
-                        <img src={`${img}`} alt={`Imagem ${index + 1}`} />
+                        <img draggable='false' dragstart='false' src={`${img}`} alt={`Imagem ${index + 1}`} />
                     </div>
                 )
             })}
@@ -101,7 +101,7 @@ const CarouselHome = () => {
         <Carousel className={`custom-carousel ${animationClass}`} selectedItem={currentSlide} onChange={handleSlideChange} autoPlay transitionTime={(20 * 10)} swipeable={false} interval={(15 * 1000)} showThumbs={false} stopOnHover={false} showStatus={false} showIndicators={true} infiniteLoop showArrows={true}>
             <div className='wallpaper-ca'>
                 <div className='div-imgs'>
-                    <img src={'/files/wallpaper.jpg'} alt='Imagem de Fundo' />
+                    <img draggable='false' dragstart='false' src={'/files/wallpaper.jpg'} alt='Imagem de Fundo' />
                 </div>
                 <div className='title-box'>
                     <div className='box__container--main'>
@@ -120,7 +120,7 @@ const CarouselHome = () => {
             
             <div id='kdoswd992__' className='wallpaper-ca'>
                 <div className='div-imgs'>
-                    <img src={'/files/wallpaper2.jpg'} alt='Imagem de Fundo 2' />
+                    <img draggable='false' dragstart='false' src={'/files/wallpaper2.jpg'} alt='Imagem de Fundo 2' />
                 </div>
                 <div className='title-box'>
                     <div className='box__container--main'>
@@ -139,7 +139,7 @@ const CarouselHome = () => {
 
             <div id='jspqjw2od__dsk' className='wallpaper-ca'>
                 <div className='div-imgs'>
-                    <img src={'/files/wallpaper3.jpg'} alt='Imagem de Fundo 2' />
+                    <img draggable='false' dragstart='false' src={'/files/wallpaper3.jpg'} alt='Imagem de Fundo 2' />
                 </div>
                 <div className='title-box'>
                     <div className='box__container--main'>

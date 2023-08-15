@@ -13,6 +13,12 @@ const CONFIGS = {
         },
     },
 
+    paginas:{
+        manutencao:{
+            get: true, // true ou false (Se a página de manutenção está ativa ou não)
+        }
+    },
+
     contato:{ // Informações de contato
         list:[ // Lista de horários
             {

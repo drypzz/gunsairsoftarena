@@ -24,7 +24,7 @@ const Navbar = ({id, bool}) => {
             <header id={id}>
                 <nav className='nav'>
                     <a className='logo__div' href='/'>
-                        <img src='../files/transparent.png' className='logo-nav' alt='logo' />
+                        <img draggable='false' dragstart='false' src='../files/transparent.png' className='logo-nav' alt='logo' />
                     </a>
 
                     <div onClick={() => setNavActive(!navActive)} className={`${navActive ? 'active' : ''} nav__menu-bar`} id='nav__menu'>

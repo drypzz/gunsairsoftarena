@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../utils/footer.css';
 
-import { FaInstagram, FaWhatsapp, FaFacebook, FaCcVisa } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaFacebook } from 'react-icons/fa';
 import { CONFIGS } from '@/__config';
 
 const Footer = () => {
@@ -16,19 +16,19 @@ const Footer = () => {
                             <h2 className='custom__footer__box--title'><span>Formas de Pagamento</span></h2>
                             <ul className='custom__footer__box--img'>
                                 <li>
-                                    <img src={'/payments/visa.svg'} alt={'Cartao'} title={'Visa'} />
+                                    <img draggable='false' dragstart='false' src={'/payments/visa.svg'} alt={'Cartao'} title={'Visa'} />
                                 </li>
                                 <li>
-                                    <img src={'/payments/mastercard.svg'} alt={'Cartao'} title={'Mastercard'} />
+                                    <img draggable='false' dragstart='false' src={'/payments/mastercard.svg'} alt={'Cartao'} title={'Mastercard'} />
                                 </li>
                                 <li>
-                                    <img src={'/payments/pix.svg'} alt={'Cartao'} title={'Pix'} />
+                                    <img draggable='false' dragstart='false' src={'/payments/pix.svg'} alt={'Cartao'} title={'Pix'} />
                                 </li>
                                 <li>
-                                    <img src={'/payments/hipercard.svg'} alt={'Cartao'} title={'Hipercard'} />
+                                    <img draggable='false' dragstart='false' src={'/payments/hipercard.svg'} alt={'Cartao'} title={'Hipercard'} />
                                 </li>
                                 <li>
-                                    <img src={'/payments/elo.svg'} alt={'Cartao'} title={'Elo'} />
+                                    <img draggable='false' dragstart='false' src={'/payments/elo.svg'} alt={'Cartao'} title={'Elo'} />
                                 </li>
                             </ul>
                             <div className='dev'>
@@ -76,7 +76,7 @@ const Footer = () => {
                         <p>CNPJ: {CONFIGS.gerais['cnpj']}</p>
                     </div>
                     <div className='footer-content'>
-                        <img src={'/files/transparent.png'} />
+                        <img draggable='false' dragstart='false' src={'/files/transparent.png'} />
                     </div>
                 </div>
             </footer>

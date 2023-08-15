@@ -34,7 +34,7 @@ const Home = () => {
                     <section>
                         <div className='header__logo'>
                             <div>
-                                <img src='../files/transparent.png' className='logo' alt='logo' />
+                                <img draggable='false' dragstart='false' src='../files/transparent.png' className='logo' alt='logo' />
                             </div>
                             <div>
                                 <span className='logo__title'>{CONFIGS.gerais['nome']}</span>
@@ -54,7 +54,7 @@ const Home = () => {
                         <span className='category'>Sobre nós</span>
                         <div className='row'>
                             <div className='content'>
-                                <img src='/files/transparent.png' className='img' />
+                                <img draggable='false' dragstart='false' src='/files/transparent.png' className='img' />
                             </div>
                             <div className='content'>
                                 <p>
