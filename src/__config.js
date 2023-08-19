@@ -21,46 +21,32 @@ const CONFIGS = {
 
     contato:{ // Informações de contato
         list:[ // Lista de horários
-            {
-                Dia: '・segunda-feira', // Dia da semana
-                Aberto: '07:00', // Horário de abertura
-                Fechado: '22:00', // Horário de fechamento
+            {day: '・segunda-feira', open: '07:00', close: '22:00', number: 1,
+                type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 
-            { 
-                Dia: '・terça-feira', // Dia da semana
-                Aberto: '07:00', // Horário de abertura
-                Fechado: '22:00', // Horário de fechamento
+            {day: '・terça-feira', open: '07:00', close: '22:00', number: 2,
+                type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 
-            { 
-                Dia: '・quarta-feira', // Dia da semana
-                Aberto: '07:00', // Horário de abertura
-                Fechado: '22:00', // Horário de fechamento
+            {day: '・quarta-feira', open: '07:00', close: '22:00', number: 3,
+                type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 
-            { 
-                Dia: '・quinta-feira', // Dia da semana
-                Aberto: '07:00', // Horário de abertura
-                Fechado: '22:00', // Horário de fechamento
+            {day: '・quinta-feira', open: '07:00', close: '22:00', number: 4,
+                type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 
-            { 
-                Dia: '・sexta-feira', // Dia da semana
-                Aberto: '07:00', // Horário de abertura
-                Fechado: '22:00', // Horário de fechamento
+            {day: '・sexta-feira', open: '07:00', close: '22:00',number: 5,
+                type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 
-            { 
-                Dia: '・sábado', // Dia da semana
-                Aberto: '07:00', // Horário de abertura
-                Fechado: '22:00', // Horário de fechamento
+            {day: '・sábado', open: '07:00', close: '22:00', number: 6,
+                type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 
-            { 
-                Dia: '・domingo', // Dia da semana
-                Aberto: '07:00', // Horário de abertura
-                Fechado: '22:00', // Horário de fechamento
+            {day: '・domingo', open: '07:00', close: '22:00', number: 0,
+                type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
         ],
     },

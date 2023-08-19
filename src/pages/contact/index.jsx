@@ -16,10 +16,12 @@ import { FaInstagram, FaWhatsapp, FaFacebook, FaMap, FaPhoneAlt, FaRegEnvelope, 
 
 import { CONFIGS, LIST_HOURS } from '@/__config';
 
+import { getDay, getHours, getMinutes } from 'date-fns';
+
 const Contacts = () => {
     const [loading, setLoading] = useState(true);
     const [map, setMap] = useState([]);
-
+    const [getActiveDay, setActiveDay] = useState(0);
     const [getLoadingMap, setLoadingMap] = useState(true);
 
     async function loadMap(){
@@ -44,13 +46,30 @@ const Contacts = () => {
             return `+${cleanedNumber.slice(0, 2)} (${cleanedNumber.slice(2, 3)}) ${cleanedNumber.slice(3, 7)}-${cleanedNumber.slice(7)}`;
         };
     };
+
+    const checkDay = () => {
+        const now = new Date();
+
+        const dayOfWeek = getDay(now);
+        const hours = getHours(now);
+        const minutes = getMinutes(now);
+
+        const getList = LIST_HOURS.find((e) => e.number === dayOfWeek && e.open <= `${hours}:${minutes}` && e.close >= `${hours}:${minutes}`);
+
+        if (getList) {
+            setActiveDay(getList.number);
+        } else {
+            setActiveDay(0);
+        }
+    };
   
     useEffect(() => {
         loadMap();
         setTimeout(() => {
             setLoading(false);
         }, 2000);
-    }, []);
+        checkDay()
+    }, [getActiveDay]);
 
     return (
         <>
@@ -118,9 +137,9 @@ const Contacts = () => {
                                     <h3 className='title--info'>Horário de Funcionamento</h3>
                                     <ul className='contacts-info-item--ul'>
                                         {LIST_HOURS.map((e, index) => (
-                                            <li key={index}>
-                                                <FaClock />{e.Dia}
-                                                <span>{e.Aberto} - {e.Fechado}</span>
+                                            <li className={`${e.number === getActiveDay ? (e.type == 'fechado' ? '' : 'active') : ''}`} key={index}>
+                                                <FaClock />{e.day}
+                                                <span>{e.open} - {e.close}</span>
                                             </li>
                                         ))}
                                     </ul>

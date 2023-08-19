@@ -44,6 +44,10 @@ section .header__logo{
 }
 
 .nav__menu-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     top: 20%;
     right: 5%;
     transform: translate(5%, 30%);
@@ -66,9 +70,17 @@ section .header__logo{
     display: block;
     width: 25px;
     height: 3px;
-    margin: 5px auto;
+    margin: 3px auto;
     transition: all 300ms ease-in-out;
     background-color: #54A824;
+}
+
+.nav__menu-bar div:nth-child(2){
+    width: 20px;
+}
+
+.nav__menu-bar div:nth-child(3){
+    width: 15px;
 }
 
 #nav__menu.active{
@@ -92,6 +104,7 @@ section .header__logo{
 #nav__menu.active div:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
     background-color: #000;
+    width: 25px;
 }
 
 .nav__menu-list{

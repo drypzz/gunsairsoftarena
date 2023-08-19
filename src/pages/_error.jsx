@@ -5,32 +5,31 @@ import Head from 'next/head';
 
 
 import '../app/style/globals.css';
-import './utils/index.css'
+import './utils/index.css';
+import CustomNav from '@/components/customnav/CustomNav';
 
 
-function NotFound({ statusCode }){
+function NotFound(){
 
     return (
         <div>
             <Head>
-                <title>Guns Airsoft Arena - Error</title>
+                <title>Error</title>
             </Head>
+            <CustomNav link='/' text='Error' />
             <div className='error-container'>
                 <div className='error-box'>
                     <div className='error-content just'>
-                        <img src='/files/transparent.png' className='image-logo' />
+                        <img draggable='false' dragstart='false' src='/files/transparent.png' className='image-logo' />
                     </div>
                     <div className='error-content'>
                         <h1>Ops...!</h1>
                     </div>
                     <div className='error-content'>
-                        <h2>Página não encontrada.</h2>
+                        <p>- Ocorreu um erro.</p>
                     </div>
-                    <div className='error-content'>
-                        <h3>Código de Erro: {statusCode === 500 ? 500 : 404}</h3>
-                    </div>
-                    <div className='error-content'>
-                        <p>Volte para a <a href='/'>Página Inicial</a></p>
+                    <div className='error-content btn'>
+                        <a href='/'>Voltar para a Home</a>
                     </div>
                     <div className='error-content just top'>
                         <span>Copyright © Guns Airsoft Arena - {new Date().getFullYear()}</span>
@@ -39,11 +38,6 @@ function NotFound({ statusCode }){
             </div>
         </div>
     )
-};
-
-NotFound.getInitialProps = ({ res, err }) => {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-    return { statusCode };
 };
 
 export default NotFound;
