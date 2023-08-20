@@ -47,29 +47,34 @@ const Contacts = () => {
         };
     };
 
+
+    
     const checkDay = () => {
         const now = new Date();
-
+    
         const dayOfWeek = getDay(now);
         const hours = getHours(now);
         const minutes = getMinutes(now);
 
         const getList = LIST_HOURS.find((e) => e.number === dayOfWeek);
 
-        if (getList.open >= `${hours}:${minutes}` && getList.close <= `${hours}:${minutes}`) {
+        const c = (getList.open <= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}` && getList.close >= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}`);
+
+        if (c === true) {
             setActiveDay(getList.number);
-        } else {
+        }else{
             setActiveDay(null);
-        }
+        };
     };
-  
+
+    
     useEffect(() => {
+        checkDay();
         loadMap();
         setTimeout(() => {
             setLoading(false);
         }, 2000);
-        checkDay()
-    }, [getActiveDay]);
+    }, []);
 
     return (
         <>
