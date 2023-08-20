@@ -1,9 +1,17 @@
+.titlesdop{
+    width: 50%;
+    margin: 0 auto;
+}
+
 .title--info{
     color: #fff;
     margin-bottom: 35px;
     font-size: 24px;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #3e7d1a;
+    padding-bottom: 10px;
 }
 
 .location{
@@ -26,17 +34,17 @@
 .contacts-container{
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
     height: 100%;
     flex-wrap: wrap;
     margin: 0;
+    gap: 50px;
     padding: 0;
 }
 
 .contacts-info{
-    width: auto;
-    margin: 10px;
+    width: 700px;
 }
 
 iframe{
@@ -73,7 +81,6 @@ iframe{
 .contacts-info-item--ul li{
     border-top: 1px solid rgba(255, 255, 255, .2);
     padding: 19.5px 0;
-    color: rgb(166, 55, 55);
     -webkit-transition: all 300ms ease;
     -moz-transition: all 300ms ease;
     -ms-transition: all 300ms ease;
@@ -81,10 +88,6 @@ iframe{
     transition: all 300ms ease;
     cursor: pointer;
     text-transform: capitalize;
-}
-
-.contacts-info-item--ul li.active{
-    color: #54A824;
 }
 
 .contacts-info-item--ul#kasw li{
@@ -125,6 +128,15 @@ iframe{
 
 .contacts-info-item--ul li span{
     float: right;
+}
+
+.contacts-info-item--ul li span#horario{
+    float: none;
+    color: rgb(166, 55, 55);
+}
+
+.contacts-info-item--ul li span.active#horario{
+    color: #54A824;
 }
 
 .container--red{
@@ -174,5 +186,9 @@ iframe{
     .contacts-info:nth-child(1), .contacts-info:nth-child(2){
         border-bottom: 3px solid #54a824;
         padding: 20px 0;
+    }
+
+    .titlesdop{
+        width: 100%;
     }
 }

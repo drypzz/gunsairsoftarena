@@ -16,7 +16,7 @@ import { FaInstagram, FaWhatsapp, FaFacebook, FaMap, FaPhoneAlt, FaRegEnvelope, 
 
 import { CONFIGS, LIST_HOURS } from '@/__config';
 
-import { getDay, getHours, getMinutes } from 'date-fns';
+import { getDay, getHours, getMinutes, set } from 'date-fns';
 
 const Contacts = () => {
     const [loading, setLoading] = useState(true);
@@ -54,12 +54,12 @@ const Contacts = () => {
         const hours = getHours(now);
         const minutes = getMinutes(now);
 
-        const getList = LIST_HOURS.find((e) => e.number === dayOfWeek && e.open <= `${hours}:${minutes}` && e.close >= `${hours}:${minutes}`);
+        const getList = LIST_HOURS.find((e) => e.number === dayOfWeek);
 
-        if (getList) {
+        if (getList.open >= `${hours}:${minutes}` && getList.close <= `${hours}:${minutes}`) {
             setActiveDay(getList.number);
         } else {
-            setActiveDay(0);
+            setActiveDay(null);
         }
     };
   
@@ -119,7 +119,9 @@ const Contacts = () => {
                         <div className='contacts'>
                             <div className='contacts-container'>
                                 <div className='contacts-info'>
-                                    <h3 className='title--info'>Contato</h3>
+                                    <div className='titlesdop'>
+                                        <h3 className='title--info'>Contato</h3>
+                                    </div>
                                     <ul id='kasw' className='contacts-info-item--ul'>
                                         <li>
                                             <a target='_blank' href='https://goo.gl/maps/cxPno5J1cjJEvS1W6'><FaMap />・{CONFIGS.gerais['endereco']}</a>
@@ -134,11 +136,13 @@ const Contacts = () => {
                                 </div>
 
                                 <div className='contacts-info'>
-                                    <h3 className='title--info'>Horário de Funcionamento</h3>
+                                    <div className='titlesdop'>
+                                        <h3 className='title--info'>Horário de Funcionamento</h3>
+                                    </div>
                                     <ul className='contacts-info-item--ul'>
                                         {LIST_HOURS.map((e, index) => (
-                                            <li className={`${e.number === getActiveDay ? (e.type == 'fechado' ? '' : 'active') : ''}`} key={index}>
-                                                <FaClock />{e.day}
+                                            <li key={index}>
+                                                <FaClock />{e.day} - <span id='horario' className={`${e.number === getActiveDay ? (e.type == 'fechado' ? '' : 'active') : ''}`}>{`${e.number === getActiveDay ? (e.type == 'fechado' ? 'Fechado' : 'Aberto') : 'Fechado'}`}</span>
                                                 <span>{e.open} - {e.close}</span>
                                             </li>
                                         ))}
@@ -146,7 +150,9 @@ const Contacts = () => {
                                 </div>
 
                                 <div className='contacts-info'>
-                                    <h3 className='title--info'>NOS ENCONTRE</h3>
+                                    <div className='titlesdop'>
+                                        <h3 className='title--info'>NOS ENCONTRE</h3>
+                                    </div>
                                     <div className='container--red'>
                                         <div className='itens--red'>
                                             <a target='_blank' href={CONFIGS.gerais.redesSociais['instagram']}><FaInstagram/></a>
