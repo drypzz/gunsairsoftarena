@@ -12,22 +12,26 @@ import '../utils/contact.css';
 
 import ClipLoader from 'react-spinners/ClipLoader';
 
-import { FaInstagram, FaWhatsapp, FaFacebook, FaMap, FaPhoneAlt, FaRegEnvelope, FaClock } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaFacebook, FaMap, FaPhoneAlt, FaRegEnvelope, FaClock, FaInfoCircle, FaRegCheckCircle } from 'react-icons/fa';
 
 import { CONFIGS, LIST_HOURS } from '@/__config';
 
-import { getDay, getHours, getMinutes, set } from 'date-fns';
+import { getDay, getHours, getMinutes, addDays, format } from 'date-fns';
 
 const Contacts = () => {
     const [loading, setLoading] = useState(true);
     const [map, setMap] = useState([]);
-    const [getActiveDay, setActiveDay] = useState(0);
+    const [getActiveDay, setActiveDay] = useState(false);
     const [getLoadingMap, setLoadingMap] = useState(true);
+
+    const [getDataNextDay, setDataNextDay] = useState({}); // Armazena os dados do próximo dia
+    const [getActiveNow, setActiveNow] = useState(false); // Verifica se no dia atual o local está aberto ou fechado
+    const [getDataNow, setDataNow] = useState({}); // Armazena os dados do dia atual
 
     async function loadMap(){
         const result = fetch('https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed')
             .then((res) => (
-                setMap(<iframe src={res.url}></iframe>), setTimeout(() => { setLoadingMap(false) }, 5000)
+                setMap(<iframe style={{border: 'none'}} src={res.url}></iframe>), setTimeout(() => { setLoadingMap(false) }, 5000)
             ))
             .catch(() => (
                 setLoadingMap(true), console.log('Erro ao carregar o mapa.')
@@ -46,34 +50,75 @@ const Contacts = () => {
             return `+${cleanedNumber.slice(0, 2)} (${cleanedNumber.slice(2, 3)}) ${cleanedNumber.slice(3, 7)}-${cleanedNumber.slice(7)}`;
         };
     };
-
-
     
-    const checkDay = () => {
+    
+    const getCheckDayActive = () => {
         const now = new Date();
-    
         const dayOfWeek = getDay(now);
         const hours = getHours(now);
         const minutes = getMinutes(now);
-
         const getList = LIST_HOURS.find((e) => e.number === dayOfWeek);
+        
+        const check = (getList.open <= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}` && getList.close >= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}`);
 
-        const c = (getList.open <= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}` && getList.close >= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}`);
+        if(getList.type === 'fechado'){
+            return setActiveNow(false);
+        };
 
-        if (c === true) {
+        if (check === true) {
             setActiveDay(getList.number);
         }else{
-            setActiveDay(null);
+            setActiveDay(false);
+        };
+
+        setActiveNow(check);
+        setDataNow(getList)
+    };
+
+    const getNextDayName = (number) => {
+        const now = new Date();
+
+        const diasDaSemana = {
+            Sunday: 'Dom.',
+            Monday: 'Seg.',
+            Tuesday: 'Ter.',
+            Wednesday: 'Qua.',
+            Thursday: 'Qui.',
+            Friday: 'Sex.',
+            Saturday: 'Sáb.'
+        };
+
+        const nextDay = addDays(now, number);
+        const nextDayName = diasDaSemana[format(nextDay, 'EEEE')];
+        const nextListDay = LIST_HOURS.find((e) => e.number === getDay(nextDay));
+
+        if (nextListDay.type === 'fechado') {
+            if (number < 6) {
+                return getNextDayName(number + 1);
+            } else {
+                setDataNextDay({
+                    hours: 'Fechado',
+                    day: '---',
+                    message: `・Nenhum dia disponível para atendimento`,
+                });
+            }
+        } else {
+            setDataNextDay({
+                hours: nextListDay.open,
+                day: nextDayName,
+                message: `・Abre - ${nextDayName} as ${nextListDay.open}`,
+            });
         };
     };
 
     
     useEffect(() => {
-        checkDay();
+        getCheckDayActive();
         loadMap();
         setTimeout(() => {
             setLoading(false);
         }, 2000);
+        getNextDayName(1)
     }, []);
 
     return (
@@ -144,6 +189,16 @@ const Contacts = () => {
                                     <div className='titlesdop'>
                                         <h3 className='title--info'>Horário de Funcionamento</h3>
                                     </div>
+                                    {getActiveNow != true
+                                    ?
+                                        <div className='hours'>
+                                            <span><FaInfoCircle />{getDataNextDay.message}</span>
+                                        </div>
+                                    :
+                                        <div id='openss' className='hours'>
+                                            <span><FaRegCheckCircle />・Estamos aberto - Fecha as {getDataNow.close}</span>
+                                        </div>
+                                    }
                                     <ul className='contacts-info-item--ul'>
                                         {LIST_HOURS.map((e, index) => (
                                             <li key={index}>

@@ -21,23 +21,23 @@ const CONFIGS = {
 
     contato:{ // Informações de contato
         list:[ // Lista de horários
-            {day: '・segunda-feira', open: '07:00', close: '22:00', number: 1,
+            {day: '・segunda', open: '07:00', close: '22:00', number: 1,
                 type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 
-            {day: '・terça-feira', open: '07:00', close: '22:00', number: 2,
+            {day: '・terça', open: '07:00', close: '22:00', number: 2,
                 type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 
-            {day: '・quarta-feira', open: '07:00', close: '22:00', number: 3,
+            {day: '・quarta', open: '07:00', close: '22:00', number: 3,
                 type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 
-            {day: '・quinta-feira', open: '07:00', close: '22:00', number: 4,
+            {day: '・quinta', open: '07:00', close: '22:00', number: 4,
                 type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 
-            {day: '・sexta-feira', open: '07:00', close: '22:00',number: 5,
+            {day: '・sexta', open: '07:00', close: '22:00',number: 5,
                 type: '', // Se no dia não abrir, coloque 'fechado' no type
             },
 

@@ -14,6 +14,21 @@
     padding-bottom: 10px;
 }
 
+.hours{
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 0, 0, .1);
+    color: #c62828;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.hours#openss{
+    background-color: rgba(0, 255, 0, .1);
+    color: #55c628;
+}
+
+
 .location{
     width: 100%;
     height: 80vh;
@@ -29,6 +44,7 @@
     width: 100%;
     margin: 0;
     padding: 30px;
+    margin: 20px 0;
 }
 
 .contacts-container{
@@ -53,7 +69,7 @@ iframe{
 }
 
 .contacts-info-item--ul{
-    height: 250px;
+    height: 235px;
     overflow-y: scroll;
     padding: 0 6px;
 }
@@ -170,6 +186,11 @@ iframe{
 }
 
 @media screen and (max-width: 960px) {
+
+    .contacts{
+        margin: 0 auto;
+    }
+    
     .contacts-container{
         justify-content: center;
         align-items: center;
