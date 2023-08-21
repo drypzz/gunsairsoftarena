@@ -16,7 +16,7 @@
 
 .hours{
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 15px;
     background-color: rgba(255, 0, 0, .1);
     color: #c62828;
     border-radius: 5px;
@@ -144,6 +144,10 @@ iframe{
 
 .contacts-info-item--ul li span{
     float: right;
+}
+
+.contacts-info-item--ul li span.active{
+    color: #54A824;
 }
 
 .contacts-info-item--ul li span#horario{

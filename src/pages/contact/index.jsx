@@ -93,20 +93,20 @@ const Contacts = () => {
         const nextListDay = LIST_HOURS.find((e) => e.number === getDay(nextDay));
 
         if (nextListDay.type === 'fechado') {
-            if (number < 6) {
+            if (number < (LIST_HOURS.length - 1)) {
                 return getNextDayName(number + 1);
             } else {
                 setDataNextDay({
                     hours: 'Fechado',
                     day: '---',
-                    message: `・Nenhum dia disponível para atendimento`,
+                    message: `・Estamos fechados até o momento.`,
                 });
             }
         } else {
             setDataNextDay({
                 hours: nextListDay.open,
                 day: nextDayName,
-                message: `・Abre - ${nextDayName} as ${nextListDay.open}`,
+                message: `・Fechado - Abre ${nextDayName} as ${nextListDay.open}`,
             });
         };
     };
@@ -192,18 +192,18 @@ const Contacts = () => {
                                     {getActiveNow != true
                                     ?
                                         <div className='hours'>
-                                            <span><FaInfoCircle />{getDataNextDay.message}</span>
+                                            <span><FaInfoCircle />{getDataNextDay['message']}</span>
                                         </div>
                                     :
                                         <div id='openss' className='hours'>
-                                            <span><FaRegCheckCircle />・Estamos aberto - Fecha as {getDataNow.close}</span>
+                                            <span><FaRegCheckCircle />・Aberto - Fecha as {getDataNow['close']}</span>
                                         </div>
                                     }
                                     <ul className='contacts-info-item--ul'>
                                         {LIST_HOURS.map((e, index) => (
                                             <li key={index}>
-                                                <FaClock />{e.day} - <span id='horario' className={`${e.number === getActiveDay ? (e.type == 'fechado' ? '' : 'active') : ''}`}>{`${e.number === getActiveDay ? (e.type == 'fechado' ? 'Fechado' : 'Aberto') : 'Fechado'}`}</span>
-                                                <span>{e.open} - {e.close}</span>
+                                                <FaClock />{e.day} {e.number === getActiveDay ? '-' : ''}<span id='horario' className={`${e.number === getActiveDay ? (e.type == 'fechado' ? '' : 'active') : ''}`}>{`${e.number === getActiveDay ? (e.type == 'fechado' ? ' Fechado' : ' Aberto') : ''}`}</span>
+                                                <span className={`${e.number === getActiveDay ? (e.type == 'fechado' ? '' : 'active') : ''}`}>{e.open} - {e.close}</span>
                                             </li>
                                         ))}
                                     </ul>

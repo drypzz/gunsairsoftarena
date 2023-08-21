@@ -3,7 +3,7 @@
 ## 📰 Informações
 
 - Version: 2.0.5
-- Date update: 20/08/23 - 12:55
+- Date update: 21/08/23 - 15:42
 
 ---
 
