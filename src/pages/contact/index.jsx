@@ -12,7 +12,7 @@ import '../utils/contact.css';
 
 import ClipLoader from 'react-spinners/ClipLoader';
 
-import { FaInstagram, FaWhatsapp, FaFacebook, FaMap, FaPhoneAlt, FaRegEnvelope, FaClock, FaInfoCircle, FaRegCheckCircle } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaFacebook, FaMap, FaPhoneAlt, FaRegEnvelope, FaClock, FaExclamationCircle, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
 
 import { CONFIGS, LIST_HOURS } from '@/__config';
 
@@ -88,6 +88,7 @@ const Contacts = () => {
             Saturday: 'Sáb.'
         };
 
+        const getDaySd = getDay(now);
         const nextDay = addDays(now, number);
         const nextDayName = diasDaSemana[format(nextDay, 'EEEE')];
         const nextListDay = LIST_HOURS.find((e) => e.number === getDay(nextDay));
@@ -102,7 +103,12 @@ const Contacts = () => {
                     message: `・Estamos fechados até o momento.`,
                 });
             }
-        } else {
+        }else if(getDataNow['number'] === getDaySd){
+            setDataNextDay({
+                message: `・Fechado - Abre hoje as ${getDataNow['open']}`,
+                status: 'now',
+            });
+        }else {
             setDataNextDay({
                 hours: nextListDay.open,
                 day: nextDayName,
@@ -119,7 +125,7 @@ const Contacts = () => {
             setLoading(false);
         }, 2000);
         getNextDayName(1)
-    }, []);
+    }, [getDataNow]);
 
     return (
         <>
@@ -191,19 +197,24 @@ const Contacts = () => {
                                     </div>
                                     {getActiveNow != true
                                     ?
-                                        <div className='hours'>
-                                            <span><FaInfoCircle />{getDataNextDay['message']}</span>
+                                        <div className={`hours ${getDataNextDay['status'] === 'now' ? 'warn' : ''}`}>
+                                            <span>{getDataNextDay['status'] === 'now' ? <FaExclamationTriangle /> : <FaExclamationCircle />}{getDataNextDay['message']}</span>
                                         </div>
                                     :
                                         <div id='openss' className='hours'>
-                                            <span><FaRegCheckCircle />・Aberto - Fecha as {getDataNow['close']}</span>
+                                            <span><FaCheckCircle />・Aberto - Fecha as {getDataNow['close']}</span>
                                         </div>
                                     }
                                     <ul className='contacts-info-item--ul'>
                                         {LIST_HOURS.map((e, index) => (
                                             <li key={index}>
-                                                <FaClock />{e.day} {e.number === getActiveDay ? '-' : ''}<span id='horario' className={`${e.number === getActiveDay ? (e.type == 'fechado' ? '' : 'active') : ''}`}>{`${e.number === getActiveDay ? (e.type == 'fechado' ? ' Fechado' : ' Aberto') : ''}`}</span>
-                                                <span className={`${e.number === getActiveDay ? (e.type == 'fechado' ? '' : 'active') : ''}`}>{e.open} - {e.close}</span>
+                                                <FaClock />{e.day} {e.number === getActiveDay ? '-' : ''}
+                                                <span id='horario' className={`${e.number === getActiveDay ? (e.type == 'fechado' ? '' : 'active') : ''}`}>
+                                                    {`${e.number === getActiveDay ? (e.type == 'fechado' ? ' Fechado' : ' Aberto') : ''}`}
+                                                </span>
+                                                <span className={`${e.number === getActiveDay ? (e.type == 'fechado' ? '' : 'active') : ''}`}>
+                                                    {e.open} - {e.close}
+                                                </span>
                                             </li>
                                         ))}
                                     </ul>
