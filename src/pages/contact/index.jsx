@@ -21,9 +21,9 @@ import { getDay, getHours, getMinutes, addDays, format } from 'date-fns';
 const Contacts = () => {
     const [loading, setLoading] = useState(true);
     const [map, setMap] = useState([]);
-    const [getActiveDay, setActiveDay] = useState(false);
     const [getLoadingMap, setLoadingMap] = useState(true);
-
+    
+    const [getActiveDay, setActiveDay] = useState(false); // Verifica se o dia atual é o dia que está aberto
     const [getDataNextDay, setDataNextDay] = useState({}); // Armazena os dados do próximo dia
     const [getActiveNow, setActiveNow] = useState(false); // Verifica se no dia atual o local está aberto ou fechado
     const [getDataNow, setDataNow] = useState({}); // Armazena os dados do dia atual
@@ -51,7 +51,6 @@ const Contacts = () => {
         };
     };
     
-    
     const getCheckDayActive = () => {
         const now = new Date();
         const dayOfWeek = getDay(now);
@@ -61,18 +60,13 @@ const Contacts = () => {
         
         const check = (getList.open <= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}` && getList.close >= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}`);
 
-        if(getList.type === 'fechado'){
-            return setActiveNow(false);
-        };
-
-        if (check === true) {
-            setActiveDay(getList.number);
-        }else{
-            setActiveDay(false);
-        };
-
-        setActiveNow(check);
-        setDataNow(getList)
+        if (getList.type === 'fechado') {
+            setActiveNow(false);
+        } else {
+            setActiveDay(check ? getList.number : false);
+            setActiveNow(check);
+            setDataNow(getList);
+        }
     };
 
     const getNextDayName = (number) => {
@@ -88,7 +82,6 @@ const Contacts = () => {
             Saturday: 'Sáb.'
         };
 
-        const getDaySd = getDay(now);
         const nextDay = addDays(now, number);
         const nextDayName = diasDaSemana[format(nextDay, 'EEEE')];
         const nextListDay = LIST_HOURS.find((e) => e.number === getDay(nextDay));
@@ -103,16 +96,16 @@ const Contacts = () => {
                     message: `・Estamos fechados até o momento.`,
                 });
             }
-        }else if(getDataNow['number'] === getDaySd){
+        }else if(getDay(nextDay) === getDataNow['number']){
             setDataNextDay({
-                message: `・Fechado - Abre hoje as ${getDataNow['open']}`,
+                message: `・Fechado - Abre hoje ás ${getDataNow['open']}`,
                 status: 'now',
             });
         }else {
             setDataNextDay({
                 hours: nextListDay.open,
                 day: nextDayName,
-                message: `・Fechado - Abre ${nextDayName} as ${nextListDay.open}`,
+                message: `・Fechado - Abre ${nextDayName} ás ${nextListDay.open}`,
             });
         };
     };
@@ -120,11 +113,11 @@ const Contacts = () => {
     
     useEffect(() => {
         getCheckDayActive();
+        getNextDayName(1)
         loadMap();
         setTimeout(() => {
             setLoading(false);
         }, 2000);
-        getNextDayName(1)
     }, [getDataNow]);
 
     return (
@@ -202,7 +195,7 @@ const Contacts = () => {
                                         </div>
                                     :
                                         <div id='openss' className='hours'>
-                                            <span><FaCheckCircle />・Aberto - Fecha as {getDataNow['close']}</span>
+                                            <span><FaCheckCircle />・Aberto - Fecha hoje ás {getDataNow['close']}</span>
                                         </div>
                                     }
                                     <ul className='contacts-info-item--ul'>
