@@ -1,0 +1,92 @@
+{
+    "gerais": {
+        "nome": "Guns Airsoft Arena",
+        "nomeCurto": "Guns Airsoft",
+
+        "cnpj": "44.433.534/0001-87",
+
+        "telefone": "554797519814",
+
+        "email": "gunsairsoftarena@gmail.com",
+
+        "endereco": "Rua Boehmerwald, 170 - Boehmerwald, Joinville - SC, 89219-731",
+
+        "redesSociais": {
+            "facebook": "https://www.facebook.com/gunsairsoftarena/",
+            "instagram": "https://www.instagram.com/gunsairsoftarena/"
+        }
+
+    },
+
+    "paginas": {
+
+        "manutencao": {
+            "get": true
+        }
+
+    },
+
+    "contato": {
+        "list": [
+            { "day": "・segunda", "open": "07:00", "close": "22:00", "number": 1,
+                "type": ""
+            },
+
+            { "day": "・terça", "open": "07:00", "close": "22:00", "number": 2,
+                "type": ""
+            },
+
+            { "day": "・quarta", "open": "07:00", "close": "22:00", "number": 3,
+                "type": ""
+            },
+
+            { "day": "・quinta", "open": "07:00", "close": "22:00", "number": 4,
+                "type": ""
+            },
+
+            { "day": "・sexta", "open": "07:00", "close": "22:00", "number": 5,
+                "type": ""
+            },
+
+            { "day": "・sábado", "open": "07:00", "close": "22:00", "number": 6,
+                "type": ""
+            },
+
+            { "day": "・domingo", "open": "07:00", "close": "22:00", "number": 0,
+                "type": ""
+            }
+        ]
+    },
+
+    "valores": {
+        "pacotes": {
+            "recruta": {
+                "valor": 30,
+                "bbsBase": 100,
+                "valorRecarga": 20
+            },
+
+            "atirador": {
+                "valor": 60,
+                "bbsBase": 300,
+                "valorRecarga": 15
+            }
+        },
+
+        "descontos": {
+            "desconto": false,
+
+            "pacotes": {
+                "recruta": {
+                    "valor": 25,
+                    "valorRecarga": 20
+                },
+
+                "atirador": {
+                    "valor": 55,
+                    "valorRecarga": 15
+                }
+            }
+        }
+    }
+}

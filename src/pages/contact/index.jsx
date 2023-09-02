@@ -96,11 +96,6 @@ const Contacts = () => {
                     message: `・Estamos fechados até o momento.`,
                 });
             }
-        }else if(getDay(nextDay) === getDataNow['number']){
-            setDataNextDay({
-                message: `・Fechado - Abre hoje ás ${getDataNow['open']}`,
-                status: 'now',
-            });
         }else {
             setDataNextDay({
                 hours: nextListDay.open,
