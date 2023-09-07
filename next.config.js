@@ -1,4 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+import TerserPlugin from 'terser-webpack-plugin';
 
-module.exports = nextConfig
+export function webpack(config, { isServer }) {
+    if (!isServer) {
+        config.optimization.minimize = true;
+        config.optimization.minimizer = [
+            new TerserPlugin({
+                terserOptions: {
+                    compress: {},
+                    mangle: true,
+                },
+            }),
+        ];
+    }
+
+    return config;
+}

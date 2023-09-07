@@ -2,8 +2,8 @@
 
 ## 📰 Informações
 
-- Version: 2.2.0
-- Date update: 02/09/23 - 20:43
+- Version: 2.5.0
+- Date update: 06/09/23 - 21:19
 
 ---
 
@@ -12,6 +12,7 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - JSX
+- Node JS
 - CSS
 - NextJS
 
@@ -38,12 +39,14 @@ npm i
 ```js
 {
   "name": "gunsairsoftarena",
+  "type": "module",
   "homepage": "https://gunsairsoftarena.com.br",
     
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.0",
     "aos": "^2.3.4",
     "autoprefixer": "10.4.14",
+    "date-fns": "^2.30.0",
     "next": "^13.4.4",
     "postcss": "8.4.23",
     "react": "^18.2.0",
@@ -52,9 +55,13 @@ npm i
     "react-icons": "^4.8.0",
     "react-responsive-carousel": "^3.2.23",
     "react-spinners": "^0.13.8",
-    "styled-jsx": "^5.1.2",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.3"
   },
+
+  "devDependencies": {
+    "terser": "^5.19.4",
+    "terser-webpack-plugin": "^5.3.9"
+  }
 }
 ```
 
