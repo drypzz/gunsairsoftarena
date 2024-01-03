@@ -17,16 +17,27 @@ const Midia = () => {
     const [getSection, setSection] = useState(0);
     const [activeButton, setActiveButton] = useState(0);
 
+    const [toast, setToast] = useState({ src: '', display: 'none' });
+
     const handleButtonClick = (sectionNumber) => {
         setSection(sectionNumber);
         setActiveButton(sectionNumber);
     };
+
+    const handleToast = (src) => {
+        setToast({src: src, display: 'flex'});
+    }
   
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
         }, 2000);
-    }, []);
+        if (toast.display === 'flex') {
+            document.body.classList.add('lock-scroll');
+        } else {
+            document.body.classList.remove('lock-scroll');
+        }
+    }, [toast]);
 
     return (
         <>
@@ -88,7 +99,7 @@ const Midia = () => {
                             <div className='galery'>
                                 {CONFIGS['galeria'].solo.map((e, index) => (
                                     <div className='galery-item' key={index}>
-                                        <img src={e} alt={`Foto ${index}`} />
+                                        <img onClick={() => handleToast(e)} src={e} alt={`Foto ${index}`} />
                                     </div>
                                 ))}
                             </div>
@@ -98,13 +109,23 @@ const Midia = () => {
                             <div className='galery'>
                                 {CONFIGS['galeria'].groups.map((e, index) => (
                                     <div className='galery-item' key={index}>
-                                        <img src={e} alt={`Foto ${index}`} />
+                                        <img onClick={() => handleToast(e)} src={e} alt={`Foto ${index}`} />
                                     </div>
                                 ))}
                             </div>
                         ) : null}
 
                     </div>
+
+                    {toast !== '' ? (
+                        <>
+                            <div style={{ display: (toast.display) }} onClick={() => (toast.display === 'flex' ? setToast({ src: '', display: 'none' }) : null)} className='toast'>
+                                <div className='toast--item'>
+                                    <img src={toast.src} alt='Transparent' />
+                                </div>
+                            </div>
+                        </>
+                    ) : null}
 
                     <Footer />
                 </div>

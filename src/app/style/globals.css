@@ -27,6 +27,11 @@ body{
   color: #f4f4f4!important;
   overflow-x: hidden!important;
   background-color: #000!important;
+  overflow: auto;
+}
+
+body.lock-scroll {
+  overflow: hidden;
 }
 
 img, svg{
