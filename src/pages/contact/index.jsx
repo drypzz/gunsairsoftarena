@@ -28,17 +28,11 @@ const Contacts = () => {
     const [getActiveNow, setActiveNow] = useState(false); // Verifica se no dia atual o local está aberto ou fechado
     const [getDataNow, setDataNow] = useState({}); // Armazena os dados do dia atual
 
-    async function loadMap(){
-        const result = fetch('https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed')
-            .then((res) => (
-                setMap(<iframe style={{border: 'none'}} src={res.url}></iframe>), setTimeout(() => { setLoadingMap(false) }, 5000)
-            ))
-            .catch(() => (
-                setLoadingMap(true), console.log('Erro ao carregar o mapa.')
-            )
-        );
-
-        return result;
+    async function loadMap() {
+        setMap(<iframe style={{ border: 'none' }} src="https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed"></iframe>);
+        setTimeout(() => {
+            setLoadingMap(false)
+        }, 5000);
     };
 
     const formatPhoneNumber = (phoneNumber) => {
@@ -69,9 +63,8 @@ const Contacts = () => {
         }
     };
 
-    const getNextDayName = (number) => {
+    const waitForNextOpening = async (number) => {
         const now = new Date();
-
         const diasDaSemana = {
             Sunday: 'Dom.',
             Monday: 'Seg.',
@@ -81,34 +74,80 @@ const Contacts = () => {
             Friday: 'Sex.',
             Saturday: 'Sáb.'
         };
-
+    
         const nextDay = addDays(now, number);
         const nextDayName = diasDaSemana[format(nextDay, 'EEEE')];
         const nextListDay = LIST_HOURS.find((e) => e.number === getDay(nextDay));
-
+    
         if (nextListDay.type === 'fechado') {
-            if (number < (LIST_HOURS.length - 1)) {
-                return getNextDayName(number + 1);
+            if (number < LIST_HOURS.length - 1) {
+                return waitForNextOpening(number + 1);
             } else {
-                setDataNextDay({
+                return {
                     hours: 'Fechado',
                     day: '---',
                     message: `・Estamos fechados até o momento.`,
-                });
+                };
             }
-        }else {
-            setDataNextDay({
+        } else {
+            return {
                 hours: nextListDay.open,
                 day: nextDayName,
                 message: `・Atendimento Fechado - Aberto ${nextDayName} ás ${nextListDay.open}`,
-            });
-        };
+            };
+        }
     };
 
+    const fetchNationalHolidays = async (countryCode, year) => {
+        try {
+            const response = await fetch(`https://date.nager.at/api/v2/PublicHolidays/${year}/${countryCode}`);
+            const holidays = await response.json();
+            return holidays;
+        } catch (error) {
+            console.error(error);
+            return [];
+        }
+    };
     
     useEffect(() => {
         getCheckDayActive();
-        getNextDayName(1)
+    
+        fetchNationalHolidays('BR', new Date().getFullYear()).then(async (res) => {
+            const now = new Date();
+            const dayOfWeek = getDay(now);
+    
+            const getList = LIST_HOURS.find((e) => e.number === dayOfWeek);
+    
+            const holidays = res.filter((e) => e.date.split('-')[1] == (now.getMonth() + 1) && e.date.split('-')[2] == now.getDate());
+    
+            if (holidays.length > 0) {
+                setActiveDay(false);
+                setActiveNow(false);
+                setDataNextDay({
+                    message: `・Atendimento Fechado (${holidays[0].localName})`,
+                });
+            } else {
+                setActiveDay(getList.number);
+                setActiveNow(getList.type === 'fechado' ? false : true);
+                setDataNow(getList);
+    
+                const hours = getHours(now);
+                const minutes = getMinutes(now);
+                const isAfterClosingTime = hours > parseInt(getList.close.split(':')[0]) || (hours === parseInt(getList.close.split(':')[0]) && minutes >= parseInt(getList.close.split(':')[1]));
+    
+                if (isAfterClosingTime || getList.type === 'fechado') {
+                    setActiveDay(false);
+                    setActiveNow(false);
+    
+                    const nextOpeningData = await waitForNextOpening(1);
+    
+                    setDataNextDay({
+                        message: nextOpeningData.message,
+                    });
+                }
+            }
+        });
+    
         loadMap();
         setTimeout(() => {
             setLoading(false);
