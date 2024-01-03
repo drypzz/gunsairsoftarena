@@ -100,7 +100,7 @@ const Contacts = () => {
             setDataNextDay({
                 hours: nextListDay.open,
                 day: nextDayName,
-                message: `・Fechado - Abre ${nextDayName} ás ${nextListDay.open}`,
+                message: `・Atendimento Fechado - Aberto ${nextDayName} ás ${nextListDay.open}`,
             });
         };
     };
@@ -190,7 +190,7 @@ const Contacts = () => {
                                         </div>
                                     :
                                         <div id='openss' className='hours'>
-                                            <span><FaCheckCircle />・Aberto - Fecha hoje ás {getDataNow['close']}</span>
+                                            <span><FaCheckCircle />・Atendimento Online - Encerra hoje ás {getDataNow['close']}</span>
                                         </div>
                                     }
                                     <ul className='contacts-info-item--ul'>

@@ -9,7 +9,7 @@ const MENU_LIST = [
     {text: '・Inicio', href: '/', icon: <FaHome />},
     {text: '・Equipamentos', href: '/equipaments', icon: <FaShieldAlt />},
     {text: '・Modos de Jogo', href: '/games', icon: <FaShareAlt />},
-    {text: '・Fotos', href: '/midia', icon: <FaPhotoVideo />},
+    {text: '・Galeria', href: '/midia', icon: <FaPhotoVideo />},
     {text: '・Valores', href: '/values', icon: <FaMoneyBillAlt />},
     {text: '・Contato', href: '/contact', icon: <FaPhoneSquareAlt />},
 ]

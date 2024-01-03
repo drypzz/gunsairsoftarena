@@ -9,12 +9,18 @@ import CustomNav from '@/components/customnav/CustomNav';
 import LoadingScreen from '@/components/loading/Loading';
 
 import '../utils/midia.css';
-import { CarouselPhotos, CarouselPhotos2 } from '@/components/carousel/Carousel';
 
 import { CONFIGS } from '@/__config';
 
 const Midia = () => {
     const [loading, setLoading] = useState(true);
+    const [getSection, setSection] = useState(0);
+    const [activeButton, setActiveButton] = useState(0);
+
+    const handleButtonClick = (sectionNumber) => {
+        setSection(sectionNumber);
+        setActiveButton(sectionNumber);
+    };
   
     useEffect(() => {
         setTimeout(() => {
@@ -59,24 +65,45 @@ const Midia = () => {
                     </Head>
                     <Navbar bool={3} />
                     
-                    <CustomNav link='/' text='Fotos' />
+                    <CustomNav link='/' text='Galeria' />
 
-                    <div>
-                        <div className='title'>
-                            <h1>Fotos</h1>
-                            <p>Confira algumas fotos de nossos clientes aqui na Guns Airsoft Arena!</p>
-                        </div>
-                    </div>
+                    <div style={{marginBottom: 50}}>
+                        <div style={{marginBottom: 20}}>
+                            <div className='title'>
+                                <h1>Galeria</h1>
+                                <p>Escolha entre uma das opções abaixo.</p>
+                            </div>
 
-                    <div className='modal'>
-                        <div className='modal-container'>
-                            <div className='modal-content'>
-                                <CarouselPhotos />
-                            </div>
-                            <div className='modal-content'>
-                                <CarouselPhotos2 />
+                            <div className='button-galery'>
+                                <div className='button-galery--item'>
+                                    <button className={activeButton === 0 ? 'active' : ''} onClick={() => handleButtonClick(0)}>Diversas</button>
+                                </div>
+                                <div className='button-galery--item'>
+                                    <button className={activeButton === 1 ? 'active' : ''} onClick={() => handleButtonClick(1)}>Turma(s)</button>
+                                </div>
                             </div>
                         </div>
+
+                        {getSection === 0 ? (
+                            <div className='galery'>
+                                {CONFIGS['galeria'].solo.map((e, index) => (
+                                    <div className='galery-item' key={index}>
+                                        <img src={e} alt={`Foto ${index}`} />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : null}
+
+                        {getSection === 1 ? (
+                            <div className='galery'>
+                                {CONFIGS['galeria'].groups.map((e, index) => (
+                                    <div className='galery-item' key={index}>
+                                        <img src={e} alt={`Foto ${index}`} />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : null}
+
                     </div>
 
                     <Footer />

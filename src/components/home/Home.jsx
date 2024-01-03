@@ -9,7 +9,7 @@ import LoadingScreen from '../loading/Loading';
 
 import { FaWhatsapp, FaRegPaperPlane } from 'react-icons/fa';
 
-import { CarouselHome } from './../carousel/Carousel';
+import CarouselHome from './../carousel/Carousel';
 
 import './../utils/home.css';
 import { CONFIGS } from '@/__config';

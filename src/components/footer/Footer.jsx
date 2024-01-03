@@ -42,7 +42,7 @@ const Footer = () => {
                                 <li><a href='/'>{'•'} Inicio</a></li>
                                 <li><a href='/equipaments'>{'•'} Equipamentos</a></li>
                                 <li><a href='/games'>{'•'} Modos de Jogo</a></li>
-                                <li><a href='/midia'>{'•'} Fotos</a></li>
+                                <li><a href='/midia'>{'•'} Galeria</a></li>
                                 <li><a href='/values'>{'•'} Valores</a></li>
                                 <li><a href='/contact'>{'•'} Contato</a></li>
                             </ul>
