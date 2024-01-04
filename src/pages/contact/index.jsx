@@ -51,9 +51,9 @@ const Contacts = () => {
         const hours = getHours(now);
         const minutes = getMinutes(now);
         const getList = LIST_HOURS.find((e) => e.number === dayOfWeek);
-        
-        const check = (getList.open <= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}` && getList.close >= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}`);
 
+        const check = (getList.open <= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}` && getList.close >= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}`);
+    
         if (getList.type === 'fechado') {
             setActiveNow(false);
         } else {
@@ -136,11 +136,11 @@ const Contacts = () => {
                 const isAfterClosingTime = hours > parseInt(getList.close.split(':')[0]) || (hours === parseInt(getList.close.split(':')[0]) && minutes >= parseInt(getList.close.split(':')[1]));
     
                 if (isAfterClosingTime || getList.type === 'fechado') {
+                    const nextOpeningData = await waitForNextOpening(1);
+                
                     setActiveDay(false);
                     setActiveNow(false);
-    
-                    const nextOpeningData = await waitForNextOpening(1);
-    
+                
                     setDataNextDay({
                         message: nextOpeningData.message,
                     });
