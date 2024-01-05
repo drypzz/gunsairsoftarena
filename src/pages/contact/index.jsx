@@ -29,7 +29,7 @@ const Contacts = () => {
     const [getDataNow, setDataNow] = useState({}); // Armazena os dados do dia atual
 
     async function loadMap() {
-        setMap(<iframe style={{ border: 'none' }} src="https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed"></iframe>);
+        setMap(<iframe style={{ border: 'none' }} src='https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed'></iframe>);
         setTimeout(() => {
             setLoadingMap(false)
         }, 5000);
@@ -51,12 +51,11 @@ const Contacts = () => {
         const hours = getHours(now);
         const minutes = getMinutes(now);
         const getList = LIST_HOURS.find((e) => e.number === dayOfWeek);
-
-        const check = (getList.open <= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}` && getList.close >= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}`);
     
-        if (getList.type === 'fechado') {
+        if (getList.type.toLowerCase() === 'fechado') {
             setActiveNow(false);
         } else {
+            const check = (getList.open <= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}` && getList.close >= `${(hours <= 9 ? `0${hours}` : hours)}:${minutes}`);
             setActiveDay(check ? getList.number : false);
             setActiveNow(check);
             setDataNow(getList);
@@ -84,15 +83,11 @@ const Contacts = () => {
                 return waitForNextOpening(number + 1);
             } else {
                 return {
-                    hours: 'Fechado',
-                    day: '---',
                     message: `・Estamos fechados até o momento.`,
                 };
             }
         } else {
             return {
-                hours: nextListDay.open,
-                day: nextDayName,
                 message: `・Atendimento Fechado - Aberto ${nextDayName} ás ${nextListDay.open}`,
             };
         }
@@ -127,22 +122,24 @@ const Contacts = () => {
                     message: `・Atendimento Fechado (${holidays[0].localName})`,
                 });
             } else {
-                setActiveDay(getList.number);
-                setActiveNow(getList.type === 'fechado' ? false : true);
-                setDataNow(getList);
-    
                 const hours = getHours(now);
                 const minutes = getMinutes(now);
+
                 const isAfterClosingTime = hours > parseInt(getList.close.split(':')[0]) || (hours === parseInt(getList.close.split(':')[0]) && minutes >= parseInt(getList.close.split(':')[1]));
-    
+
                 if (isAfterClosingTime || getList.type === 'fechado') {
                     const nextOpeningData = await waitForNextOpening(1);
-                
+
                     setActiveDay(false);
                     setActiveNow(false);
-                
+
                     setDataNextDay({
                         message: nextOpeningData.message,
+                    });
+                }else{
+                    setDataNextDay({
+                        status: 'warn',
+                        message: `・Atendimento Fechado - Aberto hoje ás ${getList.open}`,
                     });
                 }
             }
@@ -222,10 +219,10 @@ const Contacts = () => {
                                     <div className='titlesdop'>
                                         <h3 className='title--info'>Horário de Funcionamento</h3>
                                     </div>
-                                    {getActiveNow != true
+                                    {getActiveNow !== true
                                     ?
-                                        <div className={`hours ${getDataNextDay['status'] === 'now' ? 'warn' : ''}`}>
-                                            <span>{getDataNextDay['status'] === 'now' ? <FaExclamationTriangle /> : <FaExclamationCircle />}{getDataNextDay['message']}</span>
+                                        <div className={`hours ${getDataNextDay['status'] === 'warn' ? 'warn' : ''}`}>
+                                            <span>{getDataNextDay['status'] === 'warn' ? <FaExclamationTriangle /> : <FaExclamationCircle />}{getDataNextDay['message']}</span>
                                         </div>
                                     :
                                         <div id='openss' className='hours'>
