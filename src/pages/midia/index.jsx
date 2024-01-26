@@ -1,5 +1,8 @@
 'use client';
 
+import fs from 'fs';
+import path from 'path';
+
 import React, {useState, useEffect} from 'react';
 import Head from 'next/head';
 
@@ -12,11 +15,10 @@ import '../utils/midia.css';
 
 import { CONFIGS } from '@/__config';
 
-const Midia = () => {
+const Midia = ({ galleryItems }) => {
     const [loading, setLoading] = useState(true);
     const [getSection, setSection] = useState(0);
     const [activeButton, setActiveButton] = useState(0);
-
     const [toast, setToast] = useState({ src: '', display: 'none' });
 
     const handleButtonClick = (sectionNumber) => {
@@ -75,11 +77,9 @@ const Midia = () => {
                         <title>{CONFIGS.gerais['nome']} - Fotos</title>
                     </Head>
                     <Navbar bool={3} />
-                    
                     <CustomNav link='/' text='Galeria' />
-
-                    <div style={{marginBottom: 50}}>
-                        <div style={{marginBottom: 20}}>
+                    <div style={{ marginBottom: 50 }}>
+                        <div style={{ marginBottom: 20 }}>
                             <div className='title'>
                                 <h1>Galeria</h1>
                                 <p>Escolha entre uma das opções abaixo.</p>
@@ -87,19 +87,23 @@ const Midia = () => {
 
                             <div className='button-galery'>
                                 <div className='button-galery--item'>
-                                    <button className={activeButton === 0 ? 'active' : ''} onClick={() => handleButtonClick(0)}>Diversas</button>
+                                    <button className={activeButton === 0 ? 'active' : ''} onClick={() => handleButtonClick(0)}>
+                                        Diversas
+                                    </button>
                                 </div>
                                 <div className='button-galery--item'>
-                                    <button className={activeButton === 1 ? 'active' : ''} onClick={() => handleButtonClick(1)}>Turma(s)</button>
+                                    <button className={activeButton === 1 ? 'active' : ''} onClick={() => handleButtonClick(1)}>
+                                        Turma(s)
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
                         {getSection === 0 ? (
                             <div className='galery'>
-                                {CONFIGS['galeria'].solo.map((e, index) => (
+                                {galleryItems.solo.map((e, index) => (
                                     <div className='galery-item' key={index}>
-                                        <img onClick={() => handleToast(e)} src={e} alt={`Foto ${index}`} />
+                                        <img onClick={() => handleToast(`/galery/solos/${e}`)} src={`/galery/solos/${e}`} alt={`Foto ${index}`} />
                                     </div>
                                 ))}
                             </div>
@@ -107,19 +111,18 @@ const Midia = () => {
 
                         {getSection === 1 ? (
                             <div className='galery'>
-                                {CONFIGS['galeria'].groups.map((e, index) => (
-                                    <div className='galery-item' key={index}>
-                                        <img onClick={() => handleToast(e)} src={e} alt={`Foto ${index}`} />
-                                    </div>
+                                {galleryItems.groups.map((e, index) => (
+                                <div className='galery-item' key={index}>
+                                    <img onClick={() => handleToast(`/galery/groups/${e}`)} src={`/galery/groups/${e}`} alt={`Foto ${index}`} />
+                                </div>
                                 ))}
                             </div>
-                        ) : null}
-
+                            ) : null}
                     </div>
 
                     {toast !== '' ? (
                         <>
-                            <div style={{ display: (toast.display) }} onClick={() => (toast.display === 'flex' ? setToast({ src: '', display: 'none' }) : null)} className='toast'>
+                            <div style={{ display: toast.display }} onClick={() => (toast.display === 'flex' ? setToast({ src: '', display: 'none' }) : null)} className='toast'>
                                 <div className='toast--item'>
                                     <img src={toast.src} alt='Transparent' />
                                 </div>
@@ -133,5 +136,24 @@ const Midia = () => {
         </>
     )
 };
+
+export async function getStaticProps() {
+    const soloDirectory = path.join(process.cwd(), 'public/galery/solos/');
+    const groupsDirectory = path.join(process.cwd(), 'public/galery/groups/');
+  
+    const soloFiles = fs.readdirSync(soloDirectory);
+    const groupsFiles = fs.readdirSync(groupsDirectory);
+  
+    const galleryItems = {
+        solo: soloFiles,
+        groups: groupsFiles,
+    };
+  
+    return {
+        props: {
+            galleryItems,
+        },
+    };
+}
 
 export default Midia;
