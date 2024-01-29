@@ -74,7 +74,7 @@
         },
 
         "descontos": {
-            "desconto": true,
+            "desconto": false,
 
             "pacotes": {
                 "recruta": {

@@ -76,7 +76,7 @@ const Midia = ({ galleryItems }) => {
                         
                         <title>{CONFIGS.gerais['nome']} - Fotos</title>
                     </Head>
-                    <Navbar bool={3} />
+                    <Navbar bool={1} />
                     <CustomNav link='/' text='Galeria' />
                     <div style={{ marginBottom: 50 }}>
                         <div style={{ marginBottom: 20 }}>

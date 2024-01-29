@@ -63,7 +63,7 @@ const Values = () => {
                         
                         <title>{CONFIGS.gerais['nome']} - Valores</title>
                     </Head>
-                    <Navbar bool={4} />
+                    <Navbar bool={2} />
                     <CustomNav link='/' text='Valores' />
                     <div className='main'>
                         <div className='title'>

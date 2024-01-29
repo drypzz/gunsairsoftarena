@@ -29,7 +29,7 @@ const Contacts = () => {
     const [getDataNow, setDataNow] = useState({}); // Armazena os dados do dia atual
 
     async function loadMap() {
-        setMap(<iframe style={{ border: 'none' }} src='https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed'></iframe>);
+        setMap(<iframe style={{ border: 'none' }} src='https://maps.google.com/maps?q=Guns+Airsoft+Arena&t=&z=17&ie=UTF8&iwloc=&output=embed&sa'></iframe>);
         setTimeout(() => {
             setLoadingMap(false)
         }, 5000);
@@ -186,7 +186,7 @@ const Contacts = () => {
                         
                         <title>{CONFIGS.gerais['nome']} - Contato</title>
                     </Head>
-                    <Navbar bool={5} />
+                    <Navbar bool={3} />
                     <CustomNav link='/' text='Contato' />
                     <div className='main'>
                         <div className='title'>
