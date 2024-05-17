@@ -20,7 +20,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-- Este é um projeto em "Desenvolvimento" para Guns Arena Airsoft
+- Este é um projeto foi feito para estudos.
 
 ---
 
