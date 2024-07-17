@@ -1,0 +1,24 @@
+.guns-error-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    background-color: var(--color-background);
+}
+
+.guns-error-page-content{
+    width: 100%;
+    text-align: center;
+}
+
+.guns-error-page-content p{
+    font-size: 1.5rem;
+    color: var(--color-gray);
+}
+
+.guns-error-page-content h1{
+    font-size: 15rem;
+    color: var(--color-white);
+}
