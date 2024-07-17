@@ -130,7 +130,7 @@ header{
 }
 
 .guns-navbar-link::before{
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 2px;
@@ -168,7 +168,7 @@ header{
     }
 
     .guns-navbar-link::before{
-        content: '';
+        content: "";
         position: absolute;
         width: 0%;
         height: 1px;
