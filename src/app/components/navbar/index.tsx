@@ -6,7 +6,7 @@ import { FaRegPaperPlane } from "react-icons/fa";
 
 import NavItem from "./item";
 import { NavbarProps } from "./props";
-import { NavbarMenu } from "./list";
+import { NavbarMenu } from "./menu";
 
 import "./index.style.css";
 

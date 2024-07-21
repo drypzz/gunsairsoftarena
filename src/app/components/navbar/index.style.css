@@ -9,15 +9,13 @@ header{
     padding: 20px 10px;
     justify-content: space-between;
     align-items: center;
-    background-color: #0b0b0b;
-    border-bottom: 1px solid #54A824;
+    background-color: var(--color-navbar);
 }
 
 .guns-navbar-logo img{
     display: block;
-    width: 100px;
+    width: 120px;
     height: auto;
-    padding-left: 10px;
 }
 
 .guns-navbar-button{
@@ -27,15 +25,15 @@ header{
 
 .guns-navbar-button a{
     padding: 10px 20px;
-    color: #54A824;
-    border: 1px solid #54A824;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
     border-radius: 5px;
     transition: all .5s ease-in-out;
 }
 
 .guns-navbar-button a:hover{
-    background-color: #54A824;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .guns-navbar-menu{
@@ -48,17 +46,17 @@ header{
     transform: translate(5%, 30%);
     position: absolute;
     cursor: pointer;
-    background-color: #000;
+    background-color: var(--color-navbar);
     padding: 5px 10px;
     transition: all 300ms ease-in-out;
 }
 
 .guns-navbar-menu:hover{
-    background-color: #fff;
+    background-color: var(--color-white);
 }
 
 .guns-navbar-menu:hover div{
-    background-color: #000;
+    background-color: var(--color-navbar);
 }
 
 .guns-navbar-menu div{
@@ -67,7 +65,7 @@ header{
     height: 3px;
     margin: 3px auto;
     transition: all 300ms ease-in-out;
-    background-color: #54A824;
+    background-color: var(--color-primary);
 }
 
 .guns-navbar-menu div:nth-child(2){
@@ -79,17 +77,17 @@ header{
 }
 
 #guns-menu.active{
-    background-color: #fff;
+    background-color: var(--color-white);
     overflow: hidden;
 }
 
 #guns-menu.active:hover div:nth-child(1), #guns-menu.active:hover div:nth-child(3){
-    background-color: #54A824;
+    background-color: var(--color-primary);
 }
 
 #guns-menu.active div:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
-    background-color: #000;
+    background-color: var(--color-navbar);
 }
 
 #guns-menu.active div:nth-child(2){
@@ -98,7 +96,7 @@ header{
 
 #guns-menu.active div:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-    background-color: #000;
+    background-color: var(--color-navbar);
     width: 25px;
 }
 
@@ -106,15 +104,15 @@ header{
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 123px;
+    top: 150px;
     width: 100%;
     row-gap: 24px;
     right: -100%;
-    align-items: flex-start;
+    align-items: flex-end;
     padding: 24px 16px;
     transition: all 200ms ease-in-out;
     min-height: calc(100vh - 60px);
-    background-color: #0b0b0b;
+    background-color: var(--color-navbar);
 }
 
 .guns-navbar-list.active{
@@ -123,7 +121,7 @@ header{
 
 .guns-navbar-link{
     font-size: 17px;
-    color: #ffffff;
+    color: var(--color-white);
     position: relative;
     transition: all 200ms ease-in-out;
     text-transform: capitalize;
@@ -136,20 +134,25 @@ header{
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #54A824;
+    background-color: var(--color-primary);
     transition: all 200ms ease-in-out;
 }
   
 .guns-navbar-link:hover{
-    color: #54A824;
+    color: var(--color-primary);
 }   
   
 .guns-navbar-link.active{
-    color: #54A824;
+    color: var(--color-primary);
 }
 
 
 @media screen and (min-width: 960px) {    
+
+    .guns-navbar{
+        justify-content: space-around;
+    }
+
     .guns-navbar-menu{
         display: none;
     }
@@ -174,7 +177,7 @@ header{
         height: 1px;
         bottom: -1px;
         left: 0;
-        background-color: #54A824;
+        background-color: var(--color-primary);
         transition: all .3s ease-in-out;
     }
     
