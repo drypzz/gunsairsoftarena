@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { FaRegPaperPlane } from "react-icons/fa";
+import ButtonStyled from "../buttonStyled";
 
 import NavItem from "./item";
 import { NavbarProps } from "./props";
@@ -35,9 +35,7 @@ const Navbar = ({ number }: NavbarProps) => {
                         })
                     }
                     <div className="guns-navbar-button">
-                        <a target="_blank" href={`https://api.whatsapp.com/send?phone=554796573081&text=${encodeURIComponent("Olá! Gostaria de marcar um game, quais os valores?")}`}>
-                            <FaRegPaperPlane />・Reserve Agora
-                        </a>
+                        <ButtonStyled number="554796573081" desc="Olá! Gostaria de marcar um game, quais os valores?" text="Reserve Agora" />
                     </div>
                 </div>
             </nav>

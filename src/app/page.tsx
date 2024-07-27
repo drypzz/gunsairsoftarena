@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import Navbar from "./components/navbar";
 import LoadinScreen from "./components/loading";
+import CarouselContainer from "./components/carousel";
 
 const HomePage = () => {
 
@@ -22,9 +23,7 @@ const HomePage = () => {
       :
         <main>  
           <Navbar number={0} />
-          <div>
-            <h1>Home Page</h1>
-          </div>
+          <CarouselContainer />
         </main>
       }
     </>

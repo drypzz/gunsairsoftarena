@@ -1,0 +1,13 @@
+.guns-button-styled{
+    padding: 10px 20px;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    transition: all .4s ease-in-out;
+    user-select: none;
+}
+
+.guns-button-styled:hover{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
