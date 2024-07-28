@@ -22,12 +22,12 @@ const CarouselContainer = () => {
         >
             <div className="guns-custom-carousel-container">
                 <div className="guns-custom-carousel-wallpaper">
-                    <img src="/wallpaper/1.jpg" alt="Imagem de Fundo 1" />
+                    <img src="/wallpaper/3.jpg" alt="Imagem de Fundo 1" />
                 </div>
                 <div className="guns-custom-carousel-content">
                     <div className="guns-custom-carousel-content-container">
                         <div className="guns-custom-carousel-content-container-box">
-                            <h1>Bem Vind(a) ao Guns Airsoft Arena</h1>
+                            <h1>Bem-Vindo(a) ao <span className="guns">Guns Airsoft Arena</span></h1>
                         </div>
                         <div  className="guns-custom-carousel-content-container-box">
                             <p>Aqui, a sua diversão é garantida.</p>

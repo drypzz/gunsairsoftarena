@@ -62,7 +62,7 @@
     color: #fff;
     font-size: 55px;
     letter-spacing: 1px;
-    max-width: 500px;
+    max-width: 510px;
     font-family: Arial, sans-serif;
     text-transform: uppercase;
     border-bottom: 1px solid #54A824;
@@ -79,9 +79,21 @@
     font-family: 'Lato', sans-serif;
 }
 
+
+/* carousel important */
+
+.carousel.carousel-slider .control-arrow:hover{
+    background: none!important;
+}
+
+.carousel.carousel-slider .control-arrow{
+    padding: 10px!important;
+}
+
+
 @media screen and (max-width: 960px) {
     .guns-custom-carousel-container, #guns-02{
-        height: 500px;
+        height: 570px;
         justify-content: center;
     }
 

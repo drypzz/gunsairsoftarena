@@ -1,9 +1,121 @@
-.wallpaper-ca{
-    width: 100%;
-    height: 100%;
+.guns-information{
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: flex-start;
-    position: relative;
+    background-color: var(--color-navbar);
+    padding: 20px;
+    height: 150px;
+}
+
+.guns-information-content h4, .guns-information-content h3{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+}
+
+.guns-information-content h4{
+    color: var(--color-primary);
+}
+
+.guns-information-content h4 svg{
+    fill: #fff;
+}
+
+.guns-information-content h3{
+    margin-left: 30px;
+}
+
+
+/* about */
+
+
+.guns-about-us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.guns-about-us-content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.guns-about-us-content:nth-child(2){
+    max-width: 60vw;
+}
+
+.guns-about-us-content-box h1{
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+
+.guns-about-us-content-box p{
+    text-align: justify;
+    font-size: 1rem;
+}
+
+/* footer */
+
+
+footer{
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    background-color: var(--color-navbar);
+}
+
+.guns-footer-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 20px;
+}
+
+
+@media screen and (max-width: 960px){
+    .guns-information{
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .guns-information-content h4, .guns-information-content h3{
+        font-size: 1rem;
+    }
+ 
+    .guns-information-content h3{
+        margin-left: 0;
+    }
+    
+    .guns-information-content{
+        transform: scale(1);
+        text-align: center;
+    }
+
+    .guns-about-us{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .guns-about-us-content:nth-child(2){
+        max-width: 90%;
+    }
+
+    .guns-about-us-content{
+        align-items: center;
+    }
+
+    .guns-about-us-content-box p{
+        text-align: left;
+    }
 }
