@@ -51,6 +51,12 @@
     max-width: 60vw;
 }
 
+.guns-about-us-content-box img{
+    width: 450px;
+    height: auto;
+    user-select: none;
+}
+
 .guns-about-us-content-box h1{
     text-transform: uppercase;
     font-size: 3rem;
@@ -113,6 +119,10 @@ footer{
 
     .guns-about-us-content{
         align-items: center;
+    }
+
+    .guns-about-us-content-box img{
+        width: 100%;
     }
 
     .guns-about-us-content-box p{

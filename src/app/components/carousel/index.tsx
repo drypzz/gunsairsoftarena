@@ -1,14 +1,40 @@
+"use client";
+
+import React, { useState } from "react";
+
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import ButtonStyled from "../buttonStyled";
 
+import getRandomNumber from "@/app/utils/randomNumber";
+
 import "./index.style.css";
 
 const CarouselContainer = () => {
+
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [animationClass, setAnimationClass] = useState('animation-one');
+
+    const handleSlideChange = (index: number) => {
+        
+        const classes = [
+            {text: 'animation-one'},
+            {text: 'animation-two'},
+        ];
+
+        setCurrentSlide(index);
+
+        const random = Math.floor(getRandomNumber({ min: 0, max: 2 }));
+
+        return setAnimationClass(classes[random].text);
+    };
+
     return (
         <Carousel
-            className="guns-custom-carousel"
+            className={`guns-custom-carousel ${animationClass}`}
+            selectedItem={currentSlide}
+            onChange={handleSlideChange}
             autoPlay
             transitionTime={(20 * 10)}
             swipeable={false}
@@ -20,7 +46,7 @@ const CarouselContainer = () => {
             infiniteLoop
             showArrows={true}
         >
-            <div className="guns-custom-carousel-container">
+            <div className="guns-custom-carousel-container slide-1">
                 <div className="guns-custom-carousel-wallpaper">
                     <img src="/wallpaper/3.jpg" alt="Imagem de Fundo 1" />
                 </div>
@@ -39,7 +65,7 @@ const CarouselContainer = () => {
                 </div>
             </div>
 
-            <div id="guns-02" className="guns-custom-carousel-container">
+            <div className="guns-custom-carousel-container slide-2">
                 <div className="guns-custom-carousel-wallpaper">
                     <img src="/wallpaper/2.jpg" alt="Imagem de Fundo 1" />
                 </div>

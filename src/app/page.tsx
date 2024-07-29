@@ -8,6 +8,8 @@ import Navbar from "./components/navbar";
 import LoadinScreen from "./components/loading";
 import CarouselContainer from "./components/carousel";
 
+import { getYear } from "./utils/getDate";
+
 import "./page.style.css";
 
 const HomePage = () => {
@@ -56,10 +58,10 @@ const HomePage = () => {
           <footer>
             <div className="guns-footer-content">
               <div>
-                <p>2021 - {new Date().getFullYear()} © Todos os direitos reservados.</p>
+                <p>2021 - {getYear()} © Todos os direitos reservados.</p>
               </div>
               <div>
-                <p>CNPJ: 44.433.534/0001-87</p>
+                <p>CNPJ: 41.181.619/0001-27</p>
               </div>
             </div>
           </footer>
