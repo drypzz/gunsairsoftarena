@@ -14,7 +14,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://drypzz.netlify.app/"),
+  metadataBase: new URL("https://dev-gunsairsoftarena.netlify.app"),
   title: "Guns Airsoft Arena - Início",
   applicationName: "Guns Airsoft Arena - Início",
   description: "Sua arena de Airsoft em Joinville - SC",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: "Sua arena de Airsoft em Joinville - SC",
     siteName: "Guns Airsoft Arena - Início",
     type: "website",
-    url: "https://drypzz.netlify.app/",
+    url: "https://dev-gunsairsoftarena.netlify.app",
     images: [{ url: "/logo/transparent.png" }],
     countryName: "Brazil",
     locale: "pt_BR",
