@@ -7,14 +7,13 @@ import { FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import Navbar from "./components/navbar";
 import LoadinScreen from "./components/loading";
 import CarouselContainer from "./components/carousel";
-
-import { getYear } from "./utils/getDate";
+import Footer from "./components/footer";
 
 import "./page.style.css";
 
 const HomePage = () => {
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -55,16 +54,7 @@ const HomePage = () => {
               </div>
             </div>
           </section>
-          <footer>
-            <div className="guns-footer-content">
-              <div>
-                <p>2021 - {getYear()} © Todos os direitos reservados.</p>
-              </div>
-              <div>
-                <p>CNPJ: 41.181.619/0001-27</p>
-              </div>
-            </div>
-          </footer>
+          <Footer />
         </main>
       }
     </>
