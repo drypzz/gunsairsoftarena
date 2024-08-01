@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     creator: "@drypzz",
   },
   openGraph: {
-    title: "@gunsairsoftarena",
+    title: "Guns Airsoft Arena - Contato",
     description: "Sua arena de Airsoft em Joinville - SC",
-    siteName: "Guns Airsoft Arena - Contato",
+    siteName: "@gunsairsoftarena",
     type: "website",
     url: "https://dev-gunsairsoftarena.netlify.app/contato",
     images: [{ url: "/logo/transparent.png" }],
