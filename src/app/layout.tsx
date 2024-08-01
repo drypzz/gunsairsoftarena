@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dev-gunsairsoftarena.netlify.app"),
-  title: "Guns Airsoft Arena - Início",
+  title: "@gunsairsoftarena",
   applicationName: "Guns Airsoft Arena - Início",
   description: "Sua arena de Airsoft em Joinville - SC",
   creator: "DRYPZZ",
